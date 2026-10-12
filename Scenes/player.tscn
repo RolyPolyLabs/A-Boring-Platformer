@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://l1v36vb1rqti"]
+
+[ext_resource type="Script" uid="uid://k66bi8vq73ry" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://bybffv33gm62i" path="res://Pixel Art/Duck Run.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://cfml1qlyf3g27" path="res://Pixel Art/Duck Stand.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://c5helja4y6fij" path="res://Pixel Art/Duck Duck.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://csfpcq7h3l46h" path="res://Pixel Art/Dash Air.png" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://fovwhe27f36y" path="res://Pixel Art/pixilart-sprite (1)-7.png (1).png" id="6_x3wgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
+atlas = ExtResource("1_v0iea")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
+radius = 1.8000003
+
+[node name="Player" type="CharacterBody2D" unique_id=1376574703]
+scale = Vector2(1.3199974, 1.3199974)
+script = ExtResource("1_cvnsp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=317697821]
+sprite_frames = SubResource("SpriteFrames_vgqql")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=86701027]
+position = Vector2(0, 1.2000003)
+shape = SubResource("CircleShape2D_fkybt")
+
+[node name="DashTrail" type="CPUParticles2D" parent="." unique_id=137809742]
+emitting = false
+amount = 15
+texture = ExtResource("5_fkybt")
+lifetime = 0.3
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(0, 5)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+
+[node name="UpDashTrail" type="CPUParticles2D" parent="." unique_id=1210291999]
+scale = Vector2(0.99999994, 0.99999994)
+emitting = false
+amount = 15
+texture = ExtResource("6_x3wgy")
+lifetime = 0.3
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(3, 0)
+spread = 15.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 0.3
+scale_amount_max = 0.5

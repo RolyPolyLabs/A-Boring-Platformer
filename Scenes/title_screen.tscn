@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cjx6wv7xkgoaa"]
+
+[ext_resource type="Script" uid="uid://ipg7de1widoe" path="res://Scripts/title_screen.gd" id="1_twnyg"]
+[ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="2_4gxqj"]
+[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/button.tres" id="2_p3fck"]
+[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="2_twnyg"]
+[ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="3_55kwv"]
+
+[sub_resource type="Theme" id="Theme_p3fck"]
+RichTextLabel/constants/outline_size = 20
+
+[node name="TitleScreen" type="Control" unique_id=387759]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_twnyg")
+metadata/test_scene = "res://Scenes/title_screen.tscn"
+
+[node name="Main Menu" type="VBoxContainer" parent="." unique_id=67642232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu" unique_id=142750989]
+layout_mode = 2
+theme = SubResource("Theme_p3fck")
+theme_override_fonts/normal_font = ExtResource("2_4gxqj")
+theme_override_font_sizes/normal_font_size = 80
+text = "A Boring Platformer"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Menu Options" type="VBoxContainer" parent="Main Menu" unique_id=1514145503]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Start" type="Button" parent="Main Menu/Menu Options" unique_id=831564993]
+layout_mode = 2
+theme = ExtResource("2_twnyg")
+text = "Start"
+
+[node name="Options" type="Button" parent="Main Menu/Menu Options" unique_id=290421648]
+layout_mode = 2
+theme = ExtResource("2_p3fck")
+theme_override_fonts/font = ExtResource("3_55kwv")
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="Main Menu/Menu Options" unique_id=85179754]
+layout_mode = 2
+theme = ExtResource("2_twnyg")
+text = "Exit
+"
+
+[connection signal="pressed" from="Main Menu/Menu Options/Start" to="." method="_on_start_pressed"]
