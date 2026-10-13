@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ipg7de1widoe" path="res://Scripts/title_screen.gd" id="1_twnyg"]
 [ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="2_4gxqj"]
-[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/button.tres" id="2_p3fck"]
 [ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="2_twnyg"]
 [ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="3_55kwv"]
 
@@ -52,15 +51,10 @@ text = "Start"
 
 [node name="Options" type="Button" parent="Main Menu/Menu Options" unique_id=290421648]
 layout_mode = 2
-theme = ExtResource("2_p3fck")
+theme = ExtResource("2_twnyg")
 theme_override_fonts/font = ExtResource("3_55kwv")
 text = "Options
 "
 
-[node name="Exit" type="Button" parent="Main Menu/Menu Options" unique_id=85179754]
-layout_mode = 2
-theme = ExtResource("2_twnyg")
-text = "Exit
-"
-
 [connection signal="pressed" from="Main Menu/Menu Options/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main Menu/Menu Options/Options" to="." method="_on_options_pressed"]
