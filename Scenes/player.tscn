@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bybffv33gm62i" path="res://Pixel Art/Duck Run.png" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://cfml1qlyf3g27" path="res://Pixel Art/Duck Stand.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c5helja4y6fij" path="res://Pixel Art/Duck Duck.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://wig8sjuh07ks" path="res://Pixel Art/pixilart-sprite-1.png-1.png.png" id="4_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://csfpcq7h3l46h" path="res://Pixel Art/Dash Air.png" id="5_fkybt"]
 [ext_resource type="Texture2D" uid="uid://fovwhe27f36y" path="res://Pixel Art/pixilart-sprite (1)-7.png (1).png" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://gedm4eeboauv" path="res://Sound Effects/53439420-retro-zap-sound-06-474813.mp3" id="7_3smsa"]
+[ext_resource type="AudioStream" uid="uid://crn31lhsyyiro" path="res://Sound Effects/driken5482-retro-jump-1-236684.mp3" id="8_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("2_6t5aa")
@@ -43,7 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vgqql")
+"texture": ExtResource("4_f1ek2")
 }],
 "loop": true,
 "name": &"jump",
@@ -70,7 +73,7 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=317697821]
 sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &"Idle"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=86701027]
 position = Vector2(0, 1.2000003)
@@ -106,3 +109,9 @@ initial_velocity_min = 100.0
 initial_velocity_max = 200.0
 scale_amount_min = 0.3
 scale_amount_max = 0.5
+
+[node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=341447131]
+stream = ExtResource("7_3smsa")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1694651135]
+stream = ExtResource("8_8erm5")

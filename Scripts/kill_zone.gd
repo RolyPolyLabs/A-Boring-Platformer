@@ -1,9 +1,10 @@
 extends Area2D
-
+@onready var death_sfx: AudioStreamPlayer2D = $DeathSFX
 @onready var timer = $Timer
 
 func _on_body_entered(body):
 	print("You Died!")
+	death_sfx.play()
 	SignalBus.emit_signal ("PlayerDies")
 	Engine.time_scale = 0.5
 	body.get_node("CollisionShape2D").queue_free()
