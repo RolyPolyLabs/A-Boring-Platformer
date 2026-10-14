@@ -4,9 +4,30 @@
 [ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="2_4gxqj"]
 [ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="2_twnyg"]
 [ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="3_55kwv"]
+[ext_resource type="Texture2D" uid="uid://cly4nia1b6tcm" path="res://Pixel Art/New Piskel-1.png.png" id="4_55kwv"]
+[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="6_12m1t"]
 
 [sub_resource type="Theme" id="Theme_p3fck"]
 RichTextLabel/constants/outline_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_12m1t"]
+texture = ExtResource("4_55kwv")
+modulate_color = Color(0.6640821, 1, 0.54648393, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_55kwv"]
+texture = ExtResource("4_55kwv")
+modulate_color = Color(0.21452975, 0.54474926, 1.5016794e-05, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vd4x"]
+texture = ExtResource("4_55kwv")
+modulate_color = Color(7.2196127e-07, 0.543943, 0.5439431, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_55kwv"]
+load_path = "res://.godot/imported/New Piskel-1.png.png-5796fd462ac8c38f849cd426eb7fb7e4.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n82rj"]
+texture = SubResource("CompressedTexture2D_55kwv")
+modulate_color = Color(7.2196127e-07, 0.34644324, 0.34644333, 1)
 
 [node name="TitleScreen" type="Control" unique_id=387759]
 layout_mode = 3
@@ -38,23 +59,41 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Menu Options" type="VBoxContainer" parent="Main Menu" unique_id=1514145503]
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Menu/Menu Options" unique_id=1616987320]
+layout_mode = 2
+
 [node name="Start" type="Button" parent="Main Menu/Menu Options" unique_id=831564993]
 layout_mode = 2
 theme = ExtResource("2_twnyg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_12m1t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_55kwv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_55kwv")
 text = "Start"
 
 [node name="Options" type="Button" parent="Main Menu/Menu Options" unique_id=290421648]
 layout_mode = 2
 theme = ExtResource("2_twnyg")
 theme_override_fonts/font = ExtResource("3_55kwv")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vd4x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6vd4x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n82rj")
 text = "Options
 "
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1370486531]
+stream = ExtResource("6_12m1t")
+volume_db = 10.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1439759553]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="pressed" from="Main Menu/Menu Options/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main Menu/Menu Options/Options" to="." method="_on_options_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
