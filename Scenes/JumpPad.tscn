@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b04ktl8kexdl"]
+
+[ext_resource type="Script" uid="uid://d3r1y8rirqr86" path="res://Scenes/jump_pad.gd" id="1_5fcsa"]
+[ext_resource type="Texture2D" uid="uid://dkdek3ta4ohxh" path="res://Pixel Art/Spritesheet-26.png.png" id="2_ew34w"]
+[ext_resource type="AudioStream" uid="uid://d10pi3mvsay2e" path="res://Sound Effects/driken5482-retro-jump-2-236687.mp3" id="3_ew34w"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ccqlr"]
+points = PackedVector2Array(-4, -2, 4, -2, 8, 2, -8, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccqlr"]
+size = Vector2(8, 1)
+
+[sub_resource type="Gradient" id="Gradient_ew34w"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.94578314, 0.9939759, 1)
+colors = PackedColorArray(2.5027991e-06, 0.7781079, 0.9323313, 1, 0.9684269, 0.9929941, 0.99786365, 0.031573176, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f2tii"]
+gradient = SubResource("Gradient_ew34w")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.51304346, 0.4869565)
+
+[node name="Spring" type="StaticBody2D" unique_id=960977676]
+script = ExtResource("1_5fcsa")
+pad_texture = ExtResource("2_ew34w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=528426403]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2078231142]
+position = Vector2(0, 2)
+shape = SubResource("ConvexPolygonShape2D_ccqlr")
+
+[node name="LaunchZone" type="Area2D" parent="." unique_id=1628746396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaunchZone" unique_id=1298122189]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ccqlr")
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="." unique_id=831878625]
+stream = ExtResource("3_ew34w")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1796621835]
+color = Color(0, 0.85147274, 0.85147274, 1)
+energy = 0.3
+texture = SubResource("GradientTexture2D_f2tii")
+offset = Vector2(0, 1)
+texture_scale = 2.0

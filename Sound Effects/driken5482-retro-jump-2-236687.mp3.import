@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d10pi3mvsay2e"
+path="res://.godot/imported/driken5482-retro-jump-2-236687.mp3-42d10724f45f62a9b7059f79e9b8e86e.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/driken5482-retro-jump-2-236687.mp3"
+dest_files=["res://.godot/imported/driken5482-retro-jump-2-236687.mp3-42d10724f45f62a9b7059f79e9b8e86e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

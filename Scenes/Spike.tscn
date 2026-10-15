@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://krirmrwy426i"]
+
+[ext_resource type="Script" uid="uid://oja5yjq18gwd" path="res://Scripts/spike.gd" id="1_nuopa"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="2_n83sx"]
+
+[node name="Spike" type="StaticBody2D" unique_id=350820063]
+script = ExtResource("1_nuopa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777869875]
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("2_n83sx")]
