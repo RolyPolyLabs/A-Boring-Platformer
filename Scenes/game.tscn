@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_ldgsr"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://krirmrwy426i" path="res://Scenes/Spike.tscn" id="12_rku1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
 texture = ExtResource("2_h4fw4")
@@ -242,3 +243,6 @@ offset_right = 48.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 64
 script = ExtResource("11_o5yvi")
+
+[node name="Spike" parent="." unique_id=350820063 instance=ExtResource("12_rku1e")]
+position = Vector2(519, 264)
