@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bs3p5heirixyv"]
+
+[ext_resource type="Script" uid="uid://sbiobwm56bjx" path="res://Scripts/levels.gd" id="1_jk88k"]
+[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="2_3akqy"]
+[ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="2_xgx5e"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="3_bku7o"]
+[ext_resource type="AudioStream" uid="uid://dnygawoqep5gp" path="res://res/new_audio_stream_mp_3.res" id="3_jk88k"]
+[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="3_p1uqq"]
+[ext_resource type="Texture2D" uid="uid://cly4nia1b6tcm" path="res://Pixel Art/New Piskel-1.png.png" id="4_c4nq2"]
+[ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="4_j0k6p"]
+[ext_resource type="AudioStream" uid="uid://b2mr6h4khkoda" path="res://res/8BitJumper.res" id="4_uotyi"]
+
+[sub_resource type="Theme" id="Theme_p3fck"]
+RichTextLabel/constants/outline_size = 20
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dlt5w"]
+texture = ExtResource("4_c4nq2")
+expand_margin_left = 10.0
+expand_margin_top = 20.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+modulate_color = Color(0.59277385, 0.48261482, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bku7o"]
+texture = ExtResource("4_c4nq2")
+expand_margin_left = 10.0
+expand_margin_top = 20.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
+modulate_color = Color(0.5921569, 0.48235294, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bku7o"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+expand_margin_left = 30.0
+expand_margin_right = 30.0
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_12m1t"]
+stream_count = 2
+stream_0 = ExtResource("3_jk88k")
+stream_1 = ExtResource("4_uotyi")
+
+[node name="TitleScreen" type="Control" unique_id=387759]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jk88k")
+metadata/test_scene = "res://Scenes/title_screen.tscn"
+
+[node name="Main Menu" type="VBoxContainer" parent="." unique_id=67642232]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Main Menu" unique_id=142750989]
+layout_mode = 2
+theme = SubResource("Theme_p3fck")
+theme_override_fonts/normal_font = ExtResource("2_xgx5e")
+theme_override_font_sizes/normal_font_size = 80
+text = "🕹️ Levels 🕹️"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Menu" unique_id=2022367600]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 30
+
+[node name="Level 1" type="Button" parent="Main Menu/HBoxContainer" unique_id=1442349626]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_bku7o")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_dlt5w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dlt5w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dlt5w")
+text = "Level 1"
+
+[node name="Level 2" type="Button" parent="Main Menu/HBoxContainer" unique_id=265807680]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_bku7o")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxTexture_bku7o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bku7o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bku7o")
+text = "Level 2"
+
+[node name="Back" type="Button" parent="Main Menu" unique_id=11590729]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_p1uqq")
+theme_override_fonts/font = ExtResource("4_j0k6p")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bku7o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bku7o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bku7o")
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1370486531]
+stream = ExtResource("2_3akqy")
+volume_db = 10.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1439759553]
+wait_time = 0.3
+one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=464581595]
+stream = SubResource("AudioStreamPlaylist_12m1t")
+autoplay = true
+
+[connection signal="pressed" from="Main Menu/HBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Main Menu/Back" to="." method="_on_back_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

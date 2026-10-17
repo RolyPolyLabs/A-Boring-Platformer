@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cswu15nflrfy6"]
+
+[ext_resource type="AudioStream" uid="uid://dljacyf2b6bac" path="res://Music/1299929_Moonbeam.mp3" id="1_wrh0v"]
+[ext_resource type="Script" uid="uid://b105oa4jfkegg" path="res://Scripts/bg_music.gd" id="2_0kug2"]
+
+[node name="Bg Music" type="AudioStreamPlayer" unique_id=56023417]
+stream = ExtResource("1_wrh0v")
+parameters/looping = true
+script = ExtResource("2_0kug2")

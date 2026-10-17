@@ -1,20 +1,20 @@
 [gd_scene format=4 uid="uid://lmqnljka6k4o"]
 
-[ext_resource type="Script" uid="uid://clx7pqbyjbnwj" path="res://Scenes/game.gd" id="1_1l0tm"]
-[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="1_wrm1d"]
-[ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="2_3dryh"]
-[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_h4fw4"]
-[ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="4_3dryh"]
-[ext_resource type="Script" uid="uid://cbqkiud3cdctk" path="res://Scripts/camera.gd" id="4_wowpa"]
-[ext_resource type="Texture2D" uid="uid://c3bgljqeyw2wc" path="res://Pixel Art/Icons/image-1.png (1).png" id="7_1l0tm"]
-[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="8_v158k"]
-[ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_ldgsr"]
-[ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_o5yvi"]
-[ext_resource type="PackedScene" uid="uid://krirmrwy426i" path="res://Scenes/Spike.tscn" id="12_rku1e"]
+[ext_resource type="Script" uid="uid://clx7pqbyjbnwj" path="res://Scripts/level 1.gd" id="1_06qb0"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_b8do0"]
+[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="3_tkd47"]
+[ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="4_fjf22"]
+[ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="5_j1l7w"]
+[ext_resource type="Script" uid="uid://cbqkiud3cdctk" path="res://Scripts/camera.gd" id="6_wq317"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="7_bskud"]
+[ext_resource type="Texture2D" uid="uid://c3bgljqeyw2wc" path="res://Pixel Art/Icons/image-1.png (1).png" id="8_ajpot"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="9_ko25n"]
+[ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_epkso"]
+[ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_vvdxf"]
+[ext_resource type="PackedScene" uid="uid://krirmrwy426i" path="res://Scenes/Spike.tscn" id="12_2pi7h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
-texture = ExtResource("2_h4fw4")
+texture = ExtResource("2_b8do0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -128,7 +128,7 @@ texture = ExtResource("2_h4fw4")
 0:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dryh"]
-texture = ExtResource("1_wrm1d")
+texture = ExtResource("3_tkd47")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -141,7 +141,7 @@ texture = ExtResource("1_wrm1d")
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
-texture = ExtResource("2_3dryh")
+texture = ExtResource("4_fjf22")
 
 [sub_resource type="TileSet" id="TileSet_wowpa"]
 physics_layer_0/collision_layer = 1
@@ -152,15 +152,15 @@ sources/1 = SubResource("TileSetAtlasSource_h4fw4")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wowpa"]
 distance = 158.0
 
-[node name="Game" type="Node2D" unique_id=749805246]
-script = ExtResource("1_1l0tm")
+[node name="level 1" type="Node2D" unique_id=749805246]
+script = ExtResource("1_06qb0")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1537943562]
 position = Vector2(-1, 0)
 tile_map_data = PackedByteArray("AAALABEAAwAAAAAAAAAMABEAAwAAAAAAAAANABEAAwAAAAAAAAAOABEAAwAAAAAAAAAPABEAAwAAAAAAAAAQABEAAwAAAAAAAAAKABEAAwAAAAAAAAAJABEAAwAAAAAAAAARABIAAwABAAAAAAAQABIAAwABAAAAAAAPABIAAwABAAAAAAAOABIAAwABAAAAAAANABIAAwABAAAAAAAMABIAAwABAAAAAAALABIAAwABAAAAAAAKABIAAwABAAAAAAAJABIAAwABAAAAAAAFABEAAwAAAAAAAAAGABEAAwAAAAAAAAAHABEAAwAAAAAAAAAIABEAAwAAAAAAAAAUABEAAwAAAAAAAAAVABEAAwAAAAAAAAAEABEAAwAAAAAAAAADABEAAwAAAAAAAAACABEAAwAAAAAAAAABABEAAwAAAAAAAAAXABIAAwABAAAAAAAWABIAAwABAAAAAAAVABIAAwABAAAAAAAUABIAAwABAAAAAAATABIAAwABAAAAAAASABIAAwABAAAAAAAIABIAAwABAAAAAAAHABIAAwABAAAAAAAGABIAAwABAAAAAAAFABIAAwABAAAAAAAEABIAAwABAAAAAAADABIAAwABAAAAAAACABIAAwABAAAAAAABABIAAwABAAAAAAAAABIAAwABAAAAAAAYABIAAwABAAAAAAAZABIAAQAAAAAAAAAaABIAAQAAAAAAAAAbABIAAQAAAAAAAAAcABIAAQAAAAAAAAAdABIAAwABAAAAAAAcABMAAwABAAAAAAAdABMAAwABAAAAAAAdABQAAwABAAAAAAAcABQAAwABAAAAAAAbABQAAwABAAAAAAAaABQAAwABAAAAAAAaABMAAwABAAAAAAAbABMAAwABAAAAAAAZABMAAwABAAAAAAAYABMAAwABAAAAAAAXABMAAwABAAAAAAAWABMAAwABAAAAAAAVABMAAwABAAAAAAAUABMAAwABAAAAAAATABMAAwABAAAAAAASABMAAwABAAAAAAARABMAAwABAAAAAAAQABMAAwABAAAAAAAPABMAAwABAAAAAAAOABMAAwABAAAAAAANABMAAwABAAAAAAAMABMAAwABAAAAAAALABMAAwABAAAAAAAKABMAAwABAAAAAAAJABMAAwABAAAAAAAIABMAAwABAAAAAAAHABMAAwABAAAAAAAGABMAAwABAAAAAAAFABMAAwABAAAAAAAEABMAAwABAAAAAAADABMAAwABAAAAAAACABMAAwABAAAAAAABABMAAwABAAAAAAAAABMAAwABAAAAAAAAABQAAwABAAAAAAABABQAAwABAAAAAAACABQAAwABAAAAAAADABQAAwABAAAAAAAEABQAAwABAAAAAAAFABQAAwABAAAAAAAGABQAAwABAAAAAAAHABQAAwABAAAAAAAIABQAAwABAAAAAAAJABQAAwABAAAAAAAKABQAAwABAAAAAAALABQAAwABAAAAAAAMABQAAwABAAAAAAANABQAAwABAAAAAAAOABQAAwABAAAAAAAPABQAAwABAAAAAAAQABQAAwABAAAAAAARABQAAwABAAAAAAASABQAAwABAAAAAAATABQAAwABAAAAAAAUABQAAwABAAAAAAAVABQAAwABAAAAAAAWABQAAwABAAAAAAAXABQAAwABAAAAAAAYABQAAwABAAAAAAAZABQAAwABAAAAAAAdABUAAwABAAAAAAAcABUAAwABAAAAAAAbABUAAwABAAAAAAAaABUAAwABAAAAAAAZABUAAwABAAAAAAAYABUAAwABAAAAAAAXABUAAwABAAAAAAAWABUAAwABAAAAAAAVABUAAwABAAAAAAAUABUAAwABAAAAAAATABUAAwABAAAAAAASABUAAwABAAAAAAARABUAAwABAAAAAAAQABUAAwABAAAAAAAPABUAAwABAAAAAAAOABUAAwABAAAAAAANABUAAwABAAAAAAAMABUAAwABAAAAAAALABUAAwABAAAAAAAKABUAAwABAAAAAAAJABUAAwABAAAAAAAIABUAAwABAAAAAAAHABUAAwABAAAAAAAGABUAAwABAAAAAAAFABUAAwABAAAAAAAEABUAAwABAAAAAAADABUAAwABAAAAAAACABUAAwABAAAAAAABABUAAwABAAAAAAAAABUAAwABAAAAAAAAABYAAwABAAAAAAABABYAAwABAAAAAAACABYAAwABAAAAAAADABYAAwABAAAAAAAEABYAAwABAAAAAAAFABYAAwABAAAAAAAGABYAAwABAAAAAAAHABYAAwABAAAAAAAIABYAAwABAAAAAAAJABYAAwABAAAAAAAKABYAAwABAAAAAAALABYAAwABAAAAAAAMABYAAwABAAAAAAANABYAAwABAAAAAAAOABYAAwABAAAAAAAPABYAAwABAAAAAAAQABYAAwABAAAAAAARABYAAwABAAAAAAASABYAAwABAAAAAAATABYAAwABAAAAAAAUABYAAwABAAAAAAAVABYAAwABAAAAAAAWABYAAwABAAAAAAAXABYAAwABAAAAAAAYABYAAwABAAAAAAAZABYAAwABAAAAAAAaABYAAwABAAAAAAAbABYAAwABAAAAAAAcABYAAwABAAAAAAAdABYAAwABAAAAAAAAABEAAwAAAAAAAAD6/xEAAwAAAAAAAAD6/xIAAwABAAAAAAD6/xMAAwABAAAAAAD6/xQAAwABAAAAAAD6/xUAAwABAAAAAAD6/xYAAwABAAAAAAD7/xEAAwAAAAAAAAD7/xIAAwABAAAAAAD7/xMAAwABAAAAAAD7/xQAAwABAAAAAAD7/xUAAwABAAAAAAD7/xYAAwABAAAAAAD8/xEAAwAAAAAAAAD8/xIAAwABAAAAAAD8/xMAAwABAAAAAAD8/xQAAwABAAAAAAD8/xUAAwABAAAAAAD8/xYAAwABAAAAAAD9/xEAAwAAAAAAAAD9/xIAAwABAAAAAAD9/xMAAwABAAAAAAD9/xQAAwABAAAAAAD9/xUAAwABAAAAAAD9/xYAAwABAAAAAAD+/xEAAwAAAAAAAAD+/xIAAwABAAAAAAD+/xMAAwABAAAAAAD+/xQAAwABAAAAAAD+/xUAAwABAAAAAAD+/xYAAwABAAAAAAD//xEAAwAAAAAAAAD//xIAAwABAAAAAAD//xMAAwABAAAAAAD//xQAAwABAAAAAAD//xUAAwABAAAAAAD//xYAAwABAAAAAAAeABEAAQAEAAEAAAAfABEAAQAAAAAAAAAgABEAAQAAAAAAAAAhABEAAQAAAAAAAAAiABEAAQAAAAAAAAAjABEAAQAAAAAAAAAfABIAAwABAAAAAAAeABIAAwABAAAAAAAgABIAAwABAAAAAAAhABIAAwABAAAAAAAiABIAAwABAAAAAAAjABIAAwABAAAAAAAjABMAAwABAAAAAAAiABMAAwABAAAAAAAhABMAAwABAAAAAAAgABMAAwABAAAAAAAfABMAAwABAAAAAAAeABMAAwABAAAAAAAeABQAAwABAAAAAAAfABQAAwABAAAAAAAgABQAAwABAAAAAAAhABQAAwABAAAAAAAiABQAAwABAAAAAAAjABQAAwABAAAAAAAjABUAAwABAAAAAAAiABUAAwABAAAAAAAhABUAAwABAAAAAAAgABUAAwABAAAAAAAfABUAAwABAAAAAAAeABUAAwABAAAAAAAeABYAAwABAAAAAAAfABYAAwABAAAAAAAgABYAAwABAAAAAAAhABYAAwABAAAAAAAiABYAAwABAAAAAAAjABYAAwABAAAAAAD5/xIAAwABAAAAAAD4/xIAAwABAAAAAAD3/xIAAwABAAAAAAD2/xIAAwABAAAAAAD2/xMAAwABAAAAAAD3/xMAAwABAAAAAAD4/xMAAwABAAAAAAD5/xMAAwABAAAAAAD5/xQAAwABAAAAAAD5/xUAAwABAAAAAAD4/xUAAwABAAAAAAD3/xQAAwABAAAAAAD2/xQAAwABAAAAAAD2/xUAAwABAAAAAAD3/xUAAwABAAAAAAD4/xQAAwABAAAAAAD4/xYAAwABAAAAAAD5/xYAAwABAAAAAAD3/xYAAwABAAAAAAD2/xYAAwABAAAAAAD5/xEAAwAAAAAAAAD4/xEAAwAAAAAAAAD3/xEAAwAAAAAAAAD2/xEAAwAAAAAAAAAWABEAAwAAAAAAAAAXABEAAQAFAAEAAAAYABEAAQAHAAEAAAAkABEAAQAAAAAAAAAlABEAAwAAAAAAAAAmABEAAwAAAAAAAAAnABEAAwAAAAAAAAAoABEAAwAAAAAAAAAkABIAAwABAAAAAAAlABIAAwABAAAAAAAlABMAAwABAAAAAAAmABQAAwABAAAAAAAnABQAAwABAAAAAAAnABUAAwABAAAAAAAoABUAAwABAAAAAAAoABQAAwABAAAAAAAoABMAAwABAAAAAAApABMAAwABAAAAAAAoABIAAwABAAAAAAAnABIAAwABAAAAAAAmABIAAwABAAAAAAAmABMAAwABAAAAAAAnABMAAwABAAAAAAAkABMAAwABAAAAAAAkABQAAwABAAAAAAAkABUAAwABAAAAAAAkABYAAwABAAAAAAAlABYAAwABAAAAAAAmABYAAwABAAAAAAAmABUAAwABAAAAAAAlABQAAwABAAAAAAAlABUAAwABAAAAAAAnABYAAwABAAAAAAAoABYAAwABAAAAAAApABYAAwABAAAAAAApABUAAwABAAAAAAApABQAAwABAAAAAAASABEAAwAAAAAAAAARABEAAwAAAAAAAAApABEAAQAAAAAAAAApABIAAQABAAAAAAAdABEAAQAGAAEAAAATABEAAQABAAAAAAAqABIAAQAIAAYAAAArABIAAQAIAAYAAAAsABIAAQAIAAUAAAAtABIAAQAAAAYAAAAuABIAAQAIAAYAAAAtABMAAQAIAAYAAAArABMAAQAAAAYAAAAqABMAAQAIAAYAAAAuABMAAQAIAAYAAAAtABQAAQAIAAUAAAAsABQAAQAIAAYAAAArABQAAQAIAAYAAAAqABQAAQAIAAYAAAAuABQAAQAIAAYAAAAuABUAAQAIAAYAAAAtABUAAQAIAAYAAAAsABUAAQAIAAYAAAArABUAAQAIAAYAAAAqABUAAQAIAAYAAAAqABYAAQAIAAYAAAArABYAAQAIAAYAAAAsABYAAQAIAAYAAAAtABYAAQAIAAYAAAAuABYAAQAIAAYAAAAqABEAAQABAAYAAAArABEAAQABAAYAAAAsABEAAQABAAYAAAAtABEAAQABAAYAAAAuABEAAQABAAYAAAAsABMAAQAIAAYAAAA=")
 tile_set = SubResource("TileSet_wowpa")
 
-[node name="Player" parent="." unique_id=1376574703 instance=ExtResource("2_qxrlw")]
+[node name="Player" parent="." unique_id=1376574703 instance=ExtResource("5_j1l7w")]
 position = Vector2(167, 221)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=191858382]
@@ -170,9 +170,9 @@ zoom = Vector2(5, 5)
 limit_bottom = 380
 limit_smoothed = true
 position_smoothing_enabled = true
-script = ExtResource("4_wowpa")
+script = ExtResource("6_wq317")
 
-[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("4_3dryh")]
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("7_bskud")]
 position = Vector2(98, 537)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=633851433]
@@ -209,7 +209,7 @@ offset_right = 64.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("7_1l0tm")
+texture = ExtResource("8_ajpot")
 
 [node name="Label2" type="Label" parent="DeathLabel" unique_id=617607774]
 anchors_preset = 8
@@ -225,13 +225,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8125989, 0, 0.10775649, 1)
 theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("8_v158k")
+theme_override_fonts/font = ExtResource("9_ko25n")
 theme_override_font_sizes/font_size = 120
 text = "DEAD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Spring" parent="." unique_id=1169019916 instance=ExtResource("10_ldgsr")]
+[node name="Spring" parent="." unique_id=1169019916 instance=ExtResource("10_epkso")]
 position = Vector2(311, 268)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1810820296]
@@ -242,7 +242,7 @@ offset_top = 6.0
 offset_right = 48.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 64
-script = ExtResource("11_o5yvi")
+script = ExtResource("11_vvdxf")
 
-[node name="Spike" parent="." unique_id=350820063 instance=ExtResource("12_rku1e")]
+[node name="Spike" parent="." unique_id=350820063 instance=ExtResource("12_2pi7h")]
 position = Vector2(519, 264)

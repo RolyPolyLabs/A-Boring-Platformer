@@ -1,6 +1,7 @@
 extends Node
 
 signal PlayerDies()
+signal BG_MUSIC
 var Volume: float = 50.0
 
 func _ready() -> void:

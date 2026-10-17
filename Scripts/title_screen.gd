@@ -14,4 +14,9 @@ func _on_options_pressed() -> void:
 
 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	SignalBus.emit_signal ("BG_MUSIC")
+	get_tree().change_scene_to_file("res://Scenes/level 1.tscn")
+
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/levels.tscn")

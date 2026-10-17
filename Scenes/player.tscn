@@ -112,6 +112,8 @@ scale_amount_max = 0.5
 
 [node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=341447131]
 stream = ExtResource("7_3smsa")
+volume_db = -10.0
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1694651135]
 stream = ExtResource("8_8erm5")
+volume_db = -5.0
