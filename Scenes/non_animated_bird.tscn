@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c8o7yjohq7vy4"]
+
+[ext_resource type="Texture2D" uid="uid://cvf5oo2ests67" path="res://Pixel Art/BurdNonAnimated.png" id="1_30opi"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1557124901]
+texture = ExtResource("1_30opi")
