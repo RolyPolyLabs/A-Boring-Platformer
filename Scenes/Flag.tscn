@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dne4j6rl7bf1v"]
+
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="1_1hkyp"]
+[ext_resource type="Script" uid="uid://dc8c62b1jgrim" path="res://Scripts/flag.gd" id="1_i6t4d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6t4d"]
+atlas = ExtResource("1_1hkyp")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtjk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6t4d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsrnx"]
+size = Vector2(10, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1301453939]
+script = ExtResource("1_i6t4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1965694577]
+sprite_frames = SubResource("SpriteFrames_xtjk2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=691568411]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=51679366]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wsrnx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

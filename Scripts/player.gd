@@ -12,7 +12,16 @@ var can_dash = true
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_trail = $DashTrail
 @onready var up_dash_trail = $UpDashTrail
-
+@onready var walk_particles: CPUParticles2D = $WalkParticles # References your WalkParticles node
+func trigger_jump_pad(launch_force: float):
+	velocity.y = launch_force
+	
+	# Trigger the up-dash trail effect going upward
+	up_dash_trail.emitting = false
+	up_dash_trail.rotation = 0.0 # Points straight up
+	up_dash_trail.direction = Vector2(0, -1)
+	up_dash_trail.restart()
+	up_dash_trail.emitting = true
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -30,6 +39,20 @@ func _physics_process(delta):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
+	# --- Walking Particle Logic (Flips position and spray direction) ---
+	if is_on_floor() and direction != 0:
+		walk_particles.emitting = true
+		
+		if animated_sprite.flip_h:
+			walk_particles.direction = Vector2(1, -0.5)    # Spray right
+			walk_particles.position.x = 5                  # Shift emitter to the right foot
+		else:
+			walk_particles.direction = Vector2(-1, -0.5)   # Spray left
+			walk_particles.position.x = -5                 # Shift emitter to the left foot
+	else:
+		walk_particles.emitting = false
+	# -----------------------------------------------------------------
+
 	if Input.is_action_just_pressed("dash") and (is_on_floor() or can_dash):
 		dash_sound.play()
 		var input_x = Input.get_axis("move_left", "move_right")
@@ -45,7 +68,7 @@ func _physics_process(delta):
 		if dash_dir.y < 0:
 			velocity.y = 0
 			
-		move_and_collide(dash_dir * 100.0)
+		move_and_collide(dash_dir * 50.0)
 		
 		if not is_on_floor():
 			if dash_dir.y < 0:

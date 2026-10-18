@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5jm6d3drouib"]
+
+[ext_resource type="Texture2D" uid="uid://becn2h6f0mvek" path="res://Pixel Art/Platform.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(32, 16)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=418044625]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=136019008]
+texture = ExtResource("1_1rc8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743597822]
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true

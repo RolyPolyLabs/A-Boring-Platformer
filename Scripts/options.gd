@@ -6,3 +6,7 @@ func _on_back_pressed() -> void:
 
 func _on_test_volume_pressed() -> void:
 	audio_stream_player_2d.play()
+
+
+func _on_arcade_shader_pressed() -> void:
+	SignalBus.apply_shader = true

@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="3_bku7o"]
 [ext_resource type="AudioStream" uid="uid://dnygawoqep5gp" path="res://res/new_audio_stream_mp_3.res" id="3_jk88k"]
 [ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="3_p1uqq"]
-[ext_resource type="Texture2D" uid="uid://cly4nia1b6tcm" path="res://Pixel Art/New Piskel-1.png.png" id="4_c4nq2"]
+[ext_resource type="Texture2D" uid="uid://dnyi336x48rjo" path="res://Pixel Art/New Piskel-1.png" id="4_bku7o"]
 [ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="4_j0k6p"]
 [ext_resource type="AudioStream" uid="uid://b2mr6h4khkoda" path="res://res/8BitJumper.res" id="4_uotyi"]
 
@@ -14,7 +14,7 @@
 RichTextLabel/constants/outline_size = 20
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dlt5w"]
-texture = ExtResource("4_c4nq2")
+texture = ExtResource("4_bku7o")
 expand_margin_left = 10.0
 expand_margin_top = 20.0
 expand_margin_right = 10.0
@@ -22,7 +22,7 @@ expand_margin_bottom = 20.0
 modulate_color = Color(0.59277385, 0.48261482, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bku7o"]
-texture = ExtResource("4_c4nq2")
+texture = ExtResource("4_bku7o")
 expand_margin_left = 10.0
 expand_margin_top = 20.0
 expand_margin_right = 10.0

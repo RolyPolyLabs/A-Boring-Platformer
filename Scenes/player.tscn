@@ -67,6 +67,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
 radius = 1.8000003
 
+[sub_resource type="Gradient" id="Gradient_f1ek2"]
+colors = PackedColorArray(0.3579245, 0.1599234, 1.2032687e-07, 1, 0.3574912, 0.16007765, 0, 0)
+
 [node name="Player" type="CharacterBody2D" unique_id=1376574703]
 scale = Vector2(1.3199974, 1.3199974)
 script = ExtResource("1_cvnsp")
@@ -117,3 +120,19 @@ volume_db = -10.0
 [node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1694651135]
 stream = ExtResource("8_8erm5")
 volume_db = -5.0
+
+[node name="WalkParticles" type="CPUParticles2D" parent="." unique_id=918740433]
+position = Vector2(-3.030309, 3.030309)
+scale = Vector2(0.9999998, 0.9999998)
+emitting = false
+amount = 6
+lifetime = 0.4
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(-1, -0.5)
+spread = 30.0
+gravity = Vector2(0, 98)
+initial_velocity_min = 20.0
+initial_velocity_max = 50.0
+color = Color(0.41815263, 0.18980154, 0.13416216, 1)
+color_ramp = SubResource("Gradient_f1ek2")

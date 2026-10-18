@@ -2,6 +2,8 @@ extends Node
 
 signal PlayerDies()
 signal BG_MUSIC
+var apply_shader: bool = false
+
 var Volume: float = 50.0
 
 func _ready() -> void:

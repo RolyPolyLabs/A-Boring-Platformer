@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dgpbrt256leeo"]
+
+[ext_resource type="Script" uid="uid://bx50lntl2y7n4" path="res://Scripts/ScanLineShader.gd" id="1_5iieh"]
+[ext_resource type="Shader" uid="uid://csln8aa58k03y" path="res://Shaders/Camera.gdshader" id="2_758hf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7v2y"]
+shader = ExtResource("2_758hf")
+shader_parameter/curvature = 0.1
+shader_parameter/corner_radius = 0.06
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/scanlines = 0.35
+shader_parameter/scanline_size = 3.0
+shader_parameter/vignette = 0.35
+shader_parameter/brightness = 1.1
+shader_parameter/rgb_mask = false
+shader_parameter/mask_strength = 0.3
+
+[node name="Scanline shader" type="CanvasLayer" unique_id=600135161]
+visible = false
+script = ExtResource("1_5iieh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=783286287]
+material = SubResource("ShaderMaterial_t7v2y")
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 1165.0
+offset_bottom = 655.0

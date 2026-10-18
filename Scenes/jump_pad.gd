@@ -17,6 +17,12 @@ func _ready() -> void:
 func _on_launch_zone_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		sound_effect.play()
-		body.velocity.y = launch_force
+		
+		# Check if the player has our jump pad function
+		if body.has_method("trigger_jump_pad"):
+			body.trigger_jump_pad(launch_force)
+		else:
+			body.velocity.y = launch_force
+			
 	elif body is RigidBody2D:
 		body.linear_velocity = Vector2(body.linear_velocity.x, launch_force)
