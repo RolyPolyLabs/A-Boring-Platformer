@@ -4,10 +4,11 @@
 [ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="2_4gxqj"]
 [ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="2_twnyg"]
 [ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="3_55kwv"]
+[ext_resource type="Texture2D" uid="uid://d4l81obc2ijl6" path="res://Pixel Art/untitled-pixel-art@4x (4).png" id="3_sqelc"]
 [ext_resource type="Texture2D" uid="uid://dnyi336x48rjo" path="res://Pixel Art/New Piskel-1.png" id="4_n82rj"]
-[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="6_12m1t"]
-[ext_resource type="AudioStream" uid="uid://dnygawoqep5gp" path="res://res/new_audio_stream_mp_3.res" id="7_n82rj"]
-[ext_resource type="AudioStream" uid="uid://b2mr6h4khkoda" path="res://res/8BitJumper.res" id="8_0061g"]
+[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="9_8mikk"]
+[ext_resource type="Texture2D" uid="uid://bp447q0puj3km" path="res://Pixel Art/Music By Waterflame.png" id="9_0061g"]
+[ext_resource type="Script" uid="uid://gyje4cm35i1k" path="res://Scripts/bg.gd" id="10_8mikk"]
 
 [sub_resource type="Theme" id="Theme_p3fck"]
 RichTextLabel/constants/outline_size = 20
@@ -36,10 +37,13 @@ modulate_color = Color(7.2196127e-07, 0.543943, 0.5439431, 1)
 texture = ExtResource("4_n82rj")
 modulate_color = Color(7.2196127e-07, 0.34644324, 0.34644333, 1)
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_12m1t"]
-stream_count = 2
-stream_0 = ExtResource("7_n82rj")
-stream_1 = ExtResource("8_0061g")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqelc"]
+texture = ExtResource("4_n82rj")
+modulate_color = Color(0.62539715, 0.42257103, 0.28024697, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5sh6"]
+texture = ExtResource("4_n82rj")
+modulate_color = Color(0.36604333, 0.23658195, 0.1417686, 1)
 
 [node name="TitleScreen" type="Control" unique_id=387759]
 layout_mode = 3
@@ -50,6 +54,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_twnyg")
 metadata/test_scene = "res://Scenes/title_screen.tscn"
+
+[node name="Bg" type="Node2D" parent="." unique_id=266333824]
+script = ExtResource("10_8mikk")
+
+[node name="TextureRect" type="TextureRect" parent="Bg" unique_id=1388413167]
+offset_left = -166.0
+offset_top = -83.0
+offset_right = 1450.0
+offset_bottom = 725.0
+texture = ExtResource("3_sqelc")
 
 [node name="Main Menu" type="VBoxContainer" parent="." unique_id=67642232]
 layout_mode = 1
@@ -106,19 +120,38 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_n82rj")
 text = "Options
 "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1370486531]
-stream = ExtResource("6_12m1t")
-volume_db = 10.0
-
 [node name="Timer" type="Timer" parent="." unique_id=1439759553]
 wait_time = 0.3
 one_shot = true
 
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=464581595]
-stream = SubResource("AudioStreamPlaylist_12m1t")
-autoplay = true
+[node name="Credits" type="Button" parent="." unique_id=1197391831]
+layout_mode = 0
+offset_left = 897.0
+offset_top = 556.0
+offset_right = 1059.0
+offset_bottom = 626.0
+theme = ExtResource("2_twnyg")
+theme_override_fonts/font = ExtResource("3_55kwv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_sqelc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_w5sh6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_w5sh6")
+text = "Credits"
+
+[node name="Waterflame" type="Button" parent="." unique_id=1915322840]
+layout_mode = 0
+offset_left = 1073.0
+offset_top = 499.0
+offset_right = 1140.0
+offset_bottom = 627.0
+icon = ExtResource("9_0061g")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=325368623]
+stream = ExtResource("9_8mikk")
 
 [connection signal="pressed" from="Main Menu/Menu Options/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Main Menu/Menu Options/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Main Menu/Menu Options/Options" to="." method="_on_options_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Waterflame" to="." method="_on_waterflame_pressed"]

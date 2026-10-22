@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dwmgtqxsrkflb"]
+
+[ext_resource type="AudioStream" uid="uid://dnygawoqep5gp" path="res://res/new_audio_stream_mp_3.res" id="1_dmhmt"]
+[ext_resource type="AudioStream" uid="uid://doqq0ofupqyor" path="res://Music/1502631_-Feelin039-Groovy-.mp3" id="2_4nmuy"]
+[ext_resource type="Script" uid="uid://drc6ludtb0idg" path="res://Scripts/bgmenumusic.gd" id="3_4nmuy"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_12m1t"]
+shuffle = true
+stream_count = 2
+stream_0 = ExtResource("1_dmhmt")
+stream_1 = ExtResource("2_4nmuy")
+
+[node name="Music" type="AudioStreamPlayer" unique_id=272627330]
+stream = SubResource("AudioStreamPlaylist_12m1t")
+autoplay = true
+script = ExtResource("3_4nmuy")

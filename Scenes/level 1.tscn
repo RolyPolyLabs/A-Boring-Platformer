@@ -13,7 +13,6 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="9_ko25n"]
 [ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_epkso"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_vvdxf"]
-[ext_resource type="PackedScene" uid="uid://krirmrwy426i" path="res://Scenes/Spike.tscn" id="12_2pi7h"]
 [ext_resource type="PackedScene" uid="uid://b5jm6d3drouib" path="res://Scenes/platform.tscn" id="13_b8do0"]
 [ext_resource type="PackedScene" uid="uid://dne4j6rl7bf1v" path="res://Scenes/Flag.tscn" id="14_tkd47"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="15_fjf22"]
@@ -207,10 +206,10 @@ offset_bottom = 860.0
 color = Color(0.47843137, 0.7176471, 1, 1)
 
 [node name="Death" type="ColorRect" parent="." unique_id=686349868]
-offset_left = -843.0
-offset_top = -573.0
-offset_right = 1568.0
-offset_bottom = 923.0
+offset_left = -853.0
+offset_top = -584.0
+offset_right = 1558.0
+offset_bottom = 912.0
 color = Color(0.8334029, 0.15170373, 0.29128972, 0)
 
 [node name="DeathLabel" type="CanvasLayer" parent="." unique_id=714342915]
@@ -265,9 +264,6 @@ theme_override_fonts/font = ExtResource("9_ko25n")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("11_vvdxf")
 
-[node name="Spike" parent="." unique_id=350820063 instance=ExtResource("12_2pi7h")]
-position = Vector2(519, 264)
-
 [node name="Platform" parent="." unique_id=411995529 instance=ExtResource("13_b8do0")]
 position = Vector2(303, 248)
 
@@ -288,3 +284,79 @@ position = Vector2(166, 151)
 [node name="Bird" parent="." unique_id=658405326 instance=ExtResource("19_ajpot")]
 position = Vector2(310, 139)
 autoplay = "default"
+
+[node name="DashRight" type="Label" parent="." unique_id=379983218]
+z_index = -1
+offset_left = 28.0
+offset_top = 90.0
+offset_right = 254.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump and 
+dash right!"
+horizontal_alignment = 1
+
+[node name="Touch" type="Label" parent="." unique_id=1812130513]
+z_index = -1
+offset_left = 134.0
+offset_top = 91.0
+offset_right = 360.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Touch 
+Checkpoint 
+to move on"
+horizontal_alignment = 1
+
+[node name="Nice" type="Label" parent="." unique_id=1584389329]
+z_index = -1
+offset_left = -25.0
+offset_top = 190.0
+offset_right = 201.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Nice!
+Now space
+and Up
+to dash up!"
+horizontal_alignment = 1
+
+[node name="Jump" type="Label" parent="." unique_id=1455937778]
+z_index = -1
+offset_left = 152.0
+offset_top = 202.0
+offset_right = 378.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump!"
+horizontal_alignment = 1
+
+[node name="Propell" type="Label" parent="." unique_id=630213174]
+z_index = -1
+offset_left = 166.0
+offset_top = 267.0
+offset_right = 392.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump Pads
+Propell"
+horizontal_alignment = 1
+
+[node name="Movement" type="Label" parent="." unique_id=1405174804]
+z_index = -1
+offset_left = -43.0
+offset_top = 263.0
+offset_right = 183.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "WASD 
+or 
+Arrow Keys 
+to move"
+horizontal_alignment = 1

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*uid://co8pgufi1vism"
 BgMusic="*uid://cswu15nflrfy6"
+Bgmenumusic="*uid://dwmgtqxsrkflb"
 
 [display]
 

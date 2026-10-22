@@ -125,7 +125,6 @@ one_shot = true
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=464581595]
 stream = SubResource("AudioStreamPlaylist_12m1t")
-autoplay = true
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Main Menu/Back" to="." method="_on_back_pressed"]
