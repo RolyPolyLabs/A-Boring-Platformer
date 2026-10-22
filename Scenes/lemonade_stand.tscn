@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bpkgg4htq3ibb"]
+
+[ext_resource type="Texture2D" uid="uid://bydgsfgv4n01b" path="res://Pixel Art/Lemonade.png" id="1_kqljt"]
+[ext_resource type="Script" uid="uid://b2rqapkexbwuc" path="res://Scripts/lemonade_stand.gd" id="2_8rdm5"]
+[ext_resource type="Texture2D" uid="uid://kjnrn22ghk81" path="res://Pixel Art/MANFULLBODY.webp" id="2_bog3y"]
+[ext_resource type="AudioStream" uid="uid://smqqw0ufwh7b" path="res://Music/Duck-song.mp3" id="4_m8hlg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bog3y"]
+size = Vector2(114, 64)
+
+[node name="Lemonade Stand" type="Sprite2D" unique_id=1543085932]
+z_index = -1
+texture = ExtResource("1_kqljt")
+script = ExtResource("2_8rdm5")
+
+[node name="Manfullbody" type="Sprite2D" parent="." unique_id=1717519850]
+show_behind_parent = true
+position = Vector2(2.1175824e-22, -0.9999995)
+scale = Vector2(0.030677658, 0.030639373)
+texture = ExtResource("2_bog3y")
+region_enabled = true
+region_rect = Rect2(-23.954712, -11.270447, 324.51367, 490.2227)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=74169228]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=171781517]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_bog3y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1463197452]
+stream = ExtResource("4_m8hlg")
+volume_db = 20.0
+autoplay = true
+max_distance = 100.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

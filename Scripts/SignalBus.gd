@@ -4,6 +4,8 @@ signal PlayerDies()
 signal BG_MUSIC
 signal BGMENU_MUSIC
 signal StopMusicBGMENU
+signal PauseMusic
+signal ResumeMusic
 var apply_shader: bool = false
 
 var Volume: float = 50.0

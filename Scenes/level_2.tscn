@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://qx6m0vxsrg02"]
 
+[ext_resource type="Script" uid="uid://cy0bs71yx7wm7" path="res://Scripts/level_2.gd" id="1_ait6c"]
 [ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="1_cggpd"]
 [ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="2_055b2"]
 [ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="3_2mgoq"]
@@ -10,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="8_42uki"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="9_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="10_42uki"]
+[ext_resource type="PackedScene" uid="uid://bpkgg4htq3ibb" path="res://Scenes/lemonade_stand.tscn" id="11_t7v2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
 texture = ExtResource("1_cggpd")
@@ -151,6 +153,7 @@ sources/1 = SubResource("TileSetAtlasSource_ait6c")
 distance = 158.0
 
 [node name="level 2" type="Node2D" unique_id=1212390420]
+script = ExtResource("1_ait6c")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=942135327]
 position = Vector2(-1, 0)
@@ -242,3 +245,6 @@ theme_override_font_sizes/font_size = 64
 script = ExtResource("9_t7v2y")
 
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("10_42uki")]
+
+[node name="Lemonade Stand" parent="." unique_id=1543085932 instance=ExtResource("11_t7v2y")]
+position = Vector2(287, 304)
