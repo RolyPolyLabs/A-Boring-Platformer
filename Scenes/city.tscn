@@ -1,0 +1,247 @@
+[gd_scene format=4 uid="uid://bd02a86mjxycm"]
+
+[ext_resource type="Script" uid="uid://cy0bs71yx7wm7" path="res://Scripts/level_2.gd" id="1_ifi4l"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_2cq4n"]
+[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="3_gab5h"]
+[ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="4_oic26"]
+[ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="5_pdxid"]
+[ext_resource type="Script" uid="uid://cbqkiud3cdctk" path="res://Scripts/camera.gd" id="6_hluyl"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="7_odnm4"]
+[ext_resource type="Texture2D" uid="uid://c3bgljqeyw2wc" path="res://Pixel Art/Icons/image-1.png (1).png" id="8_p1kk6"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="9_76y8w"]
+[ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="10_skwfe"]
+[ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="11_8sad3"]
+[ext_resource type="Texture2D" uid="uid://c3o5fl0g0q751" path="res://desert/desert_sky.png" id="12_gab5h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
+texture = ExtResource("2_2cq4n")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.1583042, -5.036045, -1.978445, 8, 8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -2.1583042, 5.036045, -1.978445, -8, 8, -8, 8, 8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.5756207, -8, 8, -1.2590103, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 5.5756207, -8, -8, -1.2590103, -8, 8, 8, 8)
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+7:5/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+4:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+8:8/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+4:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vcilj"]
+texture = ExtResource("3_gab5h")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bl0du"]
+texture = ExtResource("4_oic26")
+
+[sub_resource type="TileSet" id="TileSet_q0ycs"]
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_vcilj")
+sources/4 = SubResource("TileSetAtlasSource_bl0du")
+sources/1 = SubResource("TileSetAtlasSource_ait6c")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hj5x7"]
+distance = 158.0
+
+[node name="level 2" type="Node2D" unique_id=1212390420]
+script = ExtResource("1_ifi4l")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=942135327]
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAAAABUAAQAIAAYAAAABABUAAQAIAAYAAAACABUAAQAIAAYAAAADABUAAQAIAAYAAAAEABUAAQAIAAYAAAAFABUAAQAIAAYAAAAGABUAAQAIAAYAAAAHABUAAQAIAAYAAAAIABUAAQAIAAYAAAAJABUAAQAIAAYAAAAKABUAAQAIAAYAAAALABUAAQAIAAYAAAAMABUAAQAIAAYAAAAMABYAAQAIAAYAAAALABYAAQAIAAYAAAAKABYAAQAIAAYAAAAJABYAAQAIAAYAAAAIABYAAQAIAAYAAAAHABYAAQAIAAYAAAAGABYAAQAIAAYAAAAFABYAAQAIAAYAAAAEABYAAQAIAAYAAAADABYAAQAIAAYAAAACABYAAQAIAAYAAAABABYAAQAIAAYAAAAAABYAAQAIAAYAAAAAABcAAQAIAAYAAAABABcAAQAIAAYAAAACABcAAQAIAAYAAAADABcAAQAIAAYAAAAEABcAAQAIAAYAAAAFABcAAQAIAAYAAAAGABcAAQAIAAYAAAAHABcAAQAIAAYAAAAIABcAAQAIAAYAAAAJABcAAQAIAAYAAAAKABcAAQAIAAYAAAALABcAAQAIAAYAAAAMABcAAQAIAAYAAAANABUAAQAIAAYAAAAOABUAAQAIAAYAAAAPABUAAQAIAAYAAAAQABUAAQAIAAYAAAARABUAAQAIAAYAAAASABUAAQAIAAYAAAATABUAAQAIAAYAAAAUABUAAQAIAAYAAAAVABUAAQAIAAYAAAAWABUAAQAIAAYAAAAXABUAAQAIAAYAAAAYABUAAQAIAAYAAAAZABUAAQAIAAYAAAAaABUAAQAIAAYAAAAbABUAAQAIAAYAAAAcABUAAQAIAAYAAAAdABUAAQAIAAYAAAAeABUAAQAIAAYAAAAfABUAAQAIAAYAAAAgABUAAQAIAAYAAAAhABUAAQAIAAYAAAAiABUAAQAIAAYAAAAjABUAAQAIAAYAAAAkABUAAQAIAAYAAAAlABUAAQAIAAYAAAAmABUAAQAIAAYAAAAnABUAAQAIAAYAAAAoABUAAQAIAAYAAAAoABYAAQAIAAYAAAAnABYAAQAIAAYAAAAnABcAAQAIAAYAAAAoABcAAQAIAAYAAAAmABcAAQAIAAYAAAAlABcAAQAIAAYAAAAkABcAAQAIAAYAAAAjABcAAQAIAAYAAAAiABcAAQAIAAYAAAAhABcAAQAIAAYAAAAgABcAAQAIAAYAAAAfABcAAQAIAAYAAAAeABcAAQAIAAYAAAAdABcAAQAIAAYAAAAcABcAAQAIAAYAAAAbABcAAQAIAAYAAAAaABcAAQAIAAYAAAAZABcAAQAIAAYAAAAYABcAAQAIAAYAAAAXABcAAQAIAAYAAAAWABcAAQAIAAYAAAAVABcAAQAIAAYAAAAUABcAAQAIAAYAAAATABcAAQAIAAYAAAASABcAAQAIAAYAAAARABcAAQAIAAYAAAAQABcAAQAIAAYAAAAPABcAAQAIAAYAAAAOABcAAQAIAAYAAAANABcAAQAIAAYAAAANABYAAQAIAAYAAAAOABYAAQAIAAYAAAAPABYAAQAIAAYAAAAQABYAAQAIAAYAAAARABYAAQAIAAYAAAASABYAAQAIAAYAAAATABYAAQAIAAYAAAAUABYAAQAIAAYAAAAVABYAAQAIAAYAAAAWABYAAQAIAAYAAAAXABYAAQAIAAYAAAAYABYAAQAIAAYAAAAZABYAAQAIAAYAAAAaABYAAQAIAAYAAAAbABYAAQAIAAYAAAAcABYAAQAIAAYAAAAdABYAAQAIAAYAAAAeABYAAQAIAAYAAAAfABYAAQAIAAYAAAAlABYAAQAIAAYAAAAmABYAAQAIAAYAAAAkABYAAQAIAAYAAAAjABYAAQAIAAYAAAAiABYAAQAIAAYAAAAhABYAAQAIAAYAAAAgABYAAQAIAAYAAAA=")
+tile_set = SubResource("TileSet_q0ycs")
+
+[node name="Player" parent="." unique_id=1376574703 instance=ExtResource("5_pdxid")]
+position = Vector2(51.000008, 291)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1069903641]
+position = Vector2(15.416679, -8.52272)
+scale = Vector2(2.0833344, 1.9138058)
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_right = 100000
+limit_bottom = 385
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("6_hluyl")
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("7_odnm4")]
+position = Vector2(97, 548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=961103565]
+shape = SubResource("WorldBoundaryShape2D_hj5x7")
+
+[node name="Death" type="ColorRect" parent="." unique_id=1315258779]
+offset_left = -843.0
+offset_top = -573.0
+offset_right = 1568.0
+offset_bottom = 923.0
+color = Color(0.8334029, 0.15170373, 0.29128972, 0)
+
+[node name="DeathLabel" type="CanvasLayer" parent="." unique_id=1020399881]
+visible = false
+
+[node name="Label" type="TextureRect" parent="DeathLabel" unique_id=112563608]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_p1kk6")
+
+[node name="Label2" type="Label" parent="DeathLabel" unique_id=607541832]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -182.0
+offset_right = 240.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8125989, 0, 0.10775649, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("9_76y8w")
+theme_override_font_sizes/font_size = 120
+text = "DEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=234626159]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1534271712]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("9_76y8w")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("10_skwfe")
+
+[node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("11_8sad3")]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1444018244]
+z_index = -1
+offset_left = -267.0
+offset_top = 9.0
+offset_right = 1633.0
+offset_bottom = 1009.0
+texture = ExtResource("12_gab5h")
