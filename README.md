@@ -11,6 +11,9 @@ Contols:
 WASD or Arrow Keys to move, Space to dash.
 Working on adding some more levels!
 
+**Why did I create this project?**
+There is only one way to fix boredom: Making a boring Platformer!!!
+
 **For Hackclub reviewers:**
 I currently have two versions of this project in review, so some things on here are not in the version I submitted, since I am updating it.
 In the furture, I will have multiple branches for yall to check out. In the meantime, I will show some screenshots of my prevous version, as well as latest.
