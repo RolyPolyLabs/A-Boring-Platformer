@@ -103,7 +103,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_bku7o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bku7o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bku7o")
-text = "Level 2"
+text = "UnderGround"
 
 [node name="Level 3" type="Button" parent="Main Menu/HBoxContainer" unique_id=481630849]
 layout_mode = 2
@@ -136,6 +136,7 @@ one_shot = true
 stream = SubResource("AudioStreamPlaylist_12m1t")
 
 [connection signal="pressed" from="Main Menu/HBoxContainer/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Main Menu/HBoxContainer/Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Main Menu/HBoxContainer/Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Main Menu/Back" to="." method="_on_back_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
