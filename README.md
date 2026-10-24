@@ -10,7 +10,9 @@ Made for Hackclubs YSWS, Terra
 Contols:
 WASD or Arrow Keys to move, Space to dash.
 Working on adding some more levels!
-
+**How to play**
+Wasd or Arrow Keys to move, jump to dash.
+Check out shaders too!
 **Why did I create this project?**
 There is only one way to fix boredom: Making a boring Platformer!!!
 
