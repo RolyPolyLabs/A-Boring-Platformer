@@ -309,7 +309,6 @@ position = Vector2(-2, 383)
 shape = SubResource("WorldBoundaryShape2D_gab5h")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=287391503]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1634377457]

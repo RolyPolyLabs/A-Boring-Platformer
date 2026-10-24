@@ -13,7 +13,6 @@ config_version=5
 config/name="A Boring Platformer"
 run/main_scene="uid://cjx6wv7xkgoaa"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 

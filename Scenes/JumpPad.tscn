@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b04ktl8kexdl"]
 
-[ext_resource type="Script" uid="uid://d3r1y8rirqr86" path="res://Scenes/jump_pad.gd" id="1_5fcsa"]
+[ext_resource type="Script" uid="uid://d3r1y8rirqr86" path="res://Scripts/jump_pad.gd" id="1_5fcsa"]
 [ext_resource type="Texture2D" uid="uid://dkdek3ta4ohxh" path="res://Pixel Art/Spritesheet-26.png.png" id="2_ew34w"]
 [ext_resource type="AudioStream" uid="uid://d10pi3mvsay2e" path="res://Sound Effects/driken5482-retro-jump-2-236687.mp3" id="3_ew34w"]
 
