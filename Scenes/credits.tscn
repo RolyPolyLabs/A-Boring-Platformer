@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c7ppey076j2pv" path="res://Pixel Art/Icons/untitled-pixel-art@4x (5).png" id="7_ae0tj"]
 [ext_resource type="AudioStream" uid="uid://doqq0ofupqyor" path="res://Music/1502631_-Feelin039-Groovy-.mp3" id="8_803yc"]
 [ext_resource type="Texture2D" uid="uid://c6kir8g6r178d" path="res://Pixel Art/Icons/image-1.png.png" id="12_rlyo5"]
+[ext_resource type="Texture2D" uid="uid://cklrq3k1ydxgr" path="res://Pixel Art/Icons/New Piskel (2).png" id="13_0oi4c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rlyo5"]
 size = Vector2(94.18788, 188.37556)
@@ -158,6 +159,31 @@ offset_bottom = 1421.222
 scale = Vector2(0.024289705, 0.024289705)
 texture = ExtResource("12_rlyo5")
 
+[node name="Back" type="Button" parent="VBoxContainer" unique_id=998707017]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_ccovl")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_uah1q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uah1q")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xelri")
+text = "Back "
+expand_icon = true
+script = ExtResource("5_uah1q")
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Back" unique_id=595872180]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.083000004
+anchor_bottom = 0.81900007
+offset_left = 50.000008
+offset_top = 13.000002
+offset_right = 1202.856
+offset_bottom = 1421.222
+scale = Vector2(0.024289705, 0.024289705)
+texture = ExtResource("13_0oi4c")
+
 [node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=270225329]
 position = Vector2(95, 391)
 stream = ExtResource("8_803yc")
@@ -168,3 +194,4 @@ parameters/looping = true
 [connection signal="mouse_exited" from="Fatismo No Eyes/Sprite/Area2D" to="Fatismo No Eyes/Sprite" method="_on_area_2d_mouse_exited"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Sound Effects" to="." method="_on_sound_effects_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

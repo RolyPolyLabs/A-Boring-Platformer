@@ -1,6 +1,21 @@
 [gd_scene format=3 uid="uid://dhhh84m5q4ob1"]
 
 [ext_resource type="Script" uid="uid://cxqr75sinvugm" path="res://Scripts/pause_menu.gd" id="1_lj4oq"]
+[ext_resource type="Script" uid="uid://cspiyevi68b74" path="res://Scripts/arcade_shader_button.gd" id="2_qwhev"]
+[ext_resource type="Script" uid="uid://c4ges5gdp3go3" path="res://Scripts/VolumeSlider.gd" id="3_5w4ur"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ey1tb"]
+bg_color = Color(0.29846603, 0.75423115, 0.4218045, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
 
 [node name="Control" type="Control" unique_id=586392687]
 process_mode = 3
@@ -37,3 +52,61 @@ theme_override_font_sizes/font_size = 32
 text = "Game Paused (Press P to resume)"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Arcade Shader" type="CheckButton" parent="Menu" unique_id=1886226486]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 352.5
+offset_right = -460.0
+offset_bottom = -264.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Turn on Arcade shader?"
+script = ExtResource("2_qwhev")
+
+[node name="Label2" type="Label" parent="Menu" unique_id=1603423190]
+offset_left = 328.0
+offset_top = 387.0
+offset_right = 828.0
+offset_bottom = 410.0
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Menu" unique_id=334501713 node_paths=PackedStringArray("volume_label")]
+offset_left = 324.0
+offset_top = 414.0
+offset_right = 824.0
+offset_bottom = 430.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_ey1tb")
+value = 25.0
+script = ExtResource("3_5w4ur")
+volume_label = NodePath("../Label2")
+
+[node name="Restart" type="Button" parent="Menu" unique_id=1854204784]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 452.0
+offset_top = 464.5
+offset_right = -468.0
+offset_bottom = -152.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart Level"
+
+[node name="Back" type="Button" parent="Menu" unique_id=1089001469]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 452.0
+offset_top = 528.5
+offset_right = -468.0
+offset_bottom = -88.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back To Title Screen"
+
+[connection signal="toggled" from="Menu/Arcade Shader" to="." method="_on_arcade_shader_toggled"]
+[connection signal="pressed" from="Menu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Menu/Back" to="." method="_on_back_pressed"]

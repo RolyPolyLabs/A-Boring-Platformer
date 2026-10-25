@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c6kir8g6r178d" path="res://Pixel Art/Icons/image-1.png.png" id="4_663nc"]
 [ext_resource type="Script" uid="uid://c4ges5gdp3go3" path="res://Scripts/VolumeSlider.gd" id="4_kftxf"]
 [ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="6_hvj8k"]
+[ext_resource type="Script" uid="uid://cspiyevi68b74" path="res://Scripts/arcade_shader_button.gd" id="7_38txh"]
 
 [sub_resource type="Theme" id="Theme_663nc"]
 RichTextLabel/constants/outline_size = 20
@@ -106,9 +107,10 @@ expand_icon = true
 stream = ExtResource("6_hvj8k")
 volume_db = 12.0
 
-[node name="Arcade Shader" type="Button" parent="Main Menu/Menu Options" unique_id=633338192]
+[node name="Arcade Shader" type="CheckButton" parent="Main Menu/Menu Options" unique_id=1546501834]
 layout_mode = 2
 text = "Turn on Arcade shader?"
+script = ExtResource("7_38txh")
 
 [node name="Back" type="Button" parent="Main Menu/Menu Options" unique_id=1367667706]
 layout_mode = 2

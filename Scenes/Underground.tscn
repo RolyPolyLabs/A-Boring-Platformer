@@ -345,3 +345,6 @@ spike_texture = ExtResource("18_rk80c")
 
 [node name="Bird" parent="." unique_id=517702568 instance=ExtResource("19_g1c18")]
 position = Vector2(303, 678)
+
+[node name="Bird2" parent="." unique_id=1501543580 instance=ExtResource("19_g1c18")]
+position = Vector2(278, 501)

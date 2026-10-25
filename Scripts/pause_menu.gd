@@ -23,3 +23,12 @@ func _on_pause_requested() -> void:
 	else:
 		print("Game Resumed!")
 		menu.hide()
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
+	pause_requested.emit()
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+	pause_requested.emit()
+	SignalBus.emit_signal("PauseMusic")

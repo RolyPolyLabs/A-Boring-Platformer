@@ -6,8 +6,13 @@ signal BGMENU_MUSIC
 signal StopMusicBGMENU
 signal PauseMusic
 signal ResumeMusic
-var apply_shader: bool = false
+signal shader_toggled(enabled: bool)
 
+var apply_shader: bool = false:
+	set(value):
+		if apply_shader != value:
+			apply_shader = value
+			shader_toggled.emit(value)
 var Volume: float = 50.0
 
 func _ready() -> void:
