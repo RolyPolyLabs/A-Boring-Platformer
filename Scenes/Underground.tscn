@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bd02a86mjxycm"]
 
 [ext_resource type="Script" uid="uid://cy0bs71yx7wm7" path="res://Scripts/level_2.gd" id="1_y84ag"]
+[ext_resource type="Texture2D" uid="uid://ba82taccbysla" path="res://Pixel Art/New Piskel.png" id="2_ag05g"]
 [ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_x6xr7"]
 [ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="3_ag05g"]
 [ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="4_evxuv"]
@@ -15,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="13_25gfa"]
 [ext_resource type="Texture2D" uid="uid://c3o5fl0g0q751" path="res://desert/desert_sky.png" id="14_t4oeq"]
 [ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="16_ag05g"]
+[ext_resource type="PackedScene" uid="uid://7gmit5eop1vq" path="res://Scenes/spikev2.tscn" id="17_evxuv"]
+[ext_resource type="Texture2D" uid="uid://dyo2o68sh558i" path="res://Pixel Art/Spritesheet-64.png.png" id="18_rk80c"]
+[ext_resource type="PackedScene" uid="uid://bjkdjxhmidpel" path="res://Scenes/Bat Moving.tscn" id="19_g1c18"]
 
 [sub_resource type="Gradient" id="Gradient_pdxid"]
 colors = PackedColorArray(0.26049027, 0.08658788, 7.219613e-08, 1, 1, 1, 1, 0)
@@ -23,6 +27,10 @@ colors = PackedColorArray(0.26049027, 0.08658788, 7.219613e-08, 1, 1, 1, 1, 0)
 gradient = SubResource("Gradient_pdxid")
 fill_from = Vector2(0, 0.13478261)
 fill_to = Vector2(0, 0)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evxuv"]
+texture = ExtResource("2_ag05g")
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
 texture = ExtResource("2_x6xr7")
@@ -174,6 +182,7 @@ sources/3 = SubResource("TileSetAtlasSource_vcilj")
 sources/4 = SubResource("TileSetAtlasSource_bl0du")
 sources/1 = SubResource("TileSetAtlasSource_ait6c")
 sources/5 = SubResource("TileSetAtlasSource_oic26")
+sources/0 = SubResource("TileSetAtlasSource_evxuv")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hj5x7"]
 distance = 158.0
@@ -230,7 +239,7 @@ texture = ExtResource("8_k5q4b")
 texture_scale = 0.1
 
 [node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("9_1k5iw")]
-position = Vector2(133, 856)
+position = Vector2(169, 998)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=961103565]
 shape = SubResource("WorldBoundaryShape2D_hj5x7")
@@ -318,3 +327,21 @@ texture = SubResource("GradientTexture2D_pdxid")
 
 [node name="Spring" parent="." unique_id=960977676 instance=ExtResource("16_ag05g")]
 position = Vector2(71, 428)
+
+[node name="Spike2" parent="." unique_id=350820063 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(359, 584)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Spike" parent="." unique_id=1781619549 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(311, 584)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Spike3" parent="." unique_id=723491975 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(407, 584)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Bird" parent="." unique_id=517702568 instance=ExtResource("19_g1c18")]
+position = Vector2(303, 678)

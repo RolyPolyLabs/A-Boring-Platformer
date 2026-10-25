@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://7gmit5eop1vq"]
+
+[ext_resource type="Script" uid="uid://oja5yjq18gwd" path="res://Scripts/spike.gd" id="1_0ak6w"]
+[ext_resource type="Texture2D" uid="uid://dyo2o68sh558i" path="res://Pixel Art/Spritesheet-64.png.png" id="1_opmdd"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="2_0ak6w"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_hxkth"]
+points = PackedVector2Array(2, -4, -2, -4, -8, 7, 8, 7)
+
+[node name="Spike" type="StaticBody2D" unique_id=350820063]
+script = ExtResource("1_0ak6w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777869875]
+z_index = -1
+texture = ExtResource("1_opmdd")
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("2_0ak6w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=789066796]
+shape = SubResource("ConvexPolygonShape2D_hxkth")

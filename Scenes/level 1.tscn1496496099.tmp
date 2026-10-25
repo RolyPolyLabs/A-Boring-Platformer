@@ -1,0 +1,384 @@
+[gd_scene format=4 uid="uid://lmqnljka6k4o"]
+
+[ext_resource type="Script" uid="uid://clx7pqbyjbnwj" path="res://Scripts/level 1.gd" id="1_06qb0"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_b8do0"]
+[ext_resource type="Texture2D" uid="uid://c41kob65dtgvs" path="res://Pixel Art/image-2.png.png" id="3_j1l7w"]
+[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="3_tkd47"]
+[ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="4_fjf22"]
+[ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="5_j1l7w"]
+[ext_resource type="Texture2D" uid="uid://ba82taccbysla" path="res://Pixel Art/New Piskel.png" id="6_bskud"]
+[ext_resource type="Script" uid="uid://cbqkiud3cdctk" path="res://Scripts/camera.gd" id="6_wq317"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="7_bskud"]
+[ext_resource type="Texture2D" uid="uid://c3bgljqeyw2wc" path="res://Pixel Art/Icons/image-1.png (1).png" id="8_ajpot"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="9_ko25n"]
+[ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_epkso"]
+[ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_vvdxf"]
+[ext_resource type="PackedScene" uid="uid://b5jm6d3drouib" path="res://Scenes/platform.tscn" id="13_b8do0"]
+[ext_resource type="PackedScene" uid="uid://dne4j6rl7bf1v" path="res://Scenes/Flag.tscn" id="14_tkd47"]
+[ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="15_fjf22"]
+[ext_resource type="PackedScene" uid="uid://c8o7yjohq7vy4" path="res://Scenes/non_animated_bird.tscn" id="18_bskud"]
+[ext_resource type="PackedScene" uid="uid://dh5on1q0wehtv" path="res://Scenes/Bird.tscn" id="19_ajpot"]
+[ext_resource type="Script" uid="uid://uq3j8ju0vfpl" path="res://Scripts/BatMove.gd" id="19_epkso"]
+[ext_resource type="PackedScene" uid="uid://dwjxym6n71etu" path="res://Scenes/bat.tscn" id="19_ko25n"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkd47"]
+texture = ExtResource("2_b8do0")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.1583042, -5.036045, -1.978445, 8, 8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -2.1583042, 5.036045, -1.978445, -8, 8, -8, 8, 8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -5.5756207, -8, 8, -1.2590103, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 5.5756207, -8, -8, -1.2590103, -8, 8, 8, 8)
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+8:3/0 = 0
+7:3/0 = 0
+6:3/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+8:5/0 = 0
+7:5/0 = 0
+6:5/0 = 0
+5:5/0 = 0
+4:5/0 = 0
+3:5/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+7:7/0 = 0
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+4:7/0 = 0
+3:7/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+8:8/0 = 0
+8:9/0 = 0
+7:9/0 = 0
+6:9/0 = 0
+5:9/0 = 0
+4:9/0 = 0
+3:9/0 = 0
+2:9/0 = 0
+1:9/0 = 0
+0:9/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wq317"]
+texture = ExtResource("3_j1l7w")
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fjf22"]
+texture = ExtResource("3_tkd47")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1l7w"]
+texture = ExtResource("4_fjf22")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ajpot"]
+texture = ExtResource("6_bskud")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wowpa"]
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_fjf22")
+sources/4 = SubResource("TileSetAtlasSource_j1l7w")
+sources/1 = SubResource("TileSetAtlasSource_tkd47")
+sources/2 = SubResource("TileSetAtlasSource_wq317")
+sources/5 = SubResource("TileSetAtlasSource_ajpot")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wowpa"]
+distance = 158.0
+
+[sub_resource type="Curve2D" id="Curve2D_ajpot"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -19, -48, 0, 0, 0, 0, -10, -33, -12.814644, -0.07627764, 12.814644, 0.07627764, 7, -22, -4.590913, 6.5173264, 4.590913, -6.5173264, 23, -31, 0, 0, 0, 0, 29, -49)
+}
+point_count = 5
+
+[node name="level 1" type="Node2D" unique_id=749805246]
+script = ExtResource("1_06qb0")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1537943562]
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAAUABUAAQACAAAAAAAUABQAAQACAAAAAAAUABMAAQACAAAAAAAUABIAAQACAAAAAAAUABEAAQACAAAAAAAUABAAAQACAAAAAAAUAA8AAQACAAAAAAAUAA4AAQACAAAAAAAUAA0AAQACAAAAAAAUAAwAAQACAAAAAAAUAAsAAQACAAAAAAAUAAoAAQACAAAAAAAUABYAAQACAAAAAAAUABcAAQACAAAAAAATABcAAQACAAAAAAASABcAAQACAAAAAAARABcAAQACAAAAAAAQABcAAQACAAAAAAAPABcAAQACAAAAAAAOABcAAQACAAAAAAANABcAAQACAAAAAAAMABcAAQACAAAAAAALABcAAQACAAAAAAAKABcAAQACAAAAAAAJABcAAQACAAAAAAAIABcAAQACAAAAAAAHABcAAQACAAAAAAAGABcAAQACAAAAAAAFABcAAQACAAAAAAAEABcAAQACAAAAAAADABcAAQACAAAAAAACABcAAQACAAAAAAABABcAAQACAAAAAAAAABcAAQACAAAAAAAAABYAAQACAAAAAAAAABUAAQACAAAAAAAAABQAAQACAAAAAAAAABMAAQACAAAAAAAAABIAAQACAAAAAAAAABEAAQACAAAAAAAAABAAAQACAAAAAAAAAA8AAQACAAAAAAAAAA4AAQACAAAAAAAAAA0AAQACAAAAAAAAAAwAAQACAAAAAAAAAAsAAQACAAAAAAAAAAoAAQACAAAAAAABABUAAwABAAAAAAACABUAAwABAAAAAAADABUAAwABAAAAAAAEABUAAwABAAAAAAAFABUAAwABAAAAAAAGABUAAwABAAAAAAAHABUAAwABAAAAAAAIABUAAwABAAAAAAAJABUAAwABAAAAAAAKABUAAwABAAAAAAALABUAAwABAAAAAAAMABUAAwABAAAAAAANABUAAwABAAAAAAAOABUAAwABAAAAAAAPABUAAwABAAAAAAAQABUAAwABAAAAAAARABUAAwABAAAAAAASABUAAwABAAAAAAATABUAAwABAAAAAAASABYAAwABAAAAAAARABYAAwABAAAAAAAQABYAAwABAAAAAAATABYAAwABAAAAAAAPABYAAwABAAAAAAAOABYAAwABAAAAAAANABYAAwABAAAAAAAMABYAAwABAAAAAAALABYAAwABAAAAAAAKABYAAwABAAAAAAAJABYAAwABAAAAAAAIABYAAwABAAAAAAAHABYAAwABAAAAAAAGABYAAwABAAAAAAAFABYAAwABAAAAAAABABYAAwABAAAAAAACABYAAwABAAAAAAADABYAAwABAAAAAAAEABYAAwABAAAAAAAAAAkAAQACAAAAAAAAAAgAAQACAAAAAAAAAAcAAQACAAAAAAAAAAYAAQACAAAAAAAAAAUAAQACAAAAAAAAAAQAAQACAAAAAAAAAAMAAQACAAAAAAAUAAMAAQACAAAAAAAUAAQAAQACAAAAAAAUAAUAAQACAAAAAAAUAAYAAQACAAAAAAAUAAcAAQACAAAAAAAUAAgAAQACAAAAAAAUAAkAAQACAAAAAAABAAMAAQACAAAAAAACAAMAAQACAAAAAAADAAMAAQACAAAAAAAEAAMAAQACAAAAAAAFAAMAAQACAAAAAAAGAAMAAQACAAAAAAAHAAMAAQACAAAAAAAIAAMAAQACAAAAAAAJAAMAAQACAAAAAAAKAAMAAQACAAAAAAALAAMAAQACAAAAAAAMAAMAAQACAAAAAAANAAMAAQACAAAAAAAOAAMAAQACAAAAAAAPAAMAAQACAAAAAAAQAAMAAQACAAAAAAARAAMAAQACAAAAAAASAAMAAQACAAAAAAATAAMAAQACAAAAAAABABQAAQAAAAAAAAACABQAAQAAAAAAAAADABQAAQAAAAAAAAAEABQAAQAAAAAAAAAFABQAAQAAAAAAAAAGABQAAQAAAAAAAAAHABQAAQAAAAAAAAAIABQAAQAAAAAAAAAJABQAAQAAAAAAAAAKABQAAQAAAAAAAAALABQAAQAAAAAAAAAMABQAAQAAAAAAAAANABQAAQAAAAAAAAAOABQAAQAAAAAAAAAPABQAAQAAAAAAAAAQABQAAQAAAAAAAAARABQAAQAAAAAAAAASABQAAQAAAAAAAAATABQAAQAAAAAAAAARAA8AAQAEAAIAAAAPAA8AAQAEAAIAAAAMAA8AAQAEAAIAAAALAA8AAQAEAAIAAAAKAA8AAQAEAAIAAAAHAA8AAQAEAAIAAAAGAA8AAQAEAAIAAAAFAA8AAQAEAAIAAAAEAA8AAQAEAAIAAAADAA8AAQAEAAIAAAAPAAoAAgAAAAAAAAAHAAcAAgAAAAAAAAATAAkAAQACAAAAAAA=")
+tile_set = SubResource("TileSet_wowpa")
+
+[node name="Player" parent="." unique_id=1376574703 instance=ExtResource("5_j1l7w")]
+position = Vector2(51.000008, 291)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=191858382]
+position = Vector2(15.416679, -8.52272)
+scale = Vector2(2.0833344, 1.9138058)
+zoom = Vector2(5, 5)
+limit_left = 0
+limit_right = 335
+limit_bottom = 385
+limit_smoothed = true
+position_smoothing_enabled = true
+script = ExtResource("6_wq317")
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("7_bskud")]
+position = Vector2(97, 548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=633851433]
+shape = SubResource("WorldBoundaryShape2D_wowpa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=105476051]
+z_index = -1
+offset_left = -760.0
+offset_top = -475.0
+offset_right = 1467.0
+offset_bottom = 860.0
+color = Color(0.47843137, 0.7176471, 1, 1)
+
+[node name="Death" type="ColorRect" parent="." unique_id=686349868]
+offset_left = -853.0
+offset_top = -584.0
+offset_right = 1558.0
+offset_bottom = 912.0
+color = Color(0.8334029, 0.15170373, 0.29128972, 0)
+
+[node name="DeathLabel" type="CanvasLayer" parent="." unique_id=714342915]
+visible = false
+
+[node name="Label" type="TextureRect" parent="DeathLabel" unique_id=734753546]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ajpot")
+
+[node name="Label2" type="Label" parent="DeathLabel" unique_id=617607774]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -182.0
+offset_right = 240.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8125989, 0, 0.10775649, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 120
+text = "DEAD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spring" parent="." unique_id=1169019916 instance=ExtResource("10_epkso")]
+position = Vector2(311, 316)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1810820296]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1049347462]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 48.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("11_vvdxf")
+
+[node name="Platform" parent="." unique_id=411995529 instance=ExtResource("13_b8do0")]
+position = Vector2(303, 248)
+
+[node name="Platform2" parent="." unique_id=418044625 instance=ExtResource("13_b8do0")]
+position = Vector2(63, 162)
+
+[node name="Platform3" parent="." unique_id=446040415 instance=ExtResource("13_b8do0")]
+position = Vector2(207, 136)
+
+[node name="StaticBody2D" parent="." unique_id=1301453939 instance=ExtResource("14_tkd47")]
+position = Vector2(199, 120)
+
+[node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("15_fjf22")]
+
+[node name="Sprite2D" parent="." unique_id=1557124901 instance=ExtResource("18_bskud")]
+position = Vector2(166, 151)
+
+[node name="Bird" parent="." unique_id=658405326 instance=ExtResource("19_ajpot")]
+position = Vector2(310, 139)
+autoplay = "default"
+
+[node name="DashRight" type="Label" parent="." unique_id=379983218]
+z_index = -1
+offset_left = 28.0
+offset_top = 90.0
+offset_right = 254.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump and 
+dash right!"
+horizontal_alignment = 1
+
+[node name="Touch" type="Label" parent="." unique_id=1812130513]
+z_index = -1
+offset_left = 134.0
+offset_top = 91.0
+offset_right = 360.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Touch 
+Checkpoint 
+to move on"
+horizontal_alignment = 1
+
+[node name="Nice" type="Label" parent="." unique_id=1584389329]
+z_index = -1
+offset_left = -25.0
+offset_top = 190.0
+offset_right = 201.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Nice!
+Now space
+and Up
+to dash up!"
+horizontal_alignment = 1
+
+[node name="Jump" type="Label" parent="." unique_id=1455937778]
+z_index = -1
+offset_left = 152.0
+offset_top = 202.0
+offset_right = 378.0
+offset_bottom = 243.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump!"
+horizontal_alignment = 1
+
+[node name="Propell" type="Label" parent="." unique_id=630213174]
+z_index = -1
+offset_left = 166.0
+offset_top = 267.0
+offset_right = 392.0
+offset_bottom = 308.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "Jump Pads
+Propell"
+horizontal_alignment = 1
+
+[node name="Movement" type="Label" parent="." unique_id=1405174804]
+z_index = -1
+offset_left = -43.0
+offset_top = 263.0
+offset_right = 183.0
+offset_bottom = 304.0
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 8
+text = "WASD 
+or 
+Arrow Keys 
+to move"
+horizontal_alignment = 1
+
+[node name="Path2D" type="Path2D" parent="." unique_id=963351045]
+position = Vector2(139, 322)
+curve = SubResource("Curve2D_ajpot")
+
+[node name="path follow" type="PathFollow2D" parent="Path2D" unique_id=1140166940]
+position = Vector2(-19, -48)
+rotation = 1.0303768
+rotates = false
+script = ExtResource("19_epkso")
+
+[node name="Bat" parent="Path2D/path follow" unique_id=449157562 instance=ExtResource("19_ko25n")]
+position = Vector2(-3.8146973e-06, 4.7683716e-06)
+rotation = -1.0303768

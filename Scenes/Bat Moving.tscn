@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bjkdjxhmidpel"]
+
+[ext_resource type="Script" uid="uid://uq3j8ju0vfpl" path="res://Scripts/BatMove.gd" id="1_lpthy"]
+[ext_resource type="PackedScene" uid="uid://dwjxym6n71etu" path="res://Scenes/bat.tscn" id="2_le7hq"]
+
+[sub_resource type="Curve2D" id="Curve2D_lpthy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -5.626737, 2.361508, 5.626737, -2.361508, 23.838287, -0.85749054, -10.533643, 11.116909, 10.533643, -11.116909, 35.67169, -8.917923, 1.1538618, 4.225466, -1.1538618, -4.225466, 33.785217, -31.041245, 0, 0, 0, 0, 23.838287, -41.674164)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko25n"]
+size = Vector2(29.999992, 81.9962)
+
+[node name="Bird" type="Node2D" unique_id=517702568]
+z_index = 1
+position = Vector2(138, 340)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1240775894]
+position = Vector2(-18.798103, -48.121124)
+rotation = 1.0303768
+scale = Vector2(0.9919266, 0.9943502)
+curve = SubResource("Curve2D_lpthy")
+
+[node name="path follow" type="PathFollow2D" parent="Path2D" unique_id=704301131]
+scale = Vector2(1.0081391, 1.005682)
+rotates = false
+loop = false
+script = ExtResource("1_lpthy")
+
+[node name="Bat" parent="Path2D/path follow" unique_id=449157562 instance=ExtResource("2_le7hq")]
+position = Vector2(1.3719771, -0.107555866)
+rotation = -1.0303768
+
+[node name="Area2D" type="Area2D" parent="Path2D/path follow" unique_id=1832702914]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/path follow/Area2D" unique_id=128939588]
+position = Vector2(22.570282, -17.944954)
+rotation = 0.54105216
+scale = Vector2(0.99999994, 0.9999999)
+shape = SubResource("RectangleShape2D_ko25n")
+
+[connection signal="body_entered" from="Path2D/path follow/Area2D" to="Path2D/path follow" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Path2D/path follow/Area2D" to="Path2D/path follow" method="_on_area_2d_body_exited"]

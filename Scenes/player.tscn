@@ -91,7 +91,8 @@ radius = 1.8000003
 [sub_resource type="Gradient" id="Gradient_f1ek2"]
 colors = PackedColorArray(0.3579245, 0.1599234, 1.2032687e-07, 1, 0.3574912, 0.16007765, 0, 0)
 
-[node name="Player" type="CharacterBody2D" unique_id=1376574703]
+[node name="Player" type="CharacterBody2D" unique_id=1376574703 groups=["Player"]]
+z_index = 3
 scale = Vector2(1.3199974, 1.3199974)
 script = ExtResource("1_cvnsp")
 
