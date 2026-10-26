@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ckau72g7xb6gk"]
+
+[ext_resource type="Script" uid="uid://j87y6xtmhmva" path="res://Scripts/bread.gd" id="1_ssi06"]
+[ext_resource type="Texture2D" uid="uid://01jhpl1o27c6" path="res://Pixel Art/Bread.png" id="1_v6j8n"]
+[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="3_egsbc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6j8n"]
+radius = 4.0
+
+[node name="Bread" type="Area2D" unique_id=455938451]
+script = ExtResource("1_ssi06")
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="." unique_id=223063483]
+rotation = -0.5868732
+texture = ExtResource("1_v6j8n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=753233838]
+shape = SubResource("CircleShape2D_v6j8n")
+
+[node name="Coin2" type="AudioStreamPlayer2D" parent="." unique_id=2004049351]
+position = Vector2(-6, 11)
+stream = ExtResource("3_egsbc")
+volume_db = 10.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

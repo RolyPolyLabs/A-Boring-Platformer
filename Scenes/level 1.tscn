@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="15_fjf22"]
 [ext_resource type="PackedScene" uid="uid://c8o7yjohq7vy4" path="res://Scenes/non_animated_bird.tscn" id="18_bskud"]
 [ext_resource type="PackedScene" uid="uid://dh5on1q0wehtv" path="res://Scenes/Bird.tscn" id="19_ajpot"]
+[ext_resource type="PackedScene" uid="uid://ckau72g7xb6gk" path="res://Scenes/bread.tscn" id="19_ko25n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkd47"]
 texture = ExtResource("2_b8do0")
@@ -360,3 +361,9 @@ or
 Arrow Keys 
 to move"
 horizontal_alignment = 1
+
+[node name="Bread" parent="." unique_id=455938451 instance=ExtResource("19_ko25n")]
+position = Vector2(150, 314)
+
+[node name="Bread2" parent="." unique_id=1772226626 instance=ExtResource("19_ko25n")]
+position = Vector2(182, 234)

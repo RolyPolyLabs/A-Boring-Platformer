@@ -318,6 +318,7 @@ position = Vector2(-2, 383)
 shape = SubResource("WorldBoundaryShape2D_gab5h")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=287391503]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1634377457]
@@ -330,17 +331,17 @@ position = Vector2(71, 428)
 
 [node name="Spike2" parent="." unique_id=350820063 instance=ExtResource("17_evxuv")]
 z_index = 1
-position = Vector2(359, 584)
+position = Vector2(455, 648)
 spike_texture = ExtResource("18_rk80c")
 
 [node name="Spike" parent="." unique_id=1781619549 instance=ExtResource("17_evxuv")]
 z_index = 1
-position = Vector2(311, 584)
+position = Vector2(407, 648)
 spike_texture = ExtResource("18_rk80c")
 
 [node name="Spike3" parent="." unique_id=723491975 instance=ExtResource("17_evxuv")]
 z_index = 1
-position = Vector2(407, 584)
+position = Vector2(503, 648)
 spike_texture = ExtResource("18_rk80c")
 
 [node name="Bird" parent="." unique_id=517702568 instance=ExtResource("19_g1c18")]

@@ -7,7 +7,11 @@ signal StopMusicBGMENU
 signal PauseMusic
 signal ResumeMusic
 signal shader_toggled(enabled: bool)
+var score: int = 0
 
+func add_point(amount: int = 1):
+	score += amount
+	print("Score updated:", score)
 var apply_shader: bool = false:
 	set(value):
 		if apply_shader != value:
