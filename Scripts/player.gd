@@ -9,19 +9,22 @@ const FRICTION = 1200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_dash = true
 
+@export var push_force = 120.0 # Adjust how hard the duck pushes boxes
+
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_trail = $DashTrail
 @onready var up_dash_trail = $UpDashTrail
-@onready var walk_particles: CPUParticles2D = $WalkParticles # References your WalkParticles node
+@onready var walk_particles: CPUParticles2D = $WalkParticles
+
 func trigger_jump_pad(launch_force: float):
 	velocity.y = launch_force
 	
-	# Trigger the up-dash trail effect going upward
 	up_dash_trail.emitting = false
-	up_dash_trail.rotation = 0.0 # Points straight up
+	up_dash_trail.rotation = 0.0
 	up_dash_trail.direction = Vector2(0, -1)
 	up_dash_trail.restart()
 	up_dash_trail.emitting = true
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -39,19 +42,19 @@ func _physics_process(delta):
 	elif direction < 0:
 		animated_sprite.flip_h = true
 
-	# --- Walking Particle Logic (Flips position and spray direction) ---
+	# --- Walking Particle Logic ---
 	if is_on_floor() and direction != 0:
 		walk_particles.emitting = true
 		
 		if animated_sprite.flip_h:
-			walk_particles.direction = Vector2(1, -0.5)    # Spray right
-			walk_particles.position.x = 5                  # Shift emitter to the right foot
+			walk_particles.direction = Vector2(1, -0.5)
+			walk_particles.position.x = 5
 		else:
-			walk_particles.direction = Vector2(-1, -0.5)   # Spray left
-			walk_particles.position.x = -5                 # Shift emitter to the left foot
+			walk_particles.direction = Vector2(-1, -0.5)
+			walk_particles.position.x = -5
 	else:
 		walk_particles.emitting = false
-	# -----------------------------------------------------------------
+	# -----------------------------
 
 	if Input.is_action_just_pressed("dash") and (is_on_floor() or can_dash):
 		dash_sound.play()
@@ -96,8 +99,20 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("jump")
 
+	# Horizontal movement calculation
 	if direction:
 		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
+
+	# --- Movement & PushableBlock Integration ---
 	move_and_slide()
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		# Only push objects registered with the PushableBlock class
+		if collider is PushableBlock:
+			collider.apply_central_impulse(-collision.get_normal() * push_force)
+	# ---------------------------------------------

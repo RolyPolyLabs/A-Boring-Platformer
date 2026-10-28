@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cm0cc41lel4b6"]
+
+[ext_resource type="Texture2D" uid="uid://durtnt3sqe6p1" path="res://Pixel Art/Moveable Block.png" id="1_l2sei"]
+[ext_resource type="Script" uid="uid://cw2td0yk0wfgj" path="res://Scripts/moveable_block.gd" id="1_q6rxt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q6rxt"]
+friction = 0.2
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6rxt"]
+size = Vector2(16, 16)
+
+[node name="Moveable Block" type="RigidBody2D" unique_id=1743274783]
+physics_material_override = SubResource("PhysicsMaterial_q6rxt")
+lock_rotation = true
+script = ExtResource("1_q6rxt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1116550391]
+texture = ExtResource("1_l2sei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1169190429]
+shape = SubResource("RectangleShape2D_q6rxt")

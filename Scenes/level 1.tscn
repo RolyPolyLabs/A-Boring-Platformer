@@ -14,7 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://b04ktl8kexdl" path="res://Scenes/JumpPad.tscn" id="10_epkso"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="11_vvdxf"]
 [ext_resource type="PackedScene" uid="uid://b5jm6d3drouib" path="res://Scenes/platform.tscn" id="13_b8do0"]
+[ext_resource type="Texture2D" uid="uid://d24tjho3oap0v" path="res://Pixel Art/BreadOutline.png" id="14_epkso"]
 [ext_resource type="PackedScene" uid="uid://dne4j6rl7bf1v" path="res://Scenes/Flag.tscn" id="14_tkd47"]
+[ext_resource type="Script" uid="uid://2if1w60sslyv" path="res://Scripts/BreadCounter.gd" id="15_epkso"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="15_fjf22"]
 [ext_resource type="PackedScene" uid="uid://c8o7yjohq7vy4" path="res://Scenes/non_animated_bird.tscn" id="18_bskud"]
 [ext_resource type="PackedScene" uid="uid://dh5on1q0wehtv" path="res://Scenes/Bird.tscn" id="19_ajpot"]
@@ -207,10 +209,10 @@ offset_bottom = 860.0
 color = Color(0.47843137, 0.7176471, 1, 1)
 
 [node name="Death" type="ColorRect" parent="." unique_id=686349868]
-offset_left = -853.0
-offset_top = -584.0
-offset_right = 1558.0
-offset_bottom = 912.0
+offset_left = -861.0
+offset_top = -566.0
+offset_right = 1550.0
+offset_bottom = 930.0
 color = Color(0.8334029, 0.15170373, 0.29128972, 0)
 
 [node name="DeathLabel" type="CanvasLayer" parent="." unique_id=714342915]
@@ -261,9 +263,30 @@ offset_left = 8.0
 offset_top = 6.0
 offset_right = 48.0
 offset_bottom = 94.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_ko25n")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("11_vvdxf")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1786555827]
+offset_left = 1034.0
+offset_top = 58.00005
+offset_right = 1129.7139
+offset_bottom = 153.71405
+rotation = -0.8923049
+texture = ExtResource("14_epkso")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=329806453]
+offset_left = 972.0
+offset_top = 9.0
+offset_right = 1070.0
+offset_bottom = 97.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_ko25n")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("15_epkso")
 
 [node name="Platform" parent="." unique_id=411995529 instance=ExtResource("13_b8do0")]
 position = Vector2(303, 248)

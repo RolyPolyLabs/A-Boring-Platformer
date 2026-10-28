@@ -8,6 +8,7 @@ signal PauseMusic
 signal ResumeMusic
 signal shader_toggled(enabled: bool)
 var score: int = 0
+signal ScoreChanged
 
 func add_point(amount: int = 1):
 	score += amount

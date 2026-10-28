@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c6sqsp6sfwiem"]
+
+[ext_resource type="Script" uid="uid://bi4de7h577yji" path="res://Scripts/mystery_box.gd" id="1_bh01q"]
+[ext_resource type="Texture2D" uid="uid://d4hoxwvfcylvo" path="res://Pixel Art/Myster Block Unused.png" id="2_bh01q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0o3k"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh01q"]
+size = Vector2(16, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1415249095]
+script = ExtResource("1_bh01q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=812255994]
+shape = SubResource("RectangleShape2D_d0o3k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=950394803]
+texture = ExtResource("2_bh01q")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1845486387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1768252375]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_bh01q")
