@@ -118,6 +118,18 @@ theme = ExtResource("2_ww8vx")
 theme_override_fonts/font = ExtResource("3_kftxf")
 text = "Back"
 
+[node name="Controls" type="Button" parent="." unique_id=2001335492]
+layout_mode = 0
+offset_left = 977.0
+offset_top = 564.0
+offset_right = 1139.0
+offset_bottom = 634.0
+theme = ExtResource("2_ww8vx")
+theme_override_fonts/font = ExtResource("3_kftxf")
+theme_override_font_sizes/font_size = 40
+text = "Controls"
+
 [connection signal="pressed" from="Main Menu/Menu Options/TestVolume" to="." method="_on_test_volume_pressed"]
 [connection signal="pressed" from="Main Menu/Menu Options/Arcade Shader" to="." method="_on_arcade_shader_pressed"]
 [connection signal="pressed" from="Main Menu/Menu Options/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]

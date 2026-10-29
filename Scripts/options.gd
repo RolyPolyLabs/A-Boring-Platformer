@@ -6,3 +6,7 @@ func _on_back_pressed() -> void:
 
 func _on_test_volume_pressed() -> void:
 	audio_stream_player_2d.play()
+
+
+func _on_controls_pressed() -> void:
+	get_tree().change_scene_to_file("res://Input Remaping Scenes (Deafult)/scenes/menus/options_menu/input/input_options_menu.tscn")

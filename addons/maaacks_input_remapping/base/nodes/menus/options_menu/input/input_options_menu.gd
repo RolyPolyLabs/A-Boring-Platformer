@@ -17,8 +17,7 @@ const KEY_DELETION_TEXT : String = "Are you sure you want to remove {key} from {
 					%InputActionsList.hide()
 					%InputActionsTree.show()
 
-@onready var assignment_placeholder_text = $KeyAssignmentWindow.text
-
+var assignment_placeholder_text : String = ""
 var last_input_readable_name
 
 func _ready() -> void:
@@ -90,3 +89,6 @@ func _on_reset_confirmation_confirmed() -> void:
 			%InputActionsList.reset()
 		1:
 			%InputActionsTree.reset()
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/options.tscn")

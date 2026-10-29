@@ -28,6 +28,7 @@ grow_vertical = 2
 script = ExtResource("1_lj4oq")
 
 [node name="Menu" type="CanvasLayer" parent="." unique_id=296158281]
+process_mode = 3
 layer = 2
 visible = false
 
@@ -54,6 +55,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Arcade Shader" type="CheckButton" parent="Menu" unique_id=1886226486]
+process_mode = 3
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -63,6 +65,10 @@ offset_right = -460.0
 offset_bottom = -264.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../Back")
+focus_neighbor_top = NodePath("../Back")
+focus_neighbor_right = NodePath("../HSlider")
+focus_neighbor_bottom = NodePath("../HSlider")
 text = "Turn on Arcade shader?"
 script = ExtResource("2_qwhev")
 
@@ -78,6 +84,10 @@ offset_left = 324.0
 offset_top = 414.0
 offset_right = 824.0
 offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Arcade Shader")
+focus_neighbor_top = NodePath("../Arcade Shader")
+focus_neighbor_right = NodePath("../Restart")
+focus_neighbor_bottom = NodePath("../Restart")
 theme_override_styles/slider = SubResource("StyleBoxFlat_ey1tb")
 value = 25.0
 script = ExtResource("3_5w4ur")
@@ -93,6 +103,10 @@ offset_right = -468.0
 offset_bottom = -152.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../HSlider")
+focus_neighbor_top = NodePath("../HSlider")
+focus_neighbor_right = NodePath("../Back")
+focus_neighbor_bottom = NodePath("../Back")
 text = "Restart Level"
 
 [node name="Back" type="Button" parent="Menu" unique_id=1089001469]
@@ -105,6 +119,10 @@ offset_right = -468.0
 offset_bottom = -88.5
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_left = NodePath("../Restart")
+focus_neighbor_top = NodePath("../Restart")
+focus_neighbor_right = NodePath("../Arcade Shader")
+focus_neighbor_bottom = NodePath("../Arcade Shader")
 text = "Back To Title Screen"
 
 [connection signal="toggled" from="Menu/Arcade Shader" to="." method="_on_arcade_shader_toggled"]

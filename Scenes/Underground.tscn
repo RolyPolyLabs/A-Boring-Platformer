@@ -298,8 +298,6 @@ text = "DEAD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("13_25gfa")]
-
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1444018244]
 z_index = -1
 material = SubResource("CanvasItemMaterial_oic26")
@@ -502,3 +500,5 @@ position = Vector2(1015, 744)
 
 [node name="One Way Block5" parent="." unique_id=1022704751 instance=ExtResource("27_t4oeq")]
 position = Vector2(999, 744)
+
+[node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("13_25gfa")]
