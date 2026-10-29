@@ -77,6 +77,16 @@ func _should_confirm_input_event(event : InputEvent) -> bool:
 	return not _is_mouse_input(event)
 
 func _confirm_choice() -> void:
+	if last_input_event != null:
+		# 1. Strip this event from any other action so it bypasses the "Already Assigned" block
+		for action in InputMap.get_actions():
+			if InputMap.action_has_event(action, last_input_event):
+				InputMap.action_erase_event(action, last_input_event)
+		
+		# 2. If you want it on ui_accept as well, add it here too
+		if not InputMap.action_has_event("ui_accept", last_input_event):
+			InputMap.action_add_event("ui_accept", last_input_event)
+			
 	confirmed.emit()
 	close()
 

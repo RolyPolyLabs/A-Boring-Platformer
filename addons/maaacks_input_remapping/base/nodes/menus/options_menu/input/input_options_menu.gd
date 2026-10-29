@@ -17,8 +17,10 @@ const KEY_DELETION_TEXT : String = "Are you sure you want to remove {key} from {
 					%InputActionsList.hide()
 					%InputActionsTree.show()
 
-var assignment_placeholder_text : String = ""
+@onready var assignment_placeholder_text = $KeyAssignmentWindow.text
+
 var last_input_readable_name
+var active_action_name : String = ""
 
 func _ready() -> void:
 	remapping_mode = remapping_mode
@@ -31,6 +33,11 @@ func _add_action_event() -> void:
 			%InputActionsList.add_action_event(last_input_readable_name, last_input_event)
 		1:
 			%InputActionsTree.add_action_event(last_input_readable_name, last_input_event)
+	
+	# Automatically mirror jump inputs to ui_accept
+	if active_action_name == "jump" and last_input_event != null:
+		if not InputMap.action_has_event("ui_accept", last_input_event):
+			InputMap.action_add_event("ui_accept", last_input_event)
 
 func _remove_action_event(item : TreeItem) -> void:
 	%InputActionsTree.remove_action_event(item)
@@ -47,6 +54,7 @@ func _on_key_assignment_window_confirmed() -> void:
 	_add_action_event()
 
 func _open_key_assignment_window(action_name : String, readable_input_name : String = assignment_placeholder_text) -> void:
+	active_action_name = action_name
 	$KeyAssignmentWindow.title = tr("Assign Key for {action}").format({action = action_name})
 	$KeyAssignmentWindow.text = readable_input_name
 	$KeyAssignmentWindow.confirm_button.disabled = true
