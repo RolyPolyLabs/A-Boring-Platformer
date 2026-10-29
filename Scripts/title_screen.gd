@@ -30,3 +30,7 @@ func _on_credits_pressed() -> void:
 
 func _on_waterflame_pressed() -> void:
 		OS.shell_open("https://www.youtube.com/@WaterflameMusic")
+
+
+func _on_shop_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Breadshop.tscn")

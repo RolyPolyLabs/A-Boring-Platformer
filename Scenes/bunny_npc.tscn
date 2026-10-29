@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bwldxdmke8rul"]
+
+[ext_resource type="Texture2D" uid="uid://gne832ve6spt" path="res://Pixel Art/Carrots.png" id="1_bxul2"]
+[ext_resource type="Texture2D" uid="uid://bydgsfgv4n01b" path="res://Pixel Art/Lemonade.png" id="2_f6mjs"]
+
+[node name="BunnyNpc" type="Node2D" unique_id=204780144]
+
+[node name="Bunny" type="Sprite2D" parent="." unique_id=443652785]
+position = Vector2(0, -1)
+scale = Vector2(0.46153843, 0.46153843)
+texture = ExtResource("1_bxul2")
+
+[node name="Stand" type="Sprite2D" parent="." unique_id=1641399379]
+texture = ExtResource("2_f6mjs")

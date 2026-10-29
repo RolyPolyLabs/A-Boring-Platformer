@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cs3y73vesadmk"]
+
+[ext_resource type="Texture2D" uid="uid://d2twx5gaxneh0" path="res://Pixel Art/Stone.png" id="1_dsl0o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x3px"]
+size = Vector2(16, 16)
+
+[node name="One Way Block" type="AnimatableBody2D" unique_id=316583475]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223839626]
+texture = ExtResource("1_dsl0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1208559795]
+rotation = 4.712389
+shape = SubResource("RectangleShape2D_7x3px")
+one_way_collision = true

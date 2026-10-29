@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bv3jiypvk6b0l"]
+
+[ext_resource type="Texture2D" uid="uid://dnyi336x48rjo" path="res://Pixel Art/New Piskel-1.png" id="1_14888"]
+[ext_resource type="PackedScene" uid="uid://bwldxdmke8rul" path="res://Scenes/bunny_npc.tscn" id="1_miku7"]
+[ext_resource type="Texture2D" uid="uid://dufb0mqumkuqn" path="res://Pixel Art/untitled-pixel-art@8x.png" id="1_mnwgb"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="2_gxsj4"]
+
+[node name="Shop" type="Control" unique_id=564571898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=462197452]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -6.0
+offset_right = 1266.0
+offset_bottom = 655.0
+texture = ExtResource("1_mnwgb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1195638768]
+modulate = Color(0.423313, 0.2941484, 0.2474952, 1)
+layout_mode = 0
+offset_left = 15.0
+offset_right = 516.0
+offset_bottom = 143.0
+texture = ExtResource("1_14888")
+
+[node name="BunnyNpc" parent="." unique_id=204780144 instance=ExtResource("1_miku7")]
+position = Vector2(854.99994, 344)
+scale = Vector2(17.900352, 17.900352)
+
+[node name="Label" type="Label" parent="." unique_id=48786288]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 73.0
+offset_right = 1143.0
+offset_bottom = 625.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 80
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=915271695]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 17.0
+offset_right = 522.0
+offset_bottom = 117.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 90
+text = "Skins"
+horizontal_alignment = 1
