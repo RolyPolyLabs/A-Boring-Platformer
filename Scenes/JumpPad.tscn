@@ -48,3 +48,11 @@ energy = 0.3
 texture = SubResource("GradientTexture2D_f2tii")
 offset = Vector2(0, 1)
 texture_scale = 2.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=449609335]
+position = Vector2(0, -1)
+speed_scale = 1.5
+emission_shape = 1
+emission_sphere_radius = 3.53
+gravity = Vector2(0, -20)
+color = Color(0.40408087, 0.8605645, 0.99999994, 1)

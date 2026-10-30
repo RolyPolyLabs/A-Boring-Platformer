@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="1_1hkyp"]
 [ext_resource type="Script" uid="uid://dc8c62b1jgrim" path="res://Scripts/flag.gd" id="1_i6t4d"]
+[ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="3_xtjk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i6t4d"]
 atlas = ExtResource("1_1hkyp")
@@ -32,5 +33,60 @@ sprite_frames = SubResource("SpriteFrames_xtjk2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=51679366]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_wsrnx")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1332430263]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D" unique_id=511360416]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Node2D" unique_id=1499530226]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 90)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Node2D" unique_id=643067371]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, -90)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Node2D" unique_id=1342495694]
+rotation = -3.133795
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=12697193]
+stream = ExtResource("3_xtjk2")
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

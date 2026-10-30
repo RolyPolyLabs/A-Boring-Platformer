@@ -25,21 +25,6 @@ input_icon_mapper = NodePath("../../../InputIconMapper")
 layout_mode = 2
 text = "Back To Options"
 
-[node name="KeyAssignmentWindow" parent="." index="6" unique_id=1562994395]
-input_confirmation = null
-confirm_button_text = null
-pauses_game = null
-makes_mouse_visible = null
-exclusive = null
-exclusive_background_color = null
-ui_cancel_closes = null
-update_content = null
-text = null
-close_button_text = null
-title = null
-title_font_size = null
-title_visible = null
-
 [node name="InputIconMapper" parent="." index="7" unique_id=451342306 instance=ExtResource("2_l301d")]
 
 [connection signal="item_selected" from="VBoxContainer/InputMappingContainer/InputActionsTree" to="." method="_on_input_actions_tree_item_selected"]

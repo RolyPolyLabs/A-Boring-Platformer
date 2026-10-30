@@ -29,7 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cs3y73vesadmk" path="res://Scenes/one_way_block.tscn" id="27_t4oeq"]
 
 [sub_resource type="Gradient" id="Gradient_pdxid"]
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.20230234, 0.094620325, 1.2032688e-08, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_hluyl"]
 gradient = SubResource("Gradient_pdxid")
@@ -314,7 +314,6 @@ position = Vector2(-2, 383)
 shape = SubResource("WorldBoundaryShape2D_gab5h")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=287391503]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1634377457]
