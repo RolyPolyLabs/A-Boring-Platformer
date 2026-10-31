@@ -41,5 +41,3 @@ shape = SubResource("RectangleShape2D_mqh3e")
 sprite_frames = SubResource("SpriteFrames_50dnf")
 autoplay = "default"
 frame_progress = 0.91353226
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=993854462]

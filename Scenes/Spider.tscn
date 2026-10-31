@@ -1,29 +1,44 @@
 [gd_scene format=3 uid="uid://dh2lslprl4vfe"]
 
-[ext_resource type="Texture2D" uid="uid://bg7n54ci1wf2i" path="res://Pixel Art/Spider.png" id="1_7jur5"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="1_7jur5"]
+[ext_resource type="Script" uid="uid://btxxmfoemjiku" path="res://Scripts/spider.gd" id="1_oc654"]
+[ext_resource type="Texture2D" uid="uid://bg7n54ci1wf2i" path="res://Pixel Art/Spider.png" id="2_cgp8y"]
+[ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="4_hrc5k"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cgp8y"]
-atlas = ExtResource("1_7jur5")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgp8y"]
+size = Vector2(30, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ng7r"]
+atlas = ExtResource("2_cgp8y")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oc654"]
-atlas = ExtResource("1_7jur5")
-region = Rect2(32, 0, 32, 32)
+atlas = ExtResource("2_cgp8y")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrc5k"]
-atlas = ExtResource("1_7jur5")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_cgp8y")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_js0a4"]
-atlas = ExtResource("1_7jur5")
+atlas = ExtResource("2_cgp8y")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j02d7"]
+atlas = ExtResource("2_cgp8y")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_j02d7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ng7r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cgp8y")
+"texture": SubResource("AtlasTexture_5ng7r")
+}],
+"loop": true,
+"name": &"Dead",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oc654")
 }, {
@@ -32,13 +47,50 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_js0a4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j02d7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Walk",
 "speed": 5.0
 }]
 
-[node name="Spider" type="AnimatedSprite2D" unique_id=2047196208]
-sprite_frames = SubResource("SpriteFrames_j02d7")
-frame = 3
-frame_progress = 0.23310536
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc654"]
+size = Vector2(32, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrc5k"]
+size = Vector2(32, 5)
+
+[node name="Spider" type="Node2D" unique_id=1652538187]
+script = ExtResource("1_oc654")
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("1_7jur5")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1750197108]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_cgp8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1914530186]
+sprite_frames = SubResource("SpriteFrames_5ng7r")
+animation = &"Dead"
+autoplay = "Walk"
+
+[node name="Deathzone" type="Area2D" parent="." unique_id=216399246]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=398162584]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_oc654")
+
+[node name="BounceZone" type="Area2D" parent="." unique_id=1230433937]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceZone" unique_id=991213930]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_hrc5k")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2013005550]
+stream = ExtResource("4_hrc5k")
+pitch_scale = 0.5
+
+[connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
+[connection signal="body_entered" from="BounceZone" to="." method="_on_bounce_zone_body_entered"]
