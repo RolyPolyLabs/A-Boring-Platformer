@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cktbvd4f3n2e3" path="res://Pixel Art/pixil-frame-0 (3).png" id="8_k5q4b"]
 [ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="9_1k5iw"]
 [ext_resource type="Texture2D" uid="uid://c3bgljqeyw2wc" path="res://Pixel Art/Icons/image-1.png (1).png" id="10_26h2g"]
+[ext_resource type="Script" uid="uid://bwfume6prbhds" path="res://Scripts/PlayerLight.gd" id="10_t5owa"]
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="11_hl8hj"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="12_aqirt"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="13_25gfa"]
@@ -27,6 +28,8 @@
 [ext_resource type="Script" uid="uid://2if1w60sslyv" path="res://Scripts/BreadCounter.gd" id="25_25gfa"]
 [ext_resource type="PackedScene" uid="uid://4h10y5xhvu5g" path="res://Scenes/InvisibleMysteryBox.tscn" id="26_25gfa"]
 [ext_resource type="PackedScene" uid="uid://cs3y73vesadmk" path="res://Scenes/one_way_block.tscn" id="27_t4oeq"]
+[ext_resource type="PackedScene" uid="uid://dtjx5d6pp407p" path="res://Scenes/flashlight.tscn" id="28_j3hw6"]
+[ext_resource type="Texture2D" uid="uid://c7122wvcioy2d" path="res://Pixel Art/Arrow.png" id="30_1wqv4"]
 
 [sub_resource type="Gradient" id="Gradient_pdxid"]
 colors = PackedColorArray(0.20230234, 0.094620325, 1.2032688e-08, 1, 1, 1, 1, 0)
@@ -246,6 +249,7 @@ shadow_filter = 2
 shadow_filter_smooth = 64.0
 texture = ExtResource("8_k5q4b")
 texture_scale = 0.1
+script = ExtResource("10_t5owa")
 
 [node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("9_1k5iw")]
 position = Vector2(169, 998)
@@ -431,9 +435,9 @@ rotation = -0.8923049
 texture = ExtResource("24_aqirt")
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=1757625934]
-offset_left = 953.0
+offset_left = 929.0
 offset_top = 9.0
-offset_right = 1051.0
+offset_right = 1027.0
 offset_bottom = 97.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -443,9 +447,6 @@ script = ExtResource("25_25gfa")
 
 [node name="Bread" parent="." unique_id=455938451 instance=ExtResource("22_26h2g")]
 position = Vector2(179, 648)
-
-[node name="Bread2" parent="." unique_id=878938634 instance=ExtResource("22_26h2g")]
-position = Vector2(203, 571)
 
 [node name="Bread3" parent="." unique_id=898578615 instance=ExtResource("22_26h2g")]
 position = Vector2(457, 583)
@@ -462,28 +463,52 @@ possible_rewards = Array[PackedScene]([ExtResource("22_26h2g")])
 opened_texture = ExtResource("23_hl8hj")
 
 [node name="Bread6" parent="." unique_id=1436156281 instance=ExtResource("22_26h2g")]
-position = Vector2(1088, 561)
+position = Vector2(1081, 561)
 
-[node name="Bread7" parent="." unique_id=1897100217 instance=ExtResource("22_26h2g")]
-position = Vector2(1088, 585)
+[node name="Bread7" parent="." unique_id=935984412 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 561)
 
-[node name="Bread8" parent="." unique_id=491048776 instance=ExtResource("22_26h2g")]
-position = Vector2(1088, 609)
+[node name="Bread8" parent="." unique_id=320070456 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 585)
 
-[node name="Bread9" parent="." unique_id=365192384 instance=ExtResource("22_26h2g")]
-position = Vector2(1089, 634)
+[node name="Bread9" parent="." unique_id=909563767 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 585)
 
-[node name="Bread10" parent="." unique_id=1348842887 instance=ExtResource("22_26h2g")]
-position = Vector2(1090, 662)
+[node name="Bread10" parent="." unique_id=1958976572 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 609)
 
-[node name="Bread11" parent="." unique_id=190916698 instance=ExtResource("22_26h2g")]
-position = Vector2(1091, 683)
+[node name="Bread11" parent="." unique_id=271966095 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 609)
 
-[node name="Bread12" parent="." unique_id=1972750787 instance=ExtResource("22_26h2g")]
-position = Vector2(1091, 703)
+[node name="Bread12" parent="." unique_id=1869808558 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 633)
 
-[node name="Bread13" parent="." unique_id=368613928 instance=ExtResource("22_26h2g")]
-position = Vector2(1091, 721)
+[node name="Bread13" parent="." unique_id=526585172 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 633)
+
+[node name="Bread14" parent="." unique_id=393013327 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 657)
+
+[node name="Bread15" parent="." unique_id=334587061 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 657)
+
+[node name="Bread16" parent="." unique_id=2060850292 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 681)
+
+[node name="Bread17" parent="." unique_id=1861267363 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 681)
+
+[node name="Bread18" parent="." unique_id=2063069159 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 705)
+
+[node name="Bread19" parent="." unique_id=376586593 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 705)
+
+[node name="Bread20" parent="." unique_id=6309757 instance=ExtResource("22_26h2g")]
+position = Vector2(1081, 729)
+
+[node name="Bread21" parent="." unique_id=348344875 instance=ExtResource("22_26h2g")]
+position = Vector2(1095, 729)
 
 [node name="One Way Block" parent="." unique_id=316583475 instance=ExtResource("27_t4oeq")]
 position = Vector2(1063, 744)
@@ -501,3 +526,31 @@ position = Vector2(1015, 744)
 position = Vector2(999, 744)
 
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("13_25gfa")]
+
+[node name="Flashlight" parent="." unique_id=2045882442 instance=ExtResource("28_j3hw6")]
+position = Vector2(146, 582)
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1438204480]
+position = Vector2(771, 641)
+rotation = 3.1415927
+texture = ExtResource("30_1wqv4")
+
+[node name="Arrow5" type="Sprite2D" parent="." unique_id=480538108]
+position = Vector2(771, 615)
+rotation = 4.712389
+texture = ExtResource("30_1wqv4")
+
+[node name="Arrow2" type="Sprite2D" parent="." unique_id=1186701736]
+position = Vector2(31, 616)
+rotation = 3.1415927
+texture = ExtResource("30_1wqv4")
+
+[node name="Arrow3" type="Sprite2D" parent="." unique_id=1216691409]
+position = Vector2(150, 488)
+rotation = 1.5707964
+texture = ExtResource("30_1wqv4")
+
+[node name="Arrow4" type="Sprite2D" parent="." unique_id=1946792197]
+position = Vector2(167, 473)
+rotation = 3.1415927
+texture = ExtResource("30_1wqv4")

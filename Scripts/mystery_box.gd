@@ -18,7 +18,7 @@ func open_box() -> void:
 	
 	# 1. Disable the trigger area so it can't be opened again
 	# (The StaticBody2D collision remains active, so the box stays solid!)
-	$Area2D.monitoring = false 
+	set_deferred("monitoring", false)
 	
 	# 2. Change the visual state to show it's opened
 	if opened_texture:
@@ -43,4 +43,4 @@ func spawn_reward() -> void:
 		reward_instance.global_position = global_position + Vector2(0, -10) # Use Vector3(0, 1, 0) for 3D
 		
 		# Add the reward to the main game scene
-		get_tree().current_scene.add_child(reward_instance)
+		get_tree().current_scene.call_deferred("add_child", reward_instance)

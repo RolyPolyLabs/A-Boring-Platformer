@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dh2lslprl4vfe"]
+
+[ext_resource type="Texture2D" uid="uid://bg7n54ci1wf2i" path="res://Pixel Art/Spider.png" id="1_7jur5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgp8y"]
+atlas = ExtResource("1_7jur5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc654"]
+atlas = ExtResource("1_7jur5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrc5k"]
+atlas = ExtResource("1_7jur5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js0a4"]
+atlas = ExtResource("1_7jur5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j02d7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgp8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc654")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrc5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js0a4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Spider" type="AnimatedSprite2D" unique_id=2047196208]
+sprite_frames = SubResource("SpriteFrames_j02d7")
+frame = 3
+frame_progress = 0.23310536

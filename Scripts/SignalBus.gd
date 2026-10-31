@@ -6,9 +6,13 @@ signal BGMENU_MUSIC
 signal StopMusicBGMENU
 signal PauseMusic
 signal ResumeMusic
+var light: int = 1
+signal lightchange
 signal shader_toggled(enabled: bool)
 var score: int = 0
 signal ScoreChanged
+
+
 
 func add_point(amount: int = 1):
 	score += amount
