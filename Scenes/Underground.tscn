@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://rkxhqoom12wk" path="res://Pixel Art/MAP(Piece 1) (1).png" id="33_aq2km"]
 [ext_resource type="Script" uid="uid://bwsb5ooykvw1g" path="res://Scripts/Map1.gd" id="34_dw1hb"]
 [ext_resource type="AudioStream" uid="uid://dtobsw6qd1q4y" path="res://Sound Effects/make_more_sound-8-bit-video-game-win-level-sound-version-1-145827.mp3" id="36_7o82l"]
-[ext_resource type="PackedScene" uid="uid://bpbpn36sw64tp" path="res://Scenes/walking_spike.tscn" id="37_ugnyp"]
 
 [sub_resource type="Gradient" id="Gradient_pdxid"]
 colors = PackedColorArray(0.20230234, 0.094620325, 1.2032688e-08, 1, 1, 1, 1, 0)
@@ -511,9 +510,9 @@ rotation = -0.8923049
 texture = ExtResource("24_aqirt")
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=1757625934]
-offset_left = 929.0
+offset_left = 873.0
 offset_top = 9.0
-offset_right = 1027.0
+offset_right = 971.0
 offset_bottom = 97.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -707,9 +706,6 @@ offset_bottom = 63.0
 theme_override_fonts/font = ExtResource("11_hl8hj")
 theme_override_font_sizes/font_size = 40
 text = "Map Piece Aqquired!"
-
-[node name="Walking Spike" parent="." unique_id=730010461 instance=ExtResource("37_ugnyp")]
-position = Vector2(293, 327)
 
 [connection signal="animation_finished" from="Spider/AnimationPlayer" to="Spider" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Spider/TextureRect/Area2D" to="Spider/TextureRect" method="_on_area_2d_body_entered"]

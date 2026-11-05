@@ -8,8 +8,8 @@ const ACCELERATION = 600.0
 const FRICTION = 1200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_dash = true
-
-@export var push_force = 120.0 # Adjust how hard the duck pushes boxes
+var skin = SignalBus.skin
+@export var push_force = 120.0
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var dash_trail = $DashTrail
@@ -24,6 +24,15 @@ func trigger_jump_pad(launch_force: float):
 	up_dash_trail.direction = Vector2(0, -1)
 	up_dash_trail.restart()
 	up_dash_trail.emitting = true
+
+# Updated helper function to handle different skins
+func play_anim(anim_name: String):
+	if skin == "tophat":
+		animated_sprite.play(anim_name + " tophat")
+	elif skin == "IRL":
+		animated_sprite.play(anim_name + " IRL") # Change this string if your animation suffix is named differently
+	else:
+		animated_sprite.play(anim_name)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -91,13 +100,13 @@ func _physics_process(delta):
 
 	if is_on_floor():
 		if Input.is_action_pressed("down"):
-			animated_sprite.play("crouch")
+			play_anim("crouch")
 		elif direction == 0:
-			animated_sprite.play("Idle")
+			play_anim("Idle")
 		else:
-			animated_sprite.play("run")
+			play_anim("run")
 	else:
-		animated_sprite.play("jump")
+		play_anim("jump")
 
 	# Horizontal movement calculation
 	if direction:
@@ -112,7 +121,5 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		# Only push objects registered with the PushableBlock class
 		if collider is PushableBlock:
 			collider.apply_central_impulse(-collision.get_normal() * push_force)
-	# ---------------------------------------------

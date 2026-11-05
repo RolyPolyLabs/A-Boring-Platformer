@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://bv3jiypvk6b0l"]
 
+[ext_resource type="Script" uid="uid://ca4h2hdy6jb0b" path="res://Scenes/breadshop.gd" id="1_85otf"]
 [ext_resource type="Texture2D" uid="uid://dnyi336x48rjo" path="res://Pixel Art/New Piskel-1.png" id="1_14888"]
 [ext_resource type="PackedScene" uid="uid://bwldxdmke8rul" path="res://Scenes/bunny_npc.tscn" id="1_miku7"]
 [ext_resource type="Texture2D" uid="uid://dufb0mqumkuqn" path="res://Pixel Art/untitled-pixel-art@8x.png" id="1_mnwgb"]
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="2_gxsj4"]
+[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="6_la7s4"]
+[ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="7_em2vv"]
+[ext_resource type="Texture2D" uid="uid://ccwt23fhftyx0" path="res://Pixel Art/Duck Jump IRL.png" id="8_em2vv"]
+[ext_resource type="Texture2D" uid="uid://c86d3tfs2g2uy" path="res://Pixel Art/Duck Jump Tophat.png" id="9_7sddp"]
+[ext_resource type="Script" uid="uid://2if1w60sslyv" path="res://Scripts/BreadCounter.gd" id="9_su0t2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_su0t2"]
+texture = ExtResource("1_14888")
+modulate_color = Color(0, 0.50264376, 0.77331597, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7sddp"]
+texture = ExtResource("1_14888")
+modulate_color = Color(1.4439226e-07, 0.36413413, 0.567762, 1)
 
 [node name="Shop" type="Control" unique_id=564571898]
 layout_mode = 3
@@ -12,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_85otf")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=462197452]
 layout_mode = 0
@@ -20,6 +35,13 @@ offset_top = -6.0
 offset_right = 1266.0
 offset_bottom = 655.0
 texture = ExtResource("1_mnwgb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2010581572]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 156.0
+offset_right = 68.0
+offset_bottom = 620.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1195638768]
 modulate = Color(0.423313, 0.2941484, 0.2474952, 1)
@@ -56,3 +78,64 @@ theme_override_fonts/font = ExtResource("2_gxsj4")
 theme_override_font_sizes/font_size = 90
 text = "Skins"
 horizontal_alignment = 1
+
+[node name="Irl" type="Button" parent="." unique_id=891828303]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 153.0
+offset_right = 344.0
+offset_bottom = 223.0
+theme = ExtResource("6_la7s4")
+theme_override_fonts/font = ExtResource("7_em2vv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_su0t2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_su0t2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sddp")
+text = "IRL"
+
+[node name="Top" type="Button" parent="." unique_id=76917496]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 241.0
+offset_right = 344.0
+offset_bottom = 311.0
+theme = ExtResource("6_la7s4")
+theme_override_fonts/font = ExtResource("7_em2vv")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_su0t2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_su0t2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7sddp")
+text = "TopHat"
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=2082280184]
+layout_mode = 0
+offset_left = -34.999992
+offset_top = 118.0
+offset_right = 5.0000076
+offset_bottom = 158.0
+scale = Vector2(3.8526785, 3.8526785)
+texture = ExtResource("8_em2vv")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1760405469]
+layout_mode = 0
+offset_left = -34.999992
+offset_top = 206.0
+offset_right = 5.0000076
+offset_bottom = 246.0
+scale = Vector2(3.8526785, 3.8526785)
+texture = ExtResource("9_7sddp")
+
+[node name="Label3" type="Label" parent="." unique_id=1202514720]
+layout_mode = 0
+offset_left = 1047.0
+offset_top = 2.0
+offset_right = 1145.0
+offset_bottom = 90.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("9_su0t2")
+
+[connection signal="pressed" from="Irl" to="." method="_on_irl_pressed"]
+[connection signal="pressed" from="Top" to="." method="_on_top_pressed"]
