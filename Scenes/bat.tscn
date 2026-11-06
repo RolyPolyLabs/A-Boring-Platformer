@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dwjxym6n71etu"]
 
 [ext_resource type="Texture2D" uid="uid://clntigi6wnej7" path="res://Pixel Art/New Piskel (1).png" id="1_jckqh"]
+[ext_resource type="Script" uid="uid://cdcnfle5qj0l3" path="res://Scripts/bat.gd" id="1_wt6c1"]
 [ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="2_jckqh"]
+[ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="4_50dnf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mqh3e"]
 size = Vector2(16, 1)
@@ -28,7 +30,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jckqh"]
+size = Vector2(32, 21)
+
 [node name="Bat" type="Node2D" unique_id=449157562]
+script = ExtResource("1_wt6c1")
 
 [node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("2_jckqh")]
 position = Vector2(0, 7)
@@ -41,3 +47,17 @@ shape = SubResource("RectangleShape2D_mqh3e")
 sprite_frames = SubResource("SpriteFrames_50dnf")
 autoplay = "default"
 frame_progress = 0.91353226
+
+[node name="Deathzone" type="Area2D" parent="." unique_id=1981153894]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=35033958]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_jckqh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=498269521]
+stream = ExtResource("4_50dnf")
+volume_db = 20.0
+
+[connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

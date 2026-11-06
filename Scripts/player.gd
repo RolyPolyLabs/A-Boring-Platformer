@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @onready var dash_sound: AudioStreamPlayer = $DashSound
 @onready var jump_sound: AudioStreamPlayer = $JumpSound
+@onready var eye_laser: Marker2D = $EyeLaser
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
@@ -15,6 +16,7 @@ var skin = SignalBus.skin
 @onready var dash_trail = $DashTrail
 @onready var up_dash_trail = $UpDashTrail
 @onready var walk_particles: CPUParticles2D = $WalkParticles
+const LASER = preload("res://Scenes/laser.tscn")
 
 func trigger_jump_pad(launch_force: float):
 	velocity.y = launch_force
@@ -30,7 +32,15 @@ func play_anim(anim_name: String):
 	if skin == "tophat":
 		animated_sprite.play(anim_name + " tophat")
 	elif skin == "IRL":
-		animated_sprite.play(anim_name + " IRL") # Change this string if your animation suffix is named differently
+		animated_sprite.play(anim_name + " IRL") 
+	elif skin == "robot":
+		animated_sprite.play(anim_name + " robot")
+	elif skin == "icecream":
+		animated_sprite.play(anim_name + " icecream")
+	elif skin == "goose":
+		animated_sprite.play(anim_name + " goose")
+	elif skin == "racer":
+		animated_sprite.play(anim_name + " racer")
 	else:
 		animated_sprite.play(anim_name)
 
@@ -123,3 +133,21 @@ func _physics_process(delta):
 		
 		if collider is PushableBlock:
 			collider.apply_central_impulse(-collision.get_normal() * push_force)
+@onready var default_laser_x: float = eye_laser.position.x # 1. Cache the default positive offset
+
+func _process(delta: float) -> void:
+	if skin == "robot":
+		if Input.is_action_just_pressed("fire"):
+			var laser_instance = LASER.instantiate()
+			get_tree().current_scene.add_child(laser_instance)
+			laser_instance.global_position = eye_laser.global_position 
+			laser_instance.rotation = rotation
+			$Laser.play()
+		
+		var direction = Input.get_axis("move_left", "move_right")
+		if direction > 0:
+			SignalBus.bulletspeed = 1000
+			eye_laser.position.x = abs(default_laser_x) # 2. Ensure position is positive on the right
+		elif direction < 0:
+			SignalBus.bulletspeed = -1000
+			eye_laser.position.x = -abs(default_laser_x) # 3. Negate position to flip to the left
