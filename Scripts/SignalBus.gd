@@ -13,7 +13,9 @@ var score: int = 0
 signal ScoreChanged
 var map1: int = 0
 var bulletspeed = 1000
-var skin = "robot" # Change to "normal", "tophat", or "IRL"
+var skin = "normal" # Change to "normal", "tophat", or "IRL"
+signal PlayerPause
+signal PlayerUnpause
 func add_point(amount: int = 1):
 	score += amount
 	print("Score updated:", score)

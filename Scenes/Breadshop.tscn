@@ -5,19 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://bwldxdmke8rul" path="res://Scenes/bunny_npc.tscn" id="1_miku7"]
 [ext_resource type="Texture2D" uid="uid://dufb0mqumkuqn" path="res://Pixel Art/untitled-pixel-art@8x.png" id="1_mnwgb"]
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="2_gxsj4"]
-[ext_resource type="Theme" uid="uid://deqhjyie0mbdx" path="res://themes/Button.tres" id="6_la7s4"]
-[ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="7_em2vv"]
+[ext_resource type="Texture2D" uid="uid://wig8sjuh07ks" path="res://Pixel Art/pixilart-sprite-1.png-1.png.png" id="8_7sddp"]
 [ext_resource type="Texture2D" uid="uid://ccwt23fhftyx0" path="res://Pixel Art/Duck Jump IRL.png" id="8_em2vv"]
 [ext_resource type="Texture2D" uid="uid://c86d3tfs2g2uy" path="res://Pixel Art/Duck Jump Tophat.png" id="9_7sddp"]
+[ext_resource type="AudioStream" uid="uid://w8dtqmqx41hq" path="res://Sound Effects/coin_2.wav" id="9_mhq5f"]
 [ext_resource type="Script" uid="uid://2if1w60sslyv" path="res://Scripts/BreadCounter.gd" id="9_su0t2"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_su0t2"]
-texture = ExtResource("1_14888")
-modulate_color = Color(0, 0.50264376, 0.77331597, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7sddp"]
-texture = ExtResource("1_14888")
-modulate_color = Color(1.4439226e-07, 0.36413413, 0.567762, 1)
+[ext_resource type="Texture2D" uid="uid://dpq66jmf7r8oq" path="res://Pixel Art/Term Duck.png" id="11_f4uus"]
+[ext_resource type="Theme" uid="uid://d183gnquxlaoq" path="res://themes/New Button.tres" id="12_f4uus"]
+[ext_resource type="Texture2D" uid="uid://da4gj81xxw7an" path="res://Pixel Art/Duck IceCream Jump.png" id="13_f4uus"]
+[ext_resource type="Texture2D" uid="uid://brtpuk8i1tjgd" path="res://Pixel Art/Duck Goose Jump.png" id="14_m0kbk"]
+[ext_resource type="Texture2D" uid="uid://csi0uf3qxa7dg" path="res://Pixel Art/Duck Racer Jump.png" id="15_7ul5y"]
+[ext_resource type="AudioStream" uid="uid://bbji325e17mjw" path="res://Sound Effects/freesound_community-wronganswer-37702.mp3" id="16_p1cxs"]
 
 [node name="Shop" type="Control" unique_id=564571898]
 layout_mode = 3
@@ -39,9 +37,9 @@ texture = ExtResource("1_mnwgb")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2010581572]
 layout_mode = 0
 offset_left = 18.0
-offset_top = 156.0
-offset_right = 68.0
-offset_bottom = 620.0
+offset_top = 165.0
+offset_right = 565.0
+offset_bottom = 629.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1195638768]
 modulate = Color(0.423313, 0.2941484, 0.2474952, 1)
@@ -79,52 +77,6 @@ theme_override_font_sizes/font_size = 90
 text = "Skins"
 horizontal_alignment = 1
 
-[node name="Irl" type="Button" parent="." unique_id=891828303]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 153.0
-offset_right = 344.0
-offset_bottom = 223.0
-theme = ExtResource("6_la7s4")
-theme_override_fonts/font = ExtResource("7_em2vv")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxTexture_su0t2")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_su0t2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7sddp")
-text = "IRL"
-
-[node name="Top" type="Button" parent="." unique_id=76917496]
-layout_mode = 0
-offset_left = 182.0
-offset_top = 241.0
-offset_right = 344.0
-offset_bottom = 311.0
-theme = ExtResource("6_la7s4")
-theme_override_fonts/font = ExtResource("7_em2vv")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxTexture_su0t2")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_su0t2")
-theme_override_styles/hover = SubResource("StyleBoxTexture_7sddp")
-text = "TopHat"
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=2082280184]
-layout_mode = 0
-offset_left = -34.999992
-offset_top = 118.0
-offset_right = 5.0000076
-offset_bottom = 158.0
-scale = Vector2(3.8526785, 3.8526785)
-texture = ExtResource("8_em2vv")
-
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=1760405469]
-layout_mode = 0
-offset_left = -34.999992
-offset_top = 206.0
-offset_right = 5.0000076
-offset_bottom = 246.0
-scale = Vector2(3.8526785, 3.8526785)
-texture = ExtResource("9_7sddp")
-
 [node name="Label3" type="Label" parent="." unique_id=1202514720]
 layout_mode = 0
 offset_left = 1047.0
@@ -137,5 +89,260 @@ theme_override_fonts/font = ExtResource("2_gxsj4")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("9_su0t2")
 
-[connection signal="pressed" from="Irl" to="." method="_on_irl_pressed"]
-[connection signal="pressed" from="Top" to="." method="_on_top_pressed"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1631442384]
+stream = ExtResource("9_mhq5f")
+volume_db = 10.0
+
+[node name="Normal" type="Button" parent="." unique_id=1619092858]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 39.000008
+offset_top = 174.00002
+offset_right = 89.00001
+offset_bottom = 224.00002
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Normal" unique_id=1963823899]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("8_7sddp")
+
+[node name="Label" type="Label" parent="Normal" unique_id=1562767582]
+layout_mode = 0
+offset_top = 44.659378
+offset_right = 49.9134
+offset_bottom = 67.65938
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Normal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IRL" type="Button" parent="." unique_id=2127607594]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 143.0
+offset_top = 174.00002
+offset_right = 193.0
+offset_bottom = 224.00002
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="IRL" unique_id=1929606337]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("8_em2vv")
+
+[node name="Label" type="Label" parent="IRL" unique_id=908941327]
+layout_mode = 0
+offset_left = -16.418884
+offset_top = 53.19722
+offset_right = 63.581116
+offset_bottom = 84.19722
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Irl Duck
+(Free)"
+horizontal_alignment = 1
+
+[node name="Tophat" type="Button" parent="." unique_id=1028655558]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 247.00003
+offset_top = 174.00002
+offset_right = 297.00003
+offset_bottom = 224.00002
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Tophat" unique_id=1767489221]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("9_7sddp")
+
+[node name="Label" type="Label" parent="Tophat" unique_id=1362241657]
+layout_mode = 0
+offset_left = -5.910797
+offset_top = 45.9729
+offset_right = 57.089203
+offset_bottom = 76.9729
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Top Hat
+(2 Bread)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Terminator" type="Button" parent="." unique_id=20285807]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 351.0
+offset_top = 174.00002
+offset_right = 401.0
+offset_bottom = 224.00002
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Terminator" unique_id=49736381]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("11_f4uus")
+
+[node name="Label" type="Label" parent="Terminator" unique_id=373642211]
+layout_mode = 0
+offset_left = -8.537814
+offset_top = 45.97287
+offset_right = 61.462185
+offset_bottom = 76.97287
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Robot
+(10 Bread)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ice Cream" type="Button" parent="." unique_id=1005775686]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 455.0
+offset_top = 174.00002
+offset_right = 505.0
+offset_bottom = 224.00002
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Ice Cream" unique_id=407826043]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("13_f4uus")
+
+[node name="Label" type="Label" parent="Ice Cream" unique_id=1997862182]
+layout_mode = 0
+offset_left = -5.2540283
+offset_top = 45.316147
+offset_right = 58.74597
+offset_bottom = 76.31615
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Ice Cream
+(5 Bread)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Goose" type="Button" parent="." unique_id=537180639]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 39.000008
+offset_top = 318.0
+offset_right = 89.00001
+offset_bottom = 368.0
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Goose" unique_id=843676027]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("14_m0kbk")
+
+[node name="Label" type="Label" parent="Goose" unique_id=1668340690]
+layout_mode = 0
+offset_left = -7.224308
+offset_top = 46.62964
+offset_right = 55.775692
+offset_bottom = 77.62964
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Goose
+(5 Bread)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Racer" type="Button" parent="." unique_id=1892332353]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 143.00003
+offset_top = 318.0
+offset_right = 193.00003
+offset_bottom = 368.0
+scale = Vector2(1.5226371, 1.5226371)
+theme = ExtResource("12_f4uus")
+theme_override_constants/icon_max_width = 100
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="Racer" unique_id=151370652]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -14.089203
+offset_right = 71.0
+offset_bottom = 77.9108
+mouse_filter = 2
+texture = ExtResource("15_7ul5y")
+
+[node name="Label" type="Label" parent="Racer" unique_id=1939557182]
+layout_mode = 0
+offset_left = -3.9405518
+offset_top = 47.943123
+offset_right = 59.05945
+offset_bottom = 78.94312
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gxsj4")
+theme_override_font_sizes/font_size = 7
+text = "Racer
+(5 Bread)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Not Enough" type="AudioStreamPlayer" parent="." unique_id=1196733466]
+stream = ExtResource("16_p1cxs")
+volume_db = 10.0
+
+[connection signal="pressed" from="Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="IRL" to="." method="_on_irl_pressed"]
+[connection signal="pressed" from="Tophat" to="." method="_on_tophat_pressed"]
+[connection signal="pressed" from="Terminator" to="." method="_on_terminator_pressed"]
+[connection signal="pressed" from="Ice Cream" to="." method="_on_ice_cream_pressed"]
+[connection signal="pressed" from="Goose" to="." method="_on_goose_pressed"]
+[connection signal="pressed" from="Racer" to="." method="_on_racer_pressed"]

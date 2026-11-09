@@ -91,6 +91,8 @@ animation = &"Dead"
 autoplay = "Walk"
 
 [node name="Deathzone" type="Area2D" parent="." unique_id=216399246]
+collision_mask = 5
+collision_priority = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Deathzone" unique_id=398162584]
 position = Vector2(0, -7.5)
@@ -112,5 +114,6 @@ stream = ExtResource("6_j02d7")
 volume_db = 10.0
 pitch_scale = 0.8
 
+[connection signal="area_entered" from="Deathzone" to="." method="_on_deathzone_area_entered"]
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="body_entered" from="BounceZone" to="." method="_on_bounce_zone_body_entered"]

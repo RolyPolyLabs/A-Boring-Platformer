@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://gedm4eeboauv" path="res://Sound Effects/53439420-retro-zap-sound-06-474813.mp3" id="7_3smsa"]
 [ext_resource type="AudioStream" uid="uid://crn31lhsyyiro" path="res://Sound Effects/driken5482-retro-jump-1-236684.mp3" id="8_8erm5"]
 [ext_resource type="Texture2D" uid="uid://ccwt23fhftyx0" path="res://Pixel Art/Duck Jump IRL.png" id="8_h4iuc"]
+[ext_resource type="AudioStream" uid="uid://ccaxd7p17hdjl" path="res://Sound Effects/cha-ching-money.mp3" id="19_olqyp"]
 [ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="20_l6n3p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
@@ -599,6 +600,10 @@ scale_amount_max = 0.5
 [node name="DashSound" type="AudioStreamPlayer" parent="." unique_id=341447131]
 stream = ExtResource("7_3smsa")
 volume_db = -10.0
+
+[node name="JumpSoundMoney" type="AudioStreamPlayer" parent="." unique_id=1674492144]
+stream = ExtResource("19_olqyp")
+volume_db = 5.0
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=1694651135]
 stream = ExtResource("8_8erm5")
