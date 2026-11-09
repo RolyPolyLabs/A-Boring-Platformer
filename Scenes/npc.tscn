@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dfq3xd3runjr3"]
 
 [ext_resource type="Texture2D" uid="uid://c85prmmkec28t" path="res://Pixel Art/Quail.png" id="1_acqhf"]
+[ext_resource type="Script" uid="uid://ghfv7k81s6gn" path="res://Scripts/QuailNpcTest.gd" id="1_g6unj"]
 [ext_resource type="AudioStream" uid="uid://dp8cb76s8thlc" path="res://Sound Effects/the-call-of-the-japanese-quail.mp3" id="2_xxsvc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
@@ -38,9 +39,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acqhf"]
-size = Vector2(14, 9)
+size = Vector2(22, 12)
 
 [node name="Npc" type="Node2D" unique_id=165633267]
+script = ExtResource("1_g6unj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1845349230]
 sprite_frames = SubResource("SpriteFrames_1ig1v")
@@ -50,10 +52,22 @@ autoplay = "Idle"
 [node name="Area2D" type="Area2D" parent="." unique_id=2071512720]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=922601108]
-position = Vector2(0, 0.5)
+position = Vector2(-21, -1)
 shape = SubResource("RectangleShape2D_acqhf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1679744948]
 stream = ExtResource("2_xxsvc")
 
+[node name="Label" type="Label" parent="." unique_id=745314023]
+visible = false
+offset_left = -8.0
+offset_top = -14.0
+offset_right = 80.0
+offset_bottom = 35.0
+scale = Vector2(0.169048, 0.169048)
+text = "Press Enter
+To Talk"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

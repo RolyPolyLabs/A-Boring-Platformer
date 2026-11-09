@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfddcefsolatn"
+path="res://.godot/imported/QuailStart.dialogue-8b9807c0df0effd7157848367c39c843.tres"
+
+[deps]
+
+source_file="res://dialog/QuailStart.dialogue"
+dest_files=["res://.godot/imported/QuailStart.dialogue-8b9807c0df0effd7157848367c39c843.tres"]
+
+[params]
+
+defaults=true

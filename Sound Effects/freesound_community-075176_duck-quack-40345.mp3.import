@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5gqffqfctn6g"
+path="res://.godot/imported/freesound_community-075176_duck-quack-40345.mp3-0f4f81747a95a9ad06fe6e2f1c1b4042.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/freesound_community-075176_duck-quack-40345.mp3"
+dest_files=["res://.godot/imported/freesound_community-075176_duck-quack-40345.mp3-0f4f81747a95a9ad06fe6e2f1c1b4042.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
