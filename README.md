@@ -12,7 +12,9 @@ WASD or Arrow Keys to move, Space to dash.
 Working on adding some more levels!
 
 **How to play**
+
 The game can played here: https://rolypolylabs.itch.io/a-boring-platformer-week-3
+
 If you want to play on pc, you will have to clone the repository and play it in godot. In the future I will have dedicated releases, but for now it is playable on the web :)
 
 Wasd or Arrow Keys to move, jump to dash.
