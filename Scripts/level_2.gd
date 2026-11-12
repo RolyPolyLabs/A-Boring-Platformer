@@ -12,4 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_audio_stream_player_finished() -> void:
-	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+	SceneManager.change_scene("res://Scenes/title_screen.tscn", {
+	"pattern": "diagonal"
+})

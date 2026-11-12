@@ -1,5 +1,7 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
+@onready var quail_rect: AnimatedSprite2D = $"Balloon/Quail Rect"
+@onready var duck_rect: AnimatedSprite2D = $"Balloon/Duck Rect"
 
 
 ## The dialogue resource
@@ -193,12 +195,16 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 	var speaker: String = dialogue_line.character.strip_edges()
 
 	# Route sound based on who is currently speaking
-	if "Quirky" in speaker and is_instance_valid(typewriter_audio):
+	if "Quail" in speaker and is_instance_valid(typewriter_audio):
 		typewriter_audio.pitch_scale = randf_range(0.95, 1.05)
 		typewriter_audio.play()
+		duck_rect.hide()
+		quail_rect.show()
 	elif "Duck" in speaker and is_instance_valid(duck_audio):
 		duck_audio.pitch_scale = randf_range(0.9, 1.1)
 		duck_audio.play()
+		quail_rect.hide()
+		duck_rect.show()
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false

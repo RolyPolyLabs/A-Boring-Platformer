@@ -16,6 +16,7 @@ var bulletspeed = 1000
 var skin = "normal" # Change to "normal", "tophat", or "IRL"
 signal PlayerPause
 signal PlayerUnpause
+var hasmap = false
 var intext = false
 func add_point(amount: int = 1):
 	score += amount
