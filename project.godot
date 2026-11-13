@@ -106,7 +106,7 @@ Interact={
 [internationalization]
 
 locale/translations=PackedStringArray("res://addons/maaacks_input_remapping/base/translations/menus_translations.en.translation", "res://addons/maaacks_input_remapping/base/translations/menus_translations.fr.translation")
-locale/translations_pot_files=PackedStringArray("res://dialog/QuailStart.dialogue", "res://dialog/Dash.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialog/QuailStart.dialogue", "res://dialog/Dash.dialogue", "res://dialog/burd Shop.dialogue")
 
 [maaacks_input_remapping]
 

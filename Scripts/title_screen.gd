@@ -15,13 +15,18 @@ func _on_start_pressed() -> void:
 		SignalBus.emit_signal("StopMusicBGMENU")
 		audio_stream_player.play()
 		timer.start()
+		
 
 func _on_options_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/options.tscn")
 
 func _on_timer_timeout() -> void:
 	SignalBus.emit_signal("BG_MUSIC")
-	get_tree().change_scene_to_file("res://Scenes/level 1.tscn")
+	SceneManager.change_scene("res://Scenes/level 1.tscn", {
+	"pattern": "diagonal",
+	"speed": 10
+	})
+	
 
 func _on_levels_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/levels.tscn")

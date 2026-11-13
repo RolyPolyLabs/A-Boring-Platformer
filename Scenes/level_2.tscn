@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="8_42uki"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="9_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="10_42uki"]
+[ext_resource type="PackedScene" uid="uid://4wj6nx3w3o0p" path="res://Scenes/BirdNPC.tscn" id="12_ait6c"]
+[ext_resource type="Resource" uid="uid://btqr22c6d31h3" path="res://dialog/burd Shop.dialogue" id="13_vcilj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ait6c"]
 texture = ExtResource("1_cggpd")
@@ -244,3 +246,7 @@ theme_override_font_sizes/font_size = 64
 script = ExtResource("9_t7v2y")
 
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("10_42uki")]
+
+[node name="Npc" parent="." unique_id=165633267 instance=ExtResource("12_ait6c")]
+position = Vector2(437, 298)
+balloon = ExtResource("13_vcilj")

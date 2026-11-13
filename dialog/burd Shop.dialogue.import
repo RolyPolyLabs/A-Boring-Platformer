@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://btqr22c6d31h3"
+path="res://.godot/imported/burd Shop.dialogue-eea5082183887b844f73d1aba47d1c66.tres"
+
+[deps]
+
+source_file="res://dialog/burd Shop.dialogue"
+dest_files=["res://.godot/imported/burd Shop.dialogue-eea5082183887b844f73d1aba47d1c66.tres"]
+
+[params]
+
+defaults=true

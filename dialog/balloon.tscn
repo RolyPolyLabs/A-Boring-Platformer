@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ce5l4png0v6lp" path="res://dialog/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://b07k5qlxvbifk" path="res://Pixel Art/Bird.png" id="4_1vlso"]
 [ext_resource type="Texture2D" uid="uid://c85prmmkec28t" path="res://Pixel Art/Quail.png" id="4_do0et"]
 [ext_resource type="AudioStream" uid="uid://dp8cb76s8thlc" path="res://Sound Effects/the-call-of-the-japanese-quail.mp3" id="4_fxkot"]
 [ext_resource type="Texture2D" uid="uid://drpyrq2s44jlj" path="res://Pixel Art/dialog/Duck Big.png" id="5_1vlso"]
@@ -148,6 +149,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhenn"]
+atlas = ExtResource("4_1vlso")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6753i"]
+atlas = ExtResource("4_1vlso")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4jn6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhenn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6753i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
 script = ExtResource("1_36de5")
@@ -256,6 +279,15 @@ scale = Vector2(2.972656, 2.972656)
 sprite_frames = SubResource("SpriteFrames_do0et")
 autoplay = "default"
 
+[node name="Burd Rect" type="AnimatedSprite2D" parent="Balloon" unique_id=426402986]
+position = Vector2(145, 537)
+scale = Vector2(9.90625, 9.90625)
+sprite_frames = SubResource("SpriteFrames_4jn6j")
+autoplay = "default"
+frame = 1
+frame_progress = 0.9003435
+flip_h = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]
 unique_name_in_owner = true
 stream = ExtResource("4_fxkot")
@@ -266,6 +298,10 @@ volume_db = 5.0
 
 [node name="DuckAudio" type="AudioStreamPlayer" parent="." unique_id=561589304]
 stream = ExtResource("6_b42tu")
+
+[node name="BurdAudio" type="AudioStreamPlayer" parent="." unique_id=1964044285]
+stream = ExtResource("5_nily6")
+pitch_scale = 6.0
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

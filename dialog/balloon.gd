@@ -2,6 +2,7 @@ extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 @onready var quail_rect: AnimatedSprite2D = $"Balloon/Quail Rect"
 @onready var duck_rect: AnimatedSprite2D = $"Balloon/Duck Rect"
+@onready var burd_rect: AnimatedSprite2D = $"Balloon/Burd Rect"
 
 
 ## The dialogue resource
@@ -29,6 +30,7 @@ extends CanvasLayer
 ## (Make sure you add a child AudioStreamPlayer named 'TypewriterAudio' or adjust this reference)
 @onready var typewriter_audio: AudioStreamPlayer = $TypewriterAudio
 @onready var duck_audio: AudioStreamPlayer = $DuckAudio
+@onready var burd_audio: AudioStreamPlayer = $BurdAudio
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -200,11 +202,18 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 		typewriter_audio.play()
 		duck_rect.hide()
 		quail_rect.show()
+		burd_rect.hide()
 	elif "Duck" in speaker and is_instance_valid(duck_audio):
 		duck_audio.pitch_scale = randf_range(0.9, 1.1)
 		duck_audio.play()
 		quail_rect.hide()
 		duck_rect.show()
+		burd_rect.hide()
+	elif "Burd" in speaker and is_instance_valid(burd_audio):
+		burd_audio.play()
+		quail_rect.hide()
+		duck_rect.hide()
+		burd_rect.show()
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false

@@ -1,26 +1,26 @@
-[gd_scene format=3 uid="uid://dfq3xd3runjr3"]
+[gd_scene format=3 uid="uid://4wj6nx3w3o0p"]
 
-[ext_resource type="Texture2D" uid="uid://c85prmmkec28t" path="res://Pixel Art/Quail.png" id="1_acqhf"]
-[ext_resource type="Script" uid="uid://ghfv7k81s6gn" path="res://Scripts/QuailNpcTest.gd" id="1_g6unj"]
-[ext_resource type="AudioStream" uid="uid://dp8cb76s8thlc" path="res://Sound Effects/the-call-of-the-japanese-quail.mp3" id="2_xxsvc"]
+[ext_resource type="Script" uid="uid://ghfv7k81s6gn" path="res://Scripts/QuailNpcTest.gd" id="1_5tqoj"]
+[ext_resource type="Texture2D" uid="uid://b07k5qlxvbifk" path="res://Pixel Art/Bird.png" id="2_5tqoj"]
+[ext_resource type="AudioStream" uid="uid://dp8cb76s8thlc" path="res://Sound Effects/the-call-of-the-japanese-quail.mp3" id="3_3vxo4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
-atlas = ExtResource("1_acqhf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cpmf"]
+atlas = ExtResource("2_5tqoj")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6unj"]
-atlas = ExtResource("1_acqhf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vxo4"]
+atlas = ExtResource("2_5tqoj")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1ryf"]
-atlas = ExtResource("1_acqhf")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhuel"]
+atlas = ExtResource("2_5tqoj")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ig1v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xxsvc")
+"texture": SubResource("AtlasTexture_0cpmf")
 }],
 "loop": true,
 "name": &"Idle",
@@ -28,10 +28,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g6unj")
+"texture": SubResource("AtlasTexture_3vxo4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h1ryf")
+"texture": SubResource("AtlasTexture_xhuel")
 }],
 "loop": true,
 "name": &"Talk",
@@ -42,11 +42,12 @@ animations = [{
 size = Vector2(22, 12)
 
 [node name="Npc" type="Node2D" unique_id=165633267]
-script = ExtResource("1_g6unj")
+script = ExtResource("1_5tqoj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1845349230]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_1ig1v")
-animation = &"Idle"
+animation = &"Talk"
 autoplay = "Idle"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2071512720]
@@ -56,7 +57,7 @@ position = Vector2(-21, -1)
 shape = SubResource("RectangleShape2D_acqhf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1679744948]
-stream = ExtResource("2_xxsvc")
+stream = ExtResource("3_3vxo4")
 
 [node name="Label" type="Label" parent="." unique_id=745314023]
 visible = false
