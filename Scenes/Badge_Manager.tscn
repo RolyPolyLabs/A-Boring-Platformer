@@ -1,0 +1,310 @@
+[gd_scene format=3 uid="uid://c0wc6axqs0hhv"]
+
+[ext_resource type="Script" uid="uid://dq5v576o5y67g" path="res://Badge Scripts/bootbadge.gd" id="1_qjm5i"]
+[ext_resource type="Texture2D" uid="uid://y81ax82x0gc4" path="res://Pixel Art/Badges.png" id="1_wernj"]
+[ext_resource type="Script" uid="uid://b74dgs8p24ei0" path="res://Badge Scripts/jumpbadge.gd" id="3_4u8k6"]
+[ext_resource type="Script" uid="uid://bd4y7a4anioty" path="res://Badge Scripts/heartbadge.gd" id="4_t3uv5"]
+[ext_resource type="Script" uid="uid://c3c8uqlvgajr3" path="res://Badge Scripts/flashbadge.gd" id="5_lmwq1"]
+[ext_resource type="Script" uid="uid://q7wh1p0lgec1" path="res://Badge Scripts/breadbadge.gd" id="6_qyafo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hr3w"]
+atlas = ExtResource("1_wernj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_akn7n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hr3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8ug"]
+atlas = ExtResource("1_wernj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igo57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye8ug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1a0e"]
+atlas = ExtResource("1_wernj")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_73fyh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1a0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwibm"]
+atlas = ExtResource("1_wernj")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7hr3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwibm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akn7n"]
+atlas = ExtResource("1_wernj")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ye8ug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akn7n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Badge Shop" type="Control" unique_id=897222760]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=887285638]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=659853881]
+offset_left = -45.0
+offset_top = -41.0
+offset_right = 1223.0
+offset_bottom = 735.0
+color = Color(0, 0, 0, 0.675)
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=1975821411]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -75.0
+offset_right = 383.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="Boot" type="Control" parent="CanvasLayer/GridContainer" unique_id=391446247]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("1_qjm5i")
+
+[node name="Badge" type="AnimatedSprite2D" parent="CanvasLayer/GridContainer/Boot" unique_id=719799086]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_akn7n")
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/Boot" unique_id=374206611]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Speed Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer/Boot" unique_id=474823488]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Equip"
+
+[node name="Jump" type="Control" parent="CanvasLayer/GridContainer" unique_id=1775446585]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("3_4u8k6")
+
+[node name="Badge" type="AnimatedSprite2D" parent="CanvasLayer/GridContainer/Jump" unique_id=1246998738]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_igo57")
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/Jump" unique_id=1978319755]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Jump Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer/Jump" unique_id=2140737657]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Equip"
+
+[node name="Heart" type="Control" parent="CanvasLayer/GridContainer" unique_id=688970997]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("4_t3uv5")
+
+[node name="Badge" type="AnimatedSprite2D" parent="CanvasLayer/GridContainer/Heart" unique_id=985190679]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_73fyh")
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/Heart" unique_id=694972349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Health Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer/Heart" unique_id=1067974299]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Equip"
+
+[node name="Flash" type="Control" parent="CanvasLayer/GridContainer" unique_id=1312613717]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("5_lmwq1")
+
+[node name="Badge" type="AnimatedSprite2D" parent="CanvasLayer/GridContainer/Flash" unique_id=129521840]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_7hr3w")
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/Flash" unique_id=1165838206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Light Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer/Flash" unique_id=612746171]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Equip"
+
+[node name="Bread" type="Control" parent="CanvasLayer/GridContainer" unique_id=1744283260]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("6_qyafo")
+
+[node name="Badge" type="AnimatedSprite2D" parent="CanvasLayer/GridContainer/Bread" unique_id=1076829999]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_ye8ug")
+
+[node name="Label" type="Label" parent="CanvasLayer/GridContainer/Bread" unique_id=1420081616]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Bread Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/GridContainer/Bread" unique_id=109065466]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Equip"
+
+[connection signal="toggled" from="CanvasLayer/GridContainer/Boot/Button" to="CanvasLayer/GridContainer/Boot" method="_on_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/GridContainer/Jump/Button" to="CanvasLayer/GridContainer/Jump" method="_on_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/GridContainer/Heart/Button" to="CanvasLayer/GridContainer/Heart" method="_on_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/GridContainer/Flash/Button" to="CanvasLayer/GridContainer/Flash" method="_on_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/GridContainer/Bread/Button" to="CanvasLayer/GridContainer/Bread" method="_on_button_toggled"]

@@ -18,6 +18,23 @@ signal PlayerPause
 signal PlayerUnpause
 var hasmap = false
 var intext = false
+var HasBootBadge = false
+var HasJumpBadge = false
+var HasHeartBadge = false
+var HasFlashBadge = false
+var HasBreadBadge = true
+signal ObtainedBadge
+var BadgeSpeedAmount
+var BadgeJumpAmount
+var BadgeHealthAmount
+var BadgeFlashAmount
+var BadgeBreadAmount
+
+
+
+
+
+
 func add_point(amount: int = 1):
 	score += amount
 	print("Score updated:", score)
