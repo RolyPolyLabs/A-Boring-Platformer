@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://rgue0l6uukl7"]
 
-[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="1_qbdk0"]
-[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="2_g3dfe"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheets/Spritesheet.png" id="1_qbdk0"]
+[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/Spritesheets/New Spritesheet.png" id="2_g3dfe"]
 [ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="3_xdqoa"]
 [ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="4_lr8km"]
 [ext_resource type="Script" uid="uid://cbqkiud3cdctk" path="res://Scripts/camera.gd" id="5_ycsm3"]

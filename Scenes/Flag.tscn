@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dne4j6rl7bf1v"]
 
-[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="1_1hkyp"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheets/Spritesheet.png" id="1_1hkyp"]
 [ext_resource type="Script" uid="uid://dc8c62b1jgrim" path="res://Scripts/flag.gd" id="1_i6t4d"]
 [ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="3_xtjk2"]
 

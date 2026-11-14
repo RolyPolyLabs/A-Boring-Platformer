@@ -1,14 +1,23 @@
 extends PointLight2D
 
+var flash_applied: bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-		texture_scale = .1
-		SignalBus.lightchange.connect(on_light_change)
+	texture_scale = 0.1
+	SignalBus.lightchange.connect(on_light_change)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	check_badge_flash()
+
 func on_light_change() -> void:
-	texture_scale += .2
+	texture_scale += 0.1
+
+func check_badge_flash() -> void:
+	if SignalBus.BadgeFlashAmount == 1.5:
+		if not flash_applied:
+			texture_scale += 0.1
+			flash_applied = true
+	else:
+		if flash_applied:
+			texture_scale -= 0.1
+			flash_applied = false

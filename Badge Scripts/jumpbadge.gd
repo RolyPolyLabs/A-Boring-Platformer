@@ -10,6 +10,7 @@ func _ready() -> void:
 	# Modulate tints the button; you can also swap styleboxes for cleaner colors
 	button.modulate = Color.GREEN 
 	badge.modulate = Color(0.255, 0.255, 0.255, 1.0)
+	SignalBus.BadgeJumpAmount = 1
 	
 
 func _on_button_toggled(toggled_on: bool) -> void:
@@ -17,7 +18,9 @@ func _on_button_toggled(toggled_on: bool) -> void:
 		button.text = "Un-Equip"
 		button.modulate = Color.RED
 		badge.modulate = Color.WHITE
+		SignalBus.BadgeJumpAmount = 1.25
 	else:
 		button.text = "Equip"
 		button.modulate = Color.GREEN
 		badge.modulate = Color(0.255, 0.255, 0.255, 1.0)
+		SignalBus.BadgeJumpAmount = 1

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c0wc6axqs0hhv"]
 
+[ext_resource type="Script" uid="uid://dpfpoothhrric" path="res://Badge Scripts/badge_manager.gd" id="1_kuor8"]
 [ext_resource type="Script" uid="uid://dq5v576o5y67g" path="res://Badge Scripts/bootbadge.gd" id="1_qjm5i"]
 [ext_resource type="Texture2D" uid="uid://y81ax82x0gc4" path="res://Pixel Art/Badges.png" id="1_wernj"]
 [ext_resource type="Script" uid="uid://b74dgs8p24ei0" path="res://Badge Scripts/jumpbadge.gd" id="3_4u8k6"]
@@ -83,14 +84,17 @@ animations = [{
 }]
 
 [node name="Badge Shop" type="Control" unique_id=897222760]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kuor8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=887285638]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=659853881]
 offset_left = -45.0
@@ -111,6 +115,7 @@ offset_right = 383.0
 offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 0
 columns = 5
 
 [node name="Boot" type="Control" parent="CanvasLayer/GridContainer" unique_id=391446247]

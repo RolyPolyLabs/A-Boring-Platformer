@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cy0bs71yx7wm7" path="res://Scripts/level_2.gd" id="1_y84ag"]
 [ext_resource type="Texture2D" uid="uid://ba82taccbysla" path="res://Pixel Art/New Piskel.png" id="2_ag05g"]
-[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheet.png" id="2_x6xr7"]
-[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/New Spritesheet.png" id="3_ag05g"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheets/Spritesheet.png" id="2_x6xr7"]
+[ext_resource type="Texture2D" uid="uid://dr0nupyf6tgvr" path="res://Pixel Art/Spritesheets/New Spritesheet.png" id="3_ag05g"]
 [ext_resource type="Texture2D" uid="uid://b5xbtrkokp6m7" path="res://Pixel Art/pixilart-sprite (1)-8.png.png" id="4_evxuv"]
 [ext_resource type="Texture2D" uid="uid://drmp2jr6hmmct" path="res://Pixel Art/Spritesheet (2) (1).png" id="5_rk80c"]
 [ext_resource type="PackedScene" uid="uid://l1v36vb1rqti" path="res://Scenes/player.tscn" id="6_g1c18"]

@@ -19,7 +19,7 @@ var skin = SignalBus.skin
 @onready var up_dash_trail = $UpDashTrail
 @onready var walk_particles: CPUParticles2D = $WalkParticles
 @onready var jump_sound_money: AudioStreamPlayer = $JumpSoundMoney
-
+var badgejump = SignalBus.BadgeJumpAmount
 var playerpaused = false
 
 const LASER = preload("res://Scenes/laser.tscn")
@@ -73,6 +73,7 @@ func play_anim(anim_name: String):
 
 
 func _physics_process(delta):
+	var badgejump = SignalBus.BadgeJumpAmount
 	# Stop all player movement and physics-based actions while paused.
 	if playerpaused:
 		velocity = Vector2.ZERO
@@ -85,7 +86,7 @@ func _physics_process(delta):
 		can_dash = true
 
 	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY * badgejump
 		if SignalBus.skin == "tophat":
 			jump_sound_money.play()
 		else:
@@ -155,8 +156,9 @@ func _physics_process(delta):
 		play_anim("jump")
 
 	# Horizontal movement calculation.
+	var speedboost = SignalBus.BadgeSpeedAmount
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * SPEED, ACCELERATION * delta)
+		velocity.x = move_toward(velocity.x, direction * SPEED * speedboost, ACCELERATION * delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 

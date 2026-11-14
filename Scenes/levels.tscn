@@ -112,7 +112,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxTexture_bku7o")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bku7o")
 theme_override_styles/hover = SubResource("StyleBoxTexture_bku7o")
-text = "Bonus level"
+text = "Sand Land"
 
 [node name="Back" type="Button" parent="Main Menu" unique_id=11590729]
 layout_mode = 2

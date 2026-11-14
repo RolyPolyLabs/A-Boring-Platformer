@@ -24,11 +24,11 @@ var HasHeartBadge = false
 var HasFlashBadge = false
 var HasBreadBadge = true
 signal ObtainedBadge
-var BadgeSpeedAmount
-var BadgeJumpAmount
-var BadgeHealthAmount
-var BadgeFlashAmount
-var BadgeBreadAmount
+var BadgeSpeedAmount = 1
+var BadgeJumpAmount = 1
+var BadgeHealthAmount = 1
+var BadgeFlashAmount = 1
+var BadgeBreadAmount = 1
 
 
 
