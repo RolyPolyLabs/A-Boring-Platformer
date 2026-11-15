@@ -1,6 +1,111 @@
 [gd_scene format=3 uid="uid://clrpepolrqmp0"]
 
 [ext_resource type="Script" uid="uid://doip7jst5baxv" path="res://Scenes/badgeshop.gd" id="1_rpjuo"]
+[ext_resource type="Script" uid="uid://dgabjtf2b8e4r" path="res://Badge Scripts/bootbuy.gd" id="2_ai8ps"]
+[ext_resource type="Texture2D" uid="uid://d24tjho3oap0v" path="res://Pixel Art/BreadOutline.png" id="3_dhkww"]
+[ext_resource type="Texture2D" uid="uid://y81ax82x0gc4" path="res://Pixel Art/Badges.png" id="3_h0wqj"]
+[ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="5_jc6ir"]
+[ext_resource type="Script" uid="uid://2if1w60sslyv" path="res://Scripts/BreadCounter.gd" id="6_nhu6k"]
+[ext_resource type="Texture2D" uid="uid://b07k5qlxvbifk" path="res://Pixel Art/Bird.png" id="7_nhu6k"]
+[ext_resource type="Texture2D" uid="uid://c2yy71uesberb" path="res://Pixel Art/BubbleTextBig.png" id="8_h0wqj"]
+[ext_resource type="FontFile" uid="uid://jhf7qtvdqdbk" path="res://Fonts/Isometra-Regular.ttf" id="9_5k8mj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hr3w"]
+atlas = ExtResource("3_h0wqj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukgiw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hr3w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8ug"]
+atlas = ExtResource("3_h0wqj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0f3m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye8ug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1a0e"]
+atlas = ExtResource("3_h0wqj")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0ma6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1a0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwibm"]
+atlas = ExtResource("3_h0wqj")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tcjks"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwibm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akn7n"]
+atlas = ExtResource("3_h0wqj")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s72m4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akn7n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0wqj"]
+atlas = ExtResource("7_nhu6k")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k8mj"]
+atlas = ExtResource("7_nhu6k")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_le2c8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0wqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k8mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Badgeshop" type="Control" unique_id=1249547195]
 z_index = 12
@@ -13,7 +118,6 @@ grow_vertical = 2
 script = ExtResource("1_rpjuo")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=119432655]
-visible = false
 layout_mode = 0
 offset_left = 50.0
 offset_top = 30.0
@@ -21,3 +125,303 @@ offset_right = 1218.0
 offset_bottom = 688.0
 scale = Vector2(0.8951243, 0.8951243)
 color = Color(0, 0, 0, 0.5)
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=485443012]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -75.0
+offset_right = 383.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+columns = 5
+
+[node name="Boot" type="Control" parent="GridContainer" unique_id=1865748418 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("2_ai8ps")
+signal_bus_flag = "HasBootBadge"
+button = NodePath("Button")
+
+[node name="Badge" type="AnimatedSprite2D" parent="GridContainer/Boot" unique_id=1145367691]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_ukgiw")
+
+[node name="Label" type="Label" parent="GridContainer/Boot" unique_id=425406235]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Speed Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Boot" unique_id=2008661986]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "10   Buy"
+icon = ExtResource("3_dhkww")
+
+[node name="Jump" type="Control" parent="GridContainer" unique_id=1594497097 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("2_ai8ps")
+required_score = 5
+signal_bus_flag = "HasJumpBadge"
+button = NodePath("Button")
+
+[node name="Badge" type="AnimatedSprite2D" parent="GridContainer/Jump" unique_id=1237093800]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_b0f3m")
+
+[node name="Label" type="Label" parent="GridContainer/Jump" unique_id=840530578]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Jump Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Jump" unique_id=1351596481]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "5   Buy"
+icon = ExtResource("3_dhkww")
+
+[node name="Heart" type="Control" parent="GridContainer" unique_id=1446827798]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+
+[node name="Badge" type="AnimatedSprite2D" parent="GridContainer/Heart" unique_id=1173262634]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_j0ma6")
+
+[node name="Label" type="Label" parent="GridContainer/Heart" unique_id=492814901]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Health Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Heart" unique_id=740249528]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+toggle_mode = true
+text = "Non Working"
+
+[node name="Flash" type="Control" parent="GridContainer" unique_id=227447766 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("2_ai8ps")
+required_score = 5
+signal_bus_flag = "HasFlashBadge"
+button = NodePath("Button")
+
+[node name="Badge" type="AnimatedSprite2D" parent="GridContainer/Flash" unique_id=1169746907]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_tcjks")
+
+[node name="Label" type="Label" parent="GridContainer/Flash" unique_id=1921765227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Light Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Flash" unique_id=1473495809]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "5   Buy"
+icon = ExtResource("3_dhkww")
+
+[node name="Bread" type="Control" parent="GridContainer" unique_id=1688689002 node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+script = ExtResource("2_ai8ps")
+required_score = 15
+signal_bus_flag = "HasBreadBadge"
+button = NodePath("Button")
+
+[node name="Badge" type="AnimatedSprite2D" parent="GridContainer/Bread" unique_id=984844844]
+position = Vector2(75, 75)
+sprite_frames = SubResource("SpriteFrames_s72m4")
+
+[node name="Label" type="Label" parent="GridContainer/Bread" unique_id=477304919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 150.0
+offset_right = -27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+text = "Bread Badge"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Bread" unique_id=1676759533]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 180.0
+offset_right = -38.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "15   Buy"
+icon = ExtResource("3_dhkww")
+
+[node name="Hide" type="Button" parent="." unique_id=1503320115]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 869.0
+offset_top = 521.0
+offset_right = -56.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "Hide"
+
+[node name="BreadPlus" type="Button" parent="." unique_id=451999713]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = 521.0
+offset_right = -872.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+toggle_mode = true
+text = "+1 Bread (For Reviewers)"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=186082083]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 98.5152
+offset_right = 1076.7139
+offset_bottom = 194.2292
+rotation = -0.8923049
+texture = ExtResource("3_dhkww")
+
+[node name="Label2" type="Label" parent="." unique_id=1498343355]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 49.51515
+offset_right = 929.0
+offset_bottom = 137.51515
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_jc6ir")
+theme_override_font_sizes/font_size = 64
+script = ExtResource("6_nhu6k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654766831]
+position = Vector2(117.999985, 99.999985)
+scale = Vector2(7.1910276, 7.1910276)
+sprite_frames = SubResource("SpriteFrames_le2c8")
+autoplay = "default"
+frame_progress = 0.32689694
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=910839214]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 52.0
+offset_right = 793.0
+offset_bottom = 140.0
+texture = ExtResource("8_h0wqj")
+
+[node name="Label" type="Label" parent="." unique_id=1816626959]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 65.0
+offset_right = 882.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5k8mj")
+text = "To Equip Badges, After leaving this menu, hit + on the 
+keyboard!"
+
+[connection signal="pressed" from="Hide" to="." method="_on_hide_pressed"]
+[connection signal="pressed" from="BreadPlus" to="." method="_on_bread_plus_pressed"]

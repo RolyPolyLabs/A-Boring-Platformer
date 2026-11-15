@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 SignalBus="*uid://co8pgufi1vism"
-BgMusic="*uid://cswu15nflrfy6"
+BgMusic="uid://cswu15nflrfy6"
 Bgmenumusic="*uid://dwmgtqxsrkflb"
 PauseMenu="*uid://dhhh84m5q4ob1"
 AppConfig="*uid://cjke6crjg14a0"

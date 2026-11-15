@@ -94,7 +94,6 @@ grow_vertical = 2
 script = ExtResource("1_kuor8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=887285638]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=659853881]
 offset_left = -45.0
@@ -119,6 +118,7 @@ mouse_filter = 0
 columns = 5
 
 [node name="Boot" type="Control" parent="CanvasLayer/GridContainer" unique_id=391446247]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 script = ExtResource("1_qjm5i")
@@ -157,6 +157,7 @@ toggle_mode = true
 text = "Equip"
 
 [node name="Jump" type="Control" parent="CanvasLayer/GridContainer" unique_id=1775446585]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 script = ExtResource("3_4u8k6")
@@ -195,6 +196,7 @@ toggle_mode = true
 text = "Equip"
 
 [node name="Heart" type="Control" parent="CanvasLayer/GridContainer" unique_id=688970997]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 script = ExtResource("4_t3uv5")
@@ -233,6 +235,7 @@ toggle_mode = true
 text = "Equip"
 
 [node name="Flash" type="Control" parent="CanvasLayer/GridContainer" unique_id=1312613717]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 script = ExtResource("5_lmwq1")
@@ -271,6 +274,7 @@ toggle_mode = true
 text = "Equip"
 
 [node name="Bread" type="Control" parent="CanvasLayer/GridContainer" unique_id=1744283260]
+visible = false
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 script = ExtResource("6_qyafo")

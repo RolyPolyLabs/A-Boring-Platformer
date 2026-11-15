@@ -1,5 +1,9 @@
 extends Control
 @onready var menu: CanvasLayer = $CanvasLayer
+@onready var boot: Control = $CanvasLayer/GridContainer/Boot
+@onready var jump: Control = $CanvasLayer/GridContainer/Jump
+@onready var flash: Control = $CanvasLayer/GridContainer/Flash
+@onready var bread: Control = $CanvasLayer/GridContainer/Bread
 
 signal pause_requested
 var frozen: bool = false
@@ -23,6 +27,14 @@ func _on_pause_requested() -> void:
 		get_tree().paused = true
 		if menu:
 			menu.visible = true
+		if SignalBus.HasBootBadge == true:
+			boot.show()
+		if SignalBus.HasJumpBadge == true:
+			jump.show()
+		if SignalBus.HasFlashBadge == true:
+			flash.show()
+		if SignalBus.HasBreadBadge == true:
+			bread.show()
 	else:
 		print("Game Resumed!")
 		if menu:

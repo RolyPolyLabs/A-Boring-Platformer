@@ -391,6 +391,18 @@ horizontal_alignment = 1
 [node name="Bread" parent="." unique_id=455938451 instance=ExtResource("19_ko25n")]
 position = Vector2(150, 314)
 
+[node name="Bread3" parent="." unique_id=1050818549 instance=ExtResource("19_ko25n")]
+position = Vector2(125, 313)
+
+[node name="Bread4" parent="." unique_id=1538803152 instance=ExtResource("19_ko25n")]
+position = Vector2(108, 313)
+
+[node name="Bread5" parent="." unique_id=1043696021 instance=ExtResource("19_ko25n")]
+position = Vector2(91, 313)
+
+[node name="Bread6" parent="." unique_id=74611613 instance=ExtResource("19_ko25n")]
+position = Vector2(74, 313)
+
 [node name="Bread2" parent="." unique_id=1772226626 instance=ExtResource("19_ko25n")]
 position = Vector2(182, 234)
 

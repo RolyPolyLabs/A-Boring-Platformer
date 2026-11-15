@@ -22,7 +22,7 @@ var HasBootBadge = false
 var HasJumpBadge = false
 var HasHeartBadge = false
 var HasFlashBadge = false
-var HasBreadBadge = true
+var HasBreadBadge = false
 signal ObtainedBadge
 var BadgeSpeedAmount = 1
 var BadgeJumpAmount = 1
