@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bmq52reqrq3wq" path="res://Pixel Art/Scrolling BG/Plan 3.png" id="16_hj5x7"]
 [ext_resource type="Texture2D" uid="uid://1pgku65y8xn7" path="res://Pixel Art/Scrolling BG/Plan 2.png" id="17_yvrk7"]
 [ext_resource type="Texture2D" uid="uid://co4fsxkhk1ect" path="res://Pixel Art/Scrolling BG/Plan 4 (2).png" id="19_i6dbo"]
+[ext_resource type="PackedScene" uid="uid://clrpepolrqmp0" path="res://Scenes/badgeshop.tscn" id="22_c5xoi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ycs"]
 texture = ExtResource("2_bl0du")
@@ -334,6 +335,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=234626159]
+visible = false
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1534271712]
 offset_left = 8.0
@@ -347,7 +349,7 @@ script = ExtResource("9_t7v2y")
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("10_42uki")]
 
 [node name="Npc" parent="." unique_id=165633267 instance=ExtResource("12_ait6c")]
-position = Vector2(437, 298)
+position = Vector2(437, 297)
 balloon = ExtResource("13_vcilj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=55203307]
@@ -460,6 +462,10 @@ repeat_times = 10
 position = Vector2(2069.6147, 284.4007)
 texture = ExtResource("17_yvrk7")
 
+[node name="Badgeshop" type="CanvasLayer" parent="." unique_id=1575792961]
+
+[node name="Badgeshop" parent="Badgeshop" unique_id=1249547195 instance=ExtResource("22_c5xoi")]
+
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1003837264]
 z_index = 11
-color = Color(0.9999996, 0.8937833, 0.82788515, 1)
+color = Color(1, 0.8132805, 0.6909885, 1)

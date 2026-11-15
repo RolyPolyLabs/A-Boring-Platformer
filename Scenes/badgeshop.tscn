@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://clrpepolrqmp0"]
+
+[ext_resource type="Script" uid="uid://doip7jst5baxv" path="res://Scenes/badgeshop.gd" id="1_rpjuo"]
+
+[node name="Badgeshop" type="Control" unique_id=1249547195]
+z_index = 12
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rpjuo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=119432655]
+visible = false
+layout_mode = 0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 1218.0
+offset_bottom = 688.0
+scale = Vector2(0.8951243, 0.8951243)
+color = Color(0, 0, 0, 0.5)

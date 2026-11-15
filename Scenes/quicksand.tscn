@@ -34,7 +34,7 @@ z_index = 10
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=53260123]
 sprite_frames = SubResource("SpriteFrames_6ami1")
 autoplay = "default"
-frame_progress = 0.20135717
+frame_progress = 0.3120687
 
 [node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("2_jtwxs")]
 

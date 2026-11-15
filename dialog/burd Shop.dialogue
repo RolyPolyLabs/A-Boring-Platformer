@@ -2,7 +2,7 @@
 Burd: I sell badges. Badges are items that can be equipped. They boost stats such as speed and can even give you special powers.
 Burd: Would you like to buy any?
 - Yes
-	
+	do SignalBus.openbadgeshop.emit()
 - No
 	Burd: Very well then
 ~ shop

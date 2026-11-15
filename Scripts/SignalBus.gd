@@ -29,7 +29,7 @@ var BadgeJumpAmount = 1
 var BadgeHealthAmount = 1
 var BadgeFlashAmount = 1
 var BadgeBreadAmount = 1
-
+signal openbadgeshop
 
 
 
