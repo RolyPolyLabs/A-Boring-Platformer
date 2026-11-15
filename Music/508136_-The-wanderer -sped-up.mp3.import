@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uc4txkahtfj1"
+path="res://.godot/imported/508136_-The-wanderer -sped-up.mp3-807f2f3a329b82cfdad8fc41a1230ba7.mp3str"
+
+[deps]
+
+source_file="res://Music/508136_-The-wanderer -sped-up.mp3"
+dest_files=["res://.godot/imported/508136_-The-wanderer -sped-up.mp3-807f2f3a329b82cfdad8fc41a1230ba7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

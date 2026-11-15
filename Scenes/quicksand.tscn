@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://df36rk6gbh4kl"]
+
+[ext_resource type="Texture2D" uid="uid://bc5ayt7k01tuu" path="res://Pixel Art/Spritesheets/Desert Spritesheet.png" id="1_aisqe"]
+[ext_resource type="PackedScene" uid="uid://bot3b0apjs68v" path="res://Scenes/kill_zone.tscn" id="2_jtwxs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtwxs"]
+atlas = ExtResource("1_aisqe")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkg42"]
+atlas = ExtResource("1_aisqe")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ami1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtwxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkg42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkg42"]
+size = Vector2(16, 16)
+
+[node name="Quicksand" type="Node2D" unique_id=2108883331]
+z_index = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=53260123]
+sprite_frames = SubResource("SpriteFrames_6ami1")
+autoplay = "default"
+frame_progress = 0.20135717
+
+[node name="Killzone" parent="." unique_id=789834768 instance=ExtResource("2_jtwxs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=471870161]
+shape = SubResource("RectangleShape2D_fkg42")

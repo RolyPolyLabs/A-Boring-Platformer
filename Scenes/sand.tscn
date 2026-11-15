@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btmhmamn2xrdu"]
+
+[ext_resource type="Texture2D" uid="uid://bc5ayt7k01tuu" path="res://Pixel Art/Spritesheets/Desert Spritesheet.png" id="1_cvu4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cojcb"]
+atlas = ExtResource("1_cvu4f")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l3g28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cojcb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Sand" type="Node2D" unique_id=1891403328]
+z_index = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=271036900]
+sprite_frames = SubResource("SpriteFrames_l3g28")
+autoplay = "default"
