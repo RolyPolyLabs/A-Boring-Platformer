@@ -44,4 +44,11 @@ Wth did my emojis not work :(
 <img width="1140" height="646" alt="image" src="https://github.com/user-attachments/assets/469c44ed-4666-435b-851f-65a4901abfd1" />
 <img width="1145" height="642" alt="image" src="https://github.com/user-attachments/assets/6a9bd27c-9cde-496f-a6f4-2ca043cb1541" />
 **New Version (Labeled "A Boring Platformer - Week 4")**
+<img width="1148" height="641" alt="image" src="https://github.com/user-attachments/assets/50c14fce-6dbe-4141-82a3-92f272521f05" />
+<img width="1145" height="643" alt="image" src="https://github.com/user-attachments/assets/90de90c4-bceb-40a3-91b8-2215c7101171" />
+<img width="1144" height="644" alt="image" src="https://github.com/user-attachments/assets/af8fe26c-6168-4057-ba33-9f39cccb8e71" />
+<img width="1143" height="646" alt="image" src="https://github.com/user-attachments/assets/ac70e184-a26b-4305-879a-60376314b490" />
+
+
+
 
