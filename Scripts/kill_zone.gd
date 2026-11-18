@@ -1,5 +1,5 @@
 extends Area2D
-@onready var death_sfx: AudioStreamPlayer2D = $DeathSFX
+@onready var death_sfx: AudioStreamPlayer = $DeathSFX
 @onready var timer = $Timer
 
 func _on_body_entered(body: Node2D) -> void:

@@ -166,6 +166,7 @@ icon = ExtResource("9_0061g")
 stream = ExtResource("9_8mikk")
 
 [node name="Shop" type="Button" parent="." unique_id=1427969684]
+visible = false
 layout_mode = 0
 offset_left = 897.0
 offset_top = 481.0
@@ -180,6 +181,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ycay6")
 text = "Shop"
 
 [node name="Map" type="Button" parent="." unique_id=1065501207]
+visible = false
 layout_mode = 0
 offset_left = 897.0
 offset_top = 405.0

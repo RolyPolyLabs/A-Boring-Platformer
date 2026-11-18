@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brdjflkesduv"]
+
+[ext_resource type="Script" uid="uid://c6grxol75mdes" path="res://addons/save_system/demo/simple_demo/smipledemo.gd" id="1_2vx32"]
+
+[node name="DemoSimple" type="Node2D" unique_id=1290462579]
+script = ExtResource("1_2vx32")

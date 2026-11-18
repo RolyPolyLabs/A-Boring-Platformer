@@ -36,6 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://rkxhqoom12wk" path="res://Pixel Art/MAP(Piece 1) (1).png" id="33_aq2km"]
 [ext_resource type="Script" uid="uid://bwsb5ooykvw1g" path="res://Scripts/Map1.gd" id="34_dw1hb"]
 [ext_resource type="AudioStream" uid="uid://dtobsw6qd1q4y" path="res://Sound Effects/make_more_sound-8-bit-video-game-win-level-sound-version-1-145827.mp3" id="36_7o82l"]
+[ext_resource type="Script" uid="uid://ckpn1t7ee8fp4" path="res://Scenes/Underground Music.gd" id="37_1uja6"]
+[ext_resource type="AudioStream" uid="uid://bgmlpkxpga6l0" path="res://Music/656842_-Byzantine--TheBlockCave-O.mp3" id="37_ugnyp"]
 
 [sub_resource type="Gradient" id="Gradient_pdxid"]
 colors = PackedColorArray(0.20230234, 0.094620325, 1.2032688e-08, 1, 1, 1, 1, 0)
@@ -287,6 +289,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aq2km"]
 size = Vector2(121.44263, 68.22119)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugnyp"]
+size = Vector2(1136, 538)
+
 [node name="level 2" type="Node2D" unique_id=1212390420]
 script = ExtResource("1_y84ag")
 
@@ -431,55 +436,15 @@ position = Vector2(919, 700)
 [node name="Spring3" parent="." unique_id=1835889942 instance=ExtResource("16_ag05g")]
 position = Vector2(535, 764)
 
-[node name="Spike6" parent="." unique_id=350820063 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(519, 760)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike7" parent="." unique_id=389747956 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(503, 760)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike8" parent="." unique_id=545556252 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(487, 760)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike9" parent="." unique_id=649045020 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(471, 760)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spring4" parent="." unique_id=1172911226 instance=ExtResource("16_ag05g")]
-position = Vector2(392, 765)
-
-[node name="Spike10" parent="." unique_id=470294476 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(376, 761)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike11" parent="." unique_id=946096999 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(360, 761)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike12" parent="." unique_id=1961538642 instance=ExtResource("17_evxuv")]
-z_index = 1
-position = Vector2(344, 761)
-spike_texture = ExtResource("18_rk80c")
-
-[node name="Spike13" parent="." unique_id=1179433617 instance=ExtResource("17_evxuv")]
-z_index = 1
+[node name="Mystery Boxes" type="Node2D" parent="." unique_id=1510207662]
 position = Vector2(328, 761)
-spike_texture = ExtResource("18_rk80c")
 
-[node name="StaticBody2D2" parent="." unique_id=1415249095 instance=ExtResource("21_k5q4b")]
-position = Vector2(728, 664)
+[node name="StaticBody2D2" parent="Mystery Boxes" unique_id=1415249095 instance=ExtResource("21_k5q4b")]
+position = Vector2(400, -97)
 possible_rewards = Array[PackedScene]([ExtResource("22_26h2g")])
 opened_texture = ExtResource("23_hl8hj")
 
-[node name="PointLight2D" type="PointLight2D" parent="StaticBody2D2" unique_id=1833553034]
+[node name="PointLight2D" type="PointLight2D" parent="Mystery Boxes/StaticBody2D2" unique_id=1833553034]
 energy = 0.9
 shadow_enabled = true
 shadow_color = Color(0, 0, 0, 1)
@@ -488,9 +453,14 @@ shadow_filter_smooth = 64.0
 texture = ExtResource("8_k5q4b")
 texture_scale = 0.3
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=668341798]
+[node name="StaticBody2D3" parent="Mystery Boxes" unique_id=262867551 instance=ExtResource("26_25gfa")]
+position = Vector2(443, -120)
+possible_rewards = Array[PackedScene]([ExtResource("22_26h2g")])
+opened_texture = ExtResource("23_hl8hj")
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1203461609]
+[node name="Hud" type="CanvasLayer" parent="." unique_id=668341798]
+
+[node name="Label" type="Label" parent="Hud" unique_id=1203461609]
 offset_left = 8.0
 offset_top = 6.0
 offset_right = 48.0
@@ -501,7 +471,7 @@ theme_override_fonts/font = ExtResource("11_hl8hj")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("12_aqirt")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1411517801]
+[node name="TextureRect" type="TextureRect" parent="Hud" unique_id=1411517801]
 offset_left = 1034.0
 offset_top = 58.00005
 offset_right = 1129.7139
@@ -509,7 +479,7 @@ offset_bottom = 153.71405
 rotation = -0.8923049
 texture = ExtResource("24_aqirt")
 
-[node name="Label2" type="Label" parent="CanvasLayer" unique_id=1757625934]
+[node name="Label2" type="Label" parent="Hud" unique_id=1757625934]
 offset_left = 873.0
 offset_top = 9.0
 offset_right = 971.0
@@ -520,84 +490,128 @@ theme_override_fonts/font = ExtResource("11_hl8hj")
 theme_override_font_sizes/font_size = 64
 script = ExtResource("25_25gfa")
 
-[node name="Bread" parent="." unique_id=455938451 instance=ExtResource("22_26h2g")]
-position = Vector2(179, 648)
+[node name="Spikes" type="Node2D" parent="." unique_id=107187652]
 
-[node name="Bread3" parent="." unique_id=898578615 instance=ExtResource("22_26h2g")]
-position = Vector2(457, 583)
+[node name="Spike6" parent="Spikes" unique_id=350820063 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(519, 760)
+spike_texture = ExtResource("18_rk80c")
 
-[node name="Bread4" parent="." unique_id=265509088 instance=ExtResource("22_26h2g")]
-position = Vector2(427, 760)
+[node name="Spike7" parent="Spikes" unique_id=389747956 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(503, 760)
+spike_texture = ExtResource("18_rk80c")
 
-[node name="Bread5" parent="." unique_id=1039877135 instance=ExtResource("22_26h2g")]
-position = Vector2(280, 760)
+[node name="Spike8" parent="Spikes" unique_id=545556252 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(487, 760)
+spike_texture = ExtResource("18_rk80c")
 
-[node name="StaticBody2D3" parent="." unique_id=262867551 instance=ExtResource("26_25gfa")]
-position = Vector2(771, 641)
-possible_rewards = Array[PackedScene]([ExtResource("22_26h2g")])
-opened_texture = ExtResource("23_hl8hj")
+[node name="Spike9" parent="Spikes" unique_id=649045020 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(471, 760)
+spike_texture = ExtResource("18_rk80c")
 
-[node name="Bread6" parent="." unique_id=1436156281 instance=ExtResource("22_26h2g")]
+[node name="Spring4" parent="Spikes" unique_id=1172911226 instance=ExtResource("16_ag05g")]
+position = Vector2(392, 765)
+
+[node name="Spike10" parent="Spikes" unique_id=470294476 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(376, 761)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Spike11" parent="Spikes" unique_id=946096999 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(360, 761)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Spike12" parent="Spikes" unique_id=1961538642 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(344, 761)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Spike13" parent="Spikes" unique_id=1179433617 instance=ExtResource("17_evxuv")]
+z_index = 1
+position = Vector2(328, 761)
+spike_texture = ExtResource("18_rk80c")
+
+[node name="Bread" type="Node2D" parent="." unique_id=1695085889]
+
+[node name="Bread6" parent="Bread" unique_id=1436156281 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 561)
 
-[node name="Bread7" parent="." unique_id=935984412 instance=ExtResource("22_26h2g")]
+[node name="Bread7" parent="Bread" unique_id=935984412 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 561)
 
-[node name="Bread8" parent="." unique_id=320070456 instance=ExtResource("22_26h2g")]
+[node name="Bread8" parent="Bread" unique_id=320070456 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 585)
 
-[node name="Bread9" parent="." unique_id=909563767 instance=ExtResource("22_26h2g")]
+[node name="Bread9" parent="Bread" unique_id=909563767 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 585)
 
-[node name="Bread10" parent="." unique_id=1958976572 instance=ExtResource("22_26h2g")]
+[node name="Bread10" parent="Bread" unique_id=1958976572 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 609)
 
-[node name="Bread11" parent="." unique_id=271966095 instance=ExtResource("22_26h2g")]
+[node name="Bread11" parent="Bread" unique_id=271966095 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 609)
 
-[node name="Bread12" parent="." unique_id=1869808558 instance=ExtResource("22_26h2g")]
+[node name="Bread12" parent="Bread" unique_id=1869808558 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 633)
 
-[node name="Bread13" parent="." unique_id=526585172 instance=ExtResource("22_26h2g")]
+[node name="Bread13" parent="Bread" unique_id=526585172 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 633)
 
-[node name="Bread14" parent="." unique_id=393013327 instance=ExtResource("22_26h2g")]
+[node name="Bread14" parent="Bread" unique_id=393013327 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 657)
 
-[node name="Bread15" parent="." unique_id=334587061 instance=ExtResource("22_26h2g")]
+[node name="Bread15" parent="Bread" unique_id=334587061 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 657)
 
-[node name="Bread16" parent="." unique_id=2060850292 instance=ExtResource("22_26h2g")]
+[node name="Bread16" parent="Bread" unique_id=2060850292 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 681)
 
-[node name="Bread17" parent="." unique_id=1861267363 instance=ExtResource("22_26h2g")]
+[node name="Bread17" parent="Bread" unique_id=1861267363 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 681)
 
-[node name="Bread18" parent="." unique_id=2063069159 instance=ExtResource("22_26h2g")]
+[node name="Bread18" parent="Bread" unique_id=2063069159 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 705)
 
-[node name="Bread19" parent="." unique_id=376586593 instance=ExtResource("22_26h2g")]
+[node name="Bread19" parent="Bread" unique_id=376586593 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 705)
 
-[node name="Bread20" parent="." unique_id=6309757 instance=ExtResource("22_26h2g")]
+[node name="Bread20" parent="Bread" unique_id=6309757 instance=ExtResource("22_26h2g")]
 position = Vector2(1081, 729)
 
-[node name="Bread21" parent="." unique_id=348344875 instance=ExtResource("22_26h2g")]
+[node name="Bread21" parent="Bread" unique_id=348344875 instance=ExtResource("22_26h2g")]
 position = Vector2(1095, 729)
 
-[node name="One Way Block" parent="." unique_id=316583475 instance=ExtResource("27_t4oeq")]
+[node name="Bread" parent="Bread" unique_id=455938451 instance=ExtResource("22_26h2g")]
+position = Vector2(179, 648)
+
+[node name="Bread3" parent="Bread" unique_id=898578615 instance=ExtResource("22_26h2g")]
+position = Vector2(457, 583)
+
+[node name="Bread4" parent="Bread" unique_id=265509088 instance=ExtResource("22_26h2g")]
+position = Vector2(427, 760)
+
+[node name="Bread5" parent="Bread" unique_id=1039877135 instance=ExtResource("22_26h2g")]
+position = Vector2(280, 760)
+
+[node name="OneWayBlocks" type="Node2D" parent="." unique_id=902264263]
+
+[node name="One Way Block" parent="OneWayBlocks" unique_id=316583475 instance=ExtResource("27_t4oeq")]
 position = Vector2(1063, 744)
 
-[node name="One Way Block2" parent="." unique_id=1953241535 instance=ExtResource("27_t4oeq")]
+[node name="One Way Block2" parent="OneWayBlocks" unique_id=1953241535 instance=ExtResource("27_t4oeq")]
 position = Vector2(1047, 744)
 
-[node name="One Way Block3" parent="." unique_id=705012773 instance=ExtResource("27_t4oeq")]
+[node name="One Way Block3" parent="OneWayBlocks" unique_id=705012773 instance=ExtResource("27_t4oeq")]
 position = Vector2(1031, 744)
 
-[node name="One Way Block4" parent="." unique_id=1582000098 instance=ExtResource("27_t4oeq")]
+[node name="One Way Block4" parent="OneWayBlocks" unique_id=1582000098 instance=ExtResource("27_t4oeq")]
 position = Vector2(1015, 744)
 
-[node name="One Way Block5" parent="." unique_id=1022704751 instance=ExtResource("27_t4oeq")]
+[node name="One Way Block5" parent="OneWayBlocks" unique_id=1022704751 instance=ExtResource("27_t4oeq")]
 position = Vector2(999, 744)
 
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("13_25gfa")]
@@ -608,29 +622,32 @@ position = Vector2(146, 582)
 [node name="Flashlight2" parent="." unique_id=1400243338 instance=ExtResource("28_j3hw6")]
 position = Vector2(139, 756)
 
-[node name="Arrow" type="Sprite2D" parent="." unique_id=1438204480]
-position = Vector2(771, 641)
-rotation = 3.1415927
+[node name="Arrows" type="Node2D" parent="." unique_id=389245436]
+position = Vector2(139, 756)
+
+[node name="Arrow" type="Sprite2D" parent="Arrows" unique_id=1438204480]
+position = Vector2(632, -115)
+rotation = -3.1415925
 texture = ExtResource("30_1wqv4")
 
-[node name="Arrow5" type="Sprite2D" parent="." unique_id=480538108]
-position = Vector2(771, 615)
-rotation = 4.712389
+[node name="Arrow5" type="Sprite2D" parent="Arrows" unique_id=480538108]
+position = Vector2(632, -141)
+rotation = -1.5707964
 texture = ExtResource("30_1wqv4")
 
-[node name="Arrow2" type="Sprite2D" parent="." unique_id=1186701736]
-position = Vector2(31, 616)
-rotation = 3.1415927
+[node name="Arrow2" type="Sprite2D" parent="Arrows" unique_id=1186701736]
+position = Vector2(-108, -140)
+rotation = -3.1415925
 texture = ExtResource("30_1wqv4")
 
-[node name="Arrow3" type="Sprite2D" parent="." unique_id=1216691409]
-position = Vector2(150, 488)
+[node name="Arrow3" type="Sprite2D" parent="Arrows" unique_id=1216691409]
+position = Vector2(11, -268)
 rotation = 1.5707964
 texture = ExtResource("30_1wqv4")
 
-[node name="Arrow4" type="Sprite2D" parent="." unique_id=1946792197]
-position = Vector2(167, 473)
-rotation = 3.1415927
+[node name="Arrow4" type="Sprite2D" parent="Arrows" unique_id=1946792197]
+position = Vector2(28, -283)
+rotation = -3.1415925
 texture = ExtResource("30_1wqv4")
 
 [node name="Spider" parent="." unique_id=1652538187 instance=ExtResource("31_mjcqi")]
@@ -707,8 +724,24 @@ theme_override_fonts/font = ExtResource("11_hl8hj")
 theme_override_font_sizes/font_size = 40
 text = "Map Piece Aqquired!"
 
+[node name="Area2D" type="Area2D" parent="." unique_id=715995636]
+script = ExtResource("37_1uja6")
+
+[node name="Bg" type="AudioStreamPlayer2D" parent="Area2D" unique_id=2068970583]
+position = Vector2(728, 664)
+stream = ExtResource("37_ugnyp")
+volume_db = -80.0
+autoplay = true
+max_distance = 4096.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=933414409]
+position = Vector2(567, 662)
+shape = SubResource("RectangleShape2D_ugnyp")
+
 [connection signal="animation_finished" from="Spider/AnimationPlayer" to="Spider" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="Spider/TextureRect/Area2D" to="Spider/TextureRect" method="_on_area_2d_body_entered"]
 [connection signal="finished" from="Spider/TextureRect/AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 
 [editable path="Spider"]

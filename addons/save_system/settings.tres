@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Saved" format=3 uid="uid://bnjhkxeli6bla"]
+
+[ext_resource type="Script" uid="uid://dlhbdisbfvfn4" path="res://addons/save_system/saved.gd" id="1_kwhfd"]
+
+[resource]
+script = ExtResource("1_kwhfd")
+path = "whats_code"
+metadata/_custom_type_script = "uid://dlhbdisbfvfn4"

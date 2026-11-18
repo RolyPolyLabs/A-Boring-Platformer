@@ -9,7 +9,7 @@ script = ExtResource("1_d6013")
 [node name="Timer" type="Timer" parent="." unique_id=1673486248]
 wait_time = 0.6
 
-[node name="DeathSFX" type="AudioStreamPlayer2D" parent="." unique_id=1536569946]
+[node name="DeathSFX" type="AudioStreamPlayer" parent="." unique_id=587309296]
 stream = ExtResource("2_byrjq")
 volume_db = 5.0
 

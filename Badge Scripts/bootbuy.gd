@@ -30,4 +30,5 @@ func _on_button_pressed() -> void:
 	if SignalBus.score >= required_score:
 		if signal_bus_flag != "" and signal_bus_flag in SignalBus:
 			SignalBus.set(signal_bus_flag, true)
+			SignalBus.score -= required_score
 			update_button_state()

@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://i62ddb63pjlf"]
+
+[ext_resource type="Script" uid="uid://dc8c62b1jgrim" path="res://Scripts/flag.gd" id="1_qe3w3"]
+[ext_resource type="Texture2D" uid="uid://b2ssb5nxrh68f" path="res://Pixel Art/Spritesheets/Spritesheet.png" id="2_bcbuj"]
+[ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="3_81eci"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6t4d"]
+atlas = ExtResource("2_bcbuj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtjk2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6t4d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsrnx"]
+size = Vector2(10, 15)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1301453939]
+script = ExtResource("1_qe3w3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1965694577]
+sprite_frames = SubResource("SpriteFrames_xtjk2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=691568411]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=51679366]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wsrnx")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1332430263]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D" unique_id=511360416]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Node2D" unique_id=1499530226]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 90)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Node2D" unique_id=643067371]
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, -90)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Node2D" unique_id=1342495694]
+rotation = -3.133795
+emitting = false
+amount = 2
+one_shot = true
+speed_scale = 3.0
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+color = Color(0.85882354, 0.3372549, 0.25882354, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=12697193]
+stream = ExtResource("3_81eci")
+pitch_scale = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

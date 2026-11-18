@@ -40,3 +40,4 @@ func _on_pause_requested() -> void:
 		if menu:
 			menu.visible = false
 		get_tree().paused = false
+		SignalBus.emit_signal("PauseMusic")
