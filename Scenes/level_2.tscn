@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://co4fsxkhk1ect" path="res://Pixel Art/Scrolling BG/Plan 4 (2).png" id="19_i6dbo"]
 [ext_resource type="PackedScene" uid="uid://clrpepolrqmp0" path="res://Scenes/badgeshop.tscn" id="22_c5xoi"]
 [ext_resource type="PackedScene" uid="uid://dba6nn856cqnp" path="res://Scenes/snakenonmove.tscn" id="24_4k5rq"]
+[ext_resource type="PackedScene" uid="uid://i62ddb63pjlf" path="res://Scenes/Gate.tscn" id="26_d42f2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ycs"]
 texture = ExtResource("2_bl0du")
@@ -428,8 +429,8 @@ color = Color(0.7529412, 0.8509804, 0.92941177, 1)
 z_index = 11
 offset_left = -843.0
 offset_top = -573.0
-offset_right = 2457.0
-offset_bottom = 926.0
+offset_right = 3342.0
+offset_bottom = 992.0
 color = Color(0.8334029, 0.15170373, 0.29128972, 0)
 
 [node name="DeathLabel" type="CanvasLayer" parent="." unique_id=1020399881]
@@ -647,6 +648,10 @@ position = Vector2(584, 295)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Snake2" unique_id=288803163]
 libraries/ = SubResource("AnimationLibrary_nx14l")
 autoplay = &"Walk"
+
+[node name="StaticBody2D" parent="." unique_id=1301453939 instance=ExtResource("26_d42f2")]
+position = Vector2(2970, 280)
+next_scene = "uid://rgue0l6uukl7"
 
 [editable path="Snake"]
 [editable path="Snake2"]

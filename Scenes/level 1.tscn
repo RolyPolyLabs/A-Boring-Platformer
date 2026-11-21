@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dfq3xd3runjr3" path="res://Scenes/quailNPC.tscn" id="23_2pi7h"]
 [ext_resource type="Resource" uid="uid://dfddcefsolatn" path="res://dialog/QuailStart.dialogue" id="24_p3rw6"]
 [ext_resource type="Resource" uid="uid://chs64fio5r6fw" path="res://dialog/Dash.dialogue" id="25_1fj1h"]
+[ext_resource type="AudioStream" uid="uid://cvf338g8v5icc" path="res://Music/550638_-Swirl-Chiptune-remix-.mp3" id="26_cu3ok"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkd47"]
 texture = ExtResource("2_b8do0")
@@ -418,3 +419,8 @@ balloon = ExtResource("24_p3rw6")
 [node name="Npc2" parent="." unique_id=262933503 instance=ExtResource("23_2pi7h")]
 position = Vector2(214, 234)
 balloon = ExtResource("25_1fj1h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1321903633]
+stream = ExtResource("26_cu3ok")
+autoplay = true
+parameters/looping = true

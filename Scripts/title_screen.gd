@@ -44,3 +44,7 @@ func _on_shop_pressed() -> void:
 
 func _on_map_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/map.tscn")
+
+
+func _on_saves_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Saves.tscn")

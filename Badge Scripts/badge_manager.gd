@@ -10,14 +10,26 @@ var frozen: bool = false
 
 func _ready() -> void:
 	pause_requested.connect(_on_pause_requested)
+	SignalBus.ObtainedBadge.connect(_refresh_badges)
 	frozen = false
 	get_tree().paused = false
 	if menu:
-		menu.visible = false 	
+		menu.visible = false
+	_refresh_badges()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("toggle_badge"):
 		pause_requested.emit()
+
+func _refresh_badges() -> void:
+	if boot:
+		boot.visible = SignalBus.HasBootBadge
+	if jump:
+		jump.visible = SignalBus.HasJumpBadge
+	if flash:
+		flash.visible = SignalBus.HasFlashBadge
+	if bread:
+		bread.visible = SignalBus.HasBreadBadge
 
 func _on_pause_requested() -> void:
 	frozen = !frozen
@@ -27,14 +39,7 @@ func _on_pause_requested() -> void:
 		get_tree().paused = true
 		if menu:
 			menu.visible = true
-		if SignalBus.HasBootBadge == true:
-			boot.show()
-		if SignalBus.HasJumpBadge == true:
-			jump.show()
-		if SignalBus.HasFlashBadge == true:
-			flash.show()
-		if SignalBus.HasBreadBadge == true:
-			bread.show()
+		_refresh_badges()
 	else:
 		print("Game Resumed!")
 		if menu:

@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_kwhfd")
-path = "whats_code"
+path = "Saves"
 metadata/_custom_type_script = "uid://dlhbdisbfvfn4"
