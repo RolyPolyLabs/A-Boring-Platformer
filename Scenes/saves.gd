@@ -12,12 +12,14 @@ signal load_requested(save_name: String)
 @onready var load_button: Button = $VBoxContainer/Load
 @onready var delete_button: Button = $VBoxContainer/Delete
 @onready var export_button: Button = $VBoxContainer/Export
+@onready var import_button: Button = $VBoxContainer/Import
 @onready var file_dialog: FileDialog = $FileDialog
 @onready var save_popup: AcceptDialog = $SavePopup
 @onready var overwrite_popup: ConfirmationDialog = $OverwritePopup
 
 var _pending_save_name: String = ""
 var _pending_export_save_name: String = ""
+var _file_dialog_mode: String = ""
 
 
 func _ready() -> void:
@@ -29,11 +31,12 @@ func _ready() -> void:
 		delete_button.pressed.connect(_on_delete_pressed)
 	if export_button and not export_button.pressed.is_connected(_on_export_pressed):
 		export_button.pressed.connect(_on_export_pressed)
+	if import_button and not import_button.pressed.is_connected(_on_import_pressed):
+		import_button.pressed.connect(_on_import_pressed)
 
 	if file_dialog:
-		file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
-		if not file_dialog.file_selected.is_connected(_on_export_file_selected):
-			file_dialog.file_selected.connect(_on_export_file_selected)
+		if not file_dialog.file_selected.is_connected(_on_file_dialog_selected):
+			file_dialog.file_selected.connect(_on_file_dialog_selected)
 
 	if overwrite_popup:
 		overwrite_popup.title = "Overwrite Save?"
@@ -89,6 +92,14 @@ func _get_save_file_path(save_name: String) -> String:
 
 func _save_exists(save_name: String) -> bool:
 	return FileAccess.file_exists(_get_save_file_path(save_name))
+
+
+func _sanitize_slot_name(raw_name: String) -> String:
+	var cleaned := raw_name.strip_edges()
+	var invalid_chars := ["/", "\\", ":", "*", "?", "\"", "<", ">", "|"]
+	for ch in invalid_chars:
+		cleaned = cleaned.replace(ch, "_")
+	return cleaned if cleaned != "" else "imported_save"
 
 
 func _sync_signal_bus_to_save_data() -> void:
@@ -215,9 +226,30 @@ func _on_export_pressed() -> void:
 		return
 
 	_pending_export_save_name = save_name
+	_file_dialog_mode = "export"
 	if file_dialog:
+		file_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+		file_dialog.filters = PackedStringArray(["*" + save_extension])
 		file_dialog.current_file = save_name + save_extension
 		file_dialog.popup_centered()
+
+
+func _on_import_pressed() -> void:
+	_file_dialog_mode = "import"
+	if file_dialog:
+		file_dialog.file_mode = FileDialog.FILE_MODE_OPEN_FILE
+		file_dialog.filters = PackedStringArray(["*" + save_extension])
+		file_dialog.current_file = ""
+		file_dialog.popup_centered()
+
+
+func _on_file_dialog_selected(path: String) -> void:
+	var mode := _file_dialog_mode
+	_file_dialog_mode = ""
+	if mode == "export":
+		_on_export_file_selected(path)
+	elif mode == "import":
+		_on_import_file_selected(path)
 
 
 func _on_export_file_selected(dest_path: String) -> void:
@@ -244,3 +276,47 @@ func _on_export_file_selected(dest_path: String) -> void:
 	dest_file.close()
 
 	_show_popup("Exported", "Exported save to:\n" + dest_path)
+
+
+func _on_import_file_selected(source_path: String) -> void:
+	if not FileAccess.file_exists(source_path):
+		_show_popup("Import Failed", "Selected file does not exist.")
+		return
+
+	var source_file := FileAccess.open(source_path, FileAccess.READ)
+	if not source_file:
+		_show_popup("Import Failed", "Could not read selected file.")
+		return
+
+	var content := source_file.get_as_text()
+	source_file.close()
+
+	var parsed: Variant = JSON.parse_string(content)
+	if typeof(parsed) != TYPE_DICTIONARY:
+		_show_popup("Import Failed", "Selected file is not a valid save JSON.")
+		return
+
+	DirAccess.make_dir_recursive_absolute(saves_dir)
+
+	var typed_name := new_save_input.text.strip_edges() if new_save_input else ""
+	var raw_slot_name := typed_name if typed_name != "" else source_path.get_file().get_basename()
+	var slot_name := _sanitize_slot_name(raw_slot_name)
+	var dest_path := _get_save_file_path(slot_name)
+
+	var dest_file := FileAccess.open(dest_path, FileAccess.WRITE)
+	if not dest_file:
+		_show_popup("Import Failed", "Could not write imported save to slot: " + slot_name)
+		return
+
+	dest_file.store_string(content)
+	dest_file.close()
+
+	if new_save_input:
+		new_save_input.text = ""
+	refresh_save_list()
+	_select_save_by_name(slot_name)
+	_show_popup("Imported", "Imported save into slot: " + slot_name)
+
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
