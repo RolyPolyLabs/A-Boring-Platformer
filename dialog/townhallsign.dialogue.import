@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://eya1erncm1xw"
+path="res://.godot/imported/townhallsign.dialogue-8bcd50ad8782c29680b4932a18e6ce55.tres"
+
+[deps]
+
+source_file="res://dialog/townhallsign.dialogue"
+dest_files=["res://.godot/imported/townhallsign.dialogue-8bcd50ad8782c29680b4932a18e6ce55.tres"]
+
+[params]
+
+defaults=true

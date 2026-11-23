@@ -2,12 +2,35 @@
 
 [ext_resource type="Script" uid="uid://uq3j8ju0vfpl" path="res://Scripts/BatMove.gd" id="1_a15fi"]
 [ext_resource type="PackedScene" uid="uid://dwjxym6n71etu" path="res://Scenes/bat.tscn" id="2_v0ycy"]
+[ext_resource type="Texture2D" uid="uid://clntigi6wnej7" path="res://Pixel Art/New Piskel (1).png" id="3_qqscp"]
 
 [sub_resource type="Curve2D" id="Curve2D_lpthy"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, -7.5049295, -2.453857, 7.5049295, 2.453857, 25.415436, 10.520851, 0, 0, 0, 0, 52.0412, 22.938911, -10.533643, 11.116909, 10.533643, -11.116909, 115.839264, 40.01375, 1.1538618, 4.225466, -1.1538618, -4.225466, 33.785217, -31.041245, 0, 0, 0, 0, 23.838287, -41.674164)
 }
 point_count = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt6c1"]
+atlas = ExtResource("3_qqscp")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50dnf"]
+atlas = ExtResource("3_qqscp")
+region = Rect2(0, 16, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvg6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt6c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50dnf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ko25n"]
 size = Vector2(29.999992, 81.9962)
@@ -32,6 +55,10 @@ script = ExtResource("1_a15fi")
 position = Vector2(1.3719771, -0.107555866)
 rotation = -1.0303768
 
+[node name="AnimatedSprite2D" parent="Path2D/path follow/Bat" index="1" unique_id=1463106762]
+sprite_frames = SubResource("SpriteFrames_uvg6w")
+frame_progress = 0.0
+
 [node name="Area2D" type="Area2D" parent="Path2D/path follow" unique_id=1832702914]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/path follow/Area2D" unique_id=128939588]
@@ -42,3 +69,5 @@ shape = SubResource("RectangleShape2D_ko25n")
 
 [connection signal="body_entered" from="Path2D/path follow/Area2D" to="Path2D/path follow" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Path2D/path follow/Area2D" to="Path2D/path follow" method="_on_area_2d_body_exited"]
+
+[editable path="Path2D/path follow/Bat"]

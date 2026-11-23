@@ -1,0 +1,12 @@
+~ start
+if Engine.has_meta("talked_to_quail"):
+	% Jim The Jerk of a Quail: Go Away!!!
+	% Jim The Jerk of a Quail: SCRAM before I call the sherif!
+	=> END
+
+
+Jim The Jerk of a Quail: I can see you aren't from around here stranger.
+Jim The Jerk of a Quail: ...
+Jim The Jerk of a Quail: Scram kid! Ya bothering me.
+do Engine.set_meta("talked_to_quail", true)
+=> END

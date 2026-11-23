@@ -1,0 +1,6 @@
+~ start
+Go inside Town Hall?
+- Yes
+	do get_tree().change_scene_to_file("res://Scenes/title_screen.tscn")
+- No
+=> END

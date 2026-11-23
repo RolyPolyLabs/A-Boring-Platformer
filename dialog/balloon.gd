@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var quail_rect: AnimatedSprite2D = $"Balloon/Quail Rect"
 @onready var duck_rect: AnimatedSprite2D = $"Balloon/Duck Rect"
 @onready var burd_rect: AnimatedSprite2D = $"Balloon/Burd Rect"
+@onready var sign_rect: AnimatedSprite2D = $"Balloon/Sign Rect"
 
 
 ## The dialogue resource
@@ -203,17 +204,25 @@ func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -
 		duck_rect.hide()
 		quail_rect.show()
 		burd_rect.hide()
+		sign_rect.hide()
 	elif "Duck" in speaker and is_instance_valid(duck_audio):
 		duck_audio.pitch_scale = randf_range(0.9, 1.1)
 		duck_audio.play()
 		quail_rect.hide()
 		duck_rect.show()
 		burd_rect.hide()
+		sign_rect.hide()
 	elif "Burd" in speaker and is_instance_valid(burd_audio):
 		burd_audio.play()
 		quail_rect.hide()
 		duck_rect.hide()
 		burd_rect.show()
+		sign_rect.hide()
+	else:
+		sign_rect.show()
+		quail_rect.hide()
+		duck_rect.hide()
+		burd_rect.hide()
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false

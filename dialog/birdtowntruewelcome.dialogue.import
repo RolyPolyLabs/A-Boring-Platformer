@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bkmn2a5hys57g"
+path="res://.godot/imported/birdtowntruewelcome.dialogue-efb3cbb6cc252434fa6c92cc55246b5b.tres"
+
+[deps]
+
+source_file="res://dialog/birdtowntruewelcome.dialogue"
+dest_files=["res://.godot/imported/birdtowntruewelcome.dialogue-efb3cbb6cc252434fa6c92cc55246b5b.tres"]
+
+[params]
+
+defaults=true
