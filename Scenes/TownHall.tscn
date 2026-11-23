@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://hra5x8psh0w1" path="res://Scenes/quailSheriff.tscn" id="32_mnqrp"]
 [ext_resource type="Resource" uid="uid://w58okvqj0yur" path="res://dialog/sherifinterupt.dialogue" id="33_3mgr8"]
 [ext_resource type="Texture2D" uid="uid://c85prmmkec28t" path="res://Pixel Art/Quail.png" id="33_pelt3"]
+[ext_resource type="PackedScene" uid="uid://d1m7y54ug8glq" path="res://Scenes/Door.tscn" id="35_hr4l3"]
+[ext_resource type="Resource" uid="uid://d23tf3ckis7xv" path="res://dialog/Exit TownHall.dialogue" id="36_0iq8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ycs"]
 texture = ExtResource("2_wdfy1")
@@ -519,3 +521,7 @@ position = Vector2(-22, 0)
 sprite_frames = SubResource("SpriteFrames_0iq8w")
 autoplay = "default"
 flip_h = true
+
+[node name="Npc8" parent="." unique_id=908143896 instance=ExtResource("35_hr4l3")]
+position = Vector2(215, 325)
+balloon = ExtResource("36_0iq8w")

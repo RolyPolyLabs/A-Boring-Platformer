@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://bfwt5pdxglfv6" path="res://Pixel Art/Scrolling BG/3.png" id="20_5kpla"]
 [ext_resource type="Texture2D" uid="uid://c3o5fl0g0q751" path="res://desert/desert_sky.png" id="20_7ihge"]
 [ext_resource type="Texture2D" uid="uid://cyfvqj8x23hpo" path="res://Pixel Art/Scrolling BG/sprite-2-2.png" id="20_y1idr"]
-[ext_resource type="AudioStream" uid="uid://do1joaxfrc4uk" path="res://Music/606055_-DuneRiders-.mp3" id="22_p1fl2"]
 [ext_resource type="Texture2D" uid="uid://1pgku65y8xn7" path="res://Pixel Art/Scrolling BG/Plan 2.png" id="23_wq6rh"]
 [ext_resource type="Texture2D" uid="uid://bpcktp280fw3c" path="res://Pixel Art/Scrolling BG/sprite-3-1.png" id="24_nfdaa"]
 [ext_resource type="PackedScene" uid="uid://dfq3xd3runjr3" path="res://Scenes/quailNPC.tscn" id="27_1jskl"]
@@ -31,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://bkmn2a5hys57g" path="res://dialog/birdtowntruewelcome.dialogue" id="29_ww82b"]
 [ext_resource type="Texture2D" uid="uid://cdah5pff5thaj" path="res://Pixel Art/House.png" id="30_iie1d"]
 [ext_resource type="PackedScene" uid="uid://cpif66pt3o8ca" path="res://Scenes/SignNPC.tscn" id="31_wshbo"]
+[ext_resource type="FontFile" uid="uid://b224b173lhaag" path="res://Fonts/Mansalva-Regular.ttf" id="32_mfoof"]
 [ext_resource type="Resource" uid="uid://cqp7sdy1ehd0c" path="res://dialog/townhall.dialogue" id="32_p1fl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ycs"]
@@ -402,12 +402,6 @@ script = ExtResource("14_bitj7")
 
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("15_el3b1")]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=55203307]
-stream = ExtResource("22_p1fl2")
-volume_db = 5.0
-autoplay = true
-parameters/looping = true
-
 [node name="Wind" type="CPUParticles2D" parent="." unique_id=1396166256]
 modulate = Color(0.7847808, 0.5036003, 0, 1)
 position = Vector2(3107, 203)
@@ -536,3 +530,16 @@ texture = ExtResource("30_iie1d")
 [node name="Npc4" parent="." unique_id=2111152901 instance=ExtResource("31_wshbo")]
 position = Vector2(816, 215)
 balloon = ExtResource("32_p1fl2")
+
+[node name="TownHallSpawn" type="Marker2D" parent="." unique_id=756478333]
+position = Vector2(788, 215)
+
+[node name="Label" type="Label" parent="." unique_id=393421379]
+offset_left = 1714.0
+offset_top = 332.0
+offset_right = 1923.0
+offset_bottom = 355.0
+scale = Vector2(0.342672, 0.342672)
+theme_override_fonts/font = ExtResource("32_mfoof")
+theme_override_font_sizes/font_size = 16
+text = "This is all I got done so far :)"

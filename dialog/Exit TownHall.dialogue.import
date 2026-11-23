@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d23tf3ckis7xv"
+path="res://.godot/imported/Exit TownHall.dialogue-c932fcf3c6d3bfd371294c496be4cdc6.tres"
+
+[deps]
+
+source_file="res://dialog/Exit TownHall.dialogue"
+dest_files=["res://.godot/imported/Exit TownHall.dialogue-c932fcf3c6d3bfd371294c496be4cdc6.tres"]
+
+[params]
+
+defaults=true

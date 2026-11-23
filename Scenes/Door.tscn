@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://d1m7y54ug8glq"]
+
+[ext_resource type="Script" uid="uid://ghfv7k81s6gn" path="res://Scripts/QuailNpcTest.gd" id="1_1fk65"]
+[ext_resource type="Texture2D" uid="uid://chegsjtr4e14o" path="res://Pixel Art/Door.png" id="2_7mbvs"]
+[ext_resource type="Texture2D" uid="uid://c4dkqblu2ka8t" path="res://Pixel Art/Sign.png" id="3_bgsld"]
+[ext_resource type="AudioStream" uid="uid://dp8cb76s8thlc" path="res://Sound Effects/the-call-of-the-japanese-quail.mp3" id="4_g50tm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxo0x"]
+atlas = ExtResource("2_7mbvs")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge5dm"]
+atlas = ExtResource("3_bgsld")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kqji6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxo0x")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ge5dm")
+}],
+"loop": true,
+"name": &"Talk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acqhf"]
+size = Vector2(12, 15)
+
+[node name="Npc" type="Node2D" unique_id=165633267]
+script = ExtResource("1_1fk65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1845349230]
+sprite_frames = SubResource("SpriteFrames_kqji6")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2071512720]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=922601108]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_acqhf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1679744948]
+stream = ExtResource("4_g50tm")
+
+[node name="Label" type="Label" parent="." unique_id=745314023]
+visible = false
+offset_left = -8.0
+offset_top = -19.999998
+offset_right = 80.0
+offset_bottom = 29.000002
+scale = Vector2(0.169048, 0.169048)
+text = "Press Enter
+To Leave"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

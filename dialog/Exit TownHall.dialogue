@@ -1,0 +1,4 @@
+~ start
+do Engine.set_meta("next_spawn", "TownHallSpawn")
+do get_tree().change_scene_to_file("res://Scenes/desert_town.tscn")
+=> END

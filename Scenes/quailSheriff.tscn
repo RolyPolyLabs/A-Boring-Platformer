@@ -48,7 +48,7 @@ script = ExtResource("1_y7bcf")
 sprite_frames = SubResource("SpriteFrames_1ig1v")
 animation = &"Talk"
 autoplay = "Talk"
-frame_progress = 0.0044694263
+frame_progress = 0.6987503
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2071512720]
 

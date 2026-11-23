@@ -342,7 +342,7 @@ position = Vector2(145, 537)
 scale = Vector2(9.90625, 9.90625)
 sprite_frames = SubResource("SpriteFrames_gncyq")
 autoplay = "default"
-frame_progress = 0.48263606
+frame_progress = 0.10245073
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]

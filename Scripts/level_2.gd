@@ -1,12 +1,14 @@
 extends Node2D
 
+@onready var player: CharacterBody2D = $Player
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	if Engine.has_meta("next_spawn") and Engine.get_meta("next_spawn") == "TownHallSpawn":
+		Engine.remove_meta("next_spawn")
+		var town_hall_spawn: Marker2D = get_node_or_null("TownHallSpawn")
+		if town_hall_spawn != null and player != null:
+			player.global_position = town_hall_spawn.global_position
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
