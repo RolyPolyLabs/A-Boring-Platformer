@@ -1,0 +1,19 @@
+~ start
+if Engine.has_meta("talked_to_voterquail"):
+	Quail Voter: I'm bored.
+	=> END
+if Engine.has_meta("agreed_voter_quail"):
+	Quail Voter: This line is sooo long.
+	=> END
+
+Quail Voter: The Bean Party is the only correct choice. Everyone should get free seeds!!!
+Quail Voter: Do you agree?
+- Yes
+	Quail Voter: A Fellow Supporter! Awesome! You need anything?
+	Duck: Quack
+	Quail Voter: To find your way home? Can't help you with that.. Here though, take a pamphlet!
+	do Engine.set_meta("agreed_voter_quail", true)
+- No
+	do Engine.set_meta("talked_to_voterquail", true)
+	Quail Voter: Alright. You're entitled to your own opinion. 
+=> END

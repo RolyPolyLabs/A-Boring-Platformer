@@ -1,0 +1,19 @@
+~ start
+if Engine.has_meta("Sheriff_Talked"):
+	Sheriff Quail: The Gates are unlocked! Now go!
+	=> END
+Sheriff Quail: I already told you! We don't know where the food is going!
+Quail: I hardly doubt that Mr. Sherif. I think your a no good, dirty rotten..
+Duck: Quack
+Sheriff Quail: Who are you?
+Duck: Quack
+Sheriff Quail: No I can't help you get home! Can't you see we are in the middle of a crisis here! 
+Duck: ?
+Sheriff Quail: *Whispering* Our food is being stolen by a great beast. He flees to the giant pyramid whenever we try to chase him. 
+Duck: !
+Sheriff Quail: You think you can help! HA! 
+Duck: Quack
+Sheriff Quail: If you really think so... the Pyramid is on the right most side of the town. I can have my guards unlock the gate for you. 
+Sheriff Quail: Good Luck!
+do Engine.set_meta("Sheriff_Talked", true)
+=> END

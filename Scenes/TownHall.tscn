@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="14_0uoh7"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="15_imwfd"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="16_0drdr"]
-[ext_resource type="AudioStream" uid="uid://uc4txkahtfj1" path="res://Music/508136_-The-wanderer -sped-up.mp3" id="17_lhifi"]
+[ext_resource type="AudioStream" uid="uid://do1joaxfrc4uk" path="res://Music/606055_-DuneRiders-.mp3" id="17_3mgr8"]
 [ext_resource type="Texture2D" uid="uid://c3o5fl0g0q751" path="res://desert/desert_sky.png" id="18_7lh0f"]
 [ext_resource type="Texture2D" uid="uid://co4fsxkhk1ect" path="res://Pixel Art/Scrolling BG/Plan 4 (2).png" id="19_td7q1"]
 [ext_resource type="Texture2D" uid="uid://bmq52reqrq3wq" path="res://Pixel Art/Scrolling BG/Plan 3.png" id="20_bjnqc"]
@@ -24,6 +24,16 @@
 [ext_resource type="PackedScene" uid="uid://clrpepolrqmp0" path="res://Scenes/badgeshop.tscn" id="22_tesv8"]
 [ext_resource type="PackedScene" uid="uid://cpif66pt3o8ca" path="res://Scenes/SignNPC.tscn" id="23_3t7yg"]
 [ext_resource type="Resource" uid="uid://eya1erncm1xw" path="res://dialog/townhallsign.dialogue" id="24_t0r3p"]
+[ext_resource type="PackedScene" uid="uid://bphlp71yk7iur" path="res://Scenes/quailvotingNPC.tscn" id="25_wdfy1"]
+[ext_resource type="Resource" uid="uid://dnra5o27y624b" path="res://dialog/voterquail1.dialogue" id="26_4ov7a"]
+[ext_resource type="Resource" uid="uid://cg4bjrkb4ttfp" path="res://dialog/voterquail3.dialogue" id="26_rdps8"]
+[ext_resource type="Resource" uid="uid://yej65nfenfke" path="res://dialog/voterquail2.dialogue" id="27_iyyi0"]
+[ext_resource type="Resource" uid="uid://chxn41rh2xfxg" path="res://dialog/voterquail4.dialogue" id="29_iyyi0"]
+[ext_resource type="Resource" uid="uid://bn25b8rmolymq" path="res://dialog/voterquail5.dialogue" id="30_gs0ee"]
+[ext_resource type="Texture2D" uid="uid://q0jvpfsx6ek" path="res://Pixel Art/VotingBooth.png" id="30_kq1ru"]
+[ext_resource type="PackedScene" uid="uid://hra5x8psh0w1" path="res://Scenes/quailSheriff.tscn" id="32_mnqrp"]
+[ext_resource type="Resource" uid="uid://w58okvqj0yur" path="res://dialog/sherifinterupt.dialogue" id="33_3mgr8"]
+[ext_resource type="Texture2D" uid="uid://c85prmmkec28t" path="res://Pixel Art/Quail.png" id="33_pelt3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0ycs"]
 texture = ExtResource("2_wdfy1")
@@ -251,6 +261,28 @@ sources/6 = SubResource("TileSetAtlasSource_ycjnr")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hj5x7"]
 distance = 158.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mgr8"]
+atlas = ExtResource("33_pelt3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr4l3"]
+atlas = ExtResource("33_pelt3")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0iq8w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mgr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr4l3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="level 2" type="Node2D" unique_id=1212390420]
 script = ExtResource("1_gky8t")
 
@@ -360,9 +392,8 @@ script = ExtResource("15_imwfd")
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("16_0drdr")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=55203307]
-stream = ExtResource("17_lhifi")
+stream = ExtResource("17_3mgr8")
 volume_db = 5.0
-autoplay = true
 parameters/looping = true
 
 [node name="Parallax" type="Node2D" parent="." unique_id=901875328]
@@ -451,3 +482,40 @@ color = Color(1, 0.8132805, 0.6909885, 1)
 [node name="Npc" parent="." unique_id=165633267 instance=ExtResource("23_3t7yg")]
 position = Vector2(343, 327)
 balloon = ExtResource("24_t0r3p")
+
+[node name="Npc2" parent="." unique_id=366386818 instance=ExtResource("25_wdfy1")]
+position = Vector2(584, 329)
+balloon = ExtResource("26_rdps8")
+
+[node name="Npc3" parent="." unique_id=130059706 instance=ExtResource("25_wdfy1")]
+position = Vector2(608, 329)
+balloon = ExtResource("27_iyyi0")
+
+[node name="Npc4" parent="." unique_id=674313873 instance=ExtResource("25_wdfy1")]
+position = Vector2(632, 329)
+balloon = ExtResource("26_4ov7a")
+
+[node name="Npc5" parent="." unique_id=1792610275 instance=ExtResource("25_wdfy1")]
+position = Vector2(560, 329)
+balloon = ExtResource("29_iyyi0")
+
+[node name="Npc6" parent="." unique_id=529188177 instance=ExtResource("25_wdfy1")]
+position = Vector2(658, 329)
+balloon = ExtResource("30_gs0ee")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=166565205]
+offset_left = 652.0
+offset_top = 315.0
+offset_right = 672.0
+offset_bottom = 335.0
+texture = ExtResource("30_kq1ru")
+
+[node name="Npc7" parent="." unique_id=1278058426 instance=ExtResource("32_mnqrp")]
+position = Vector2(819, 329)
+balloon = ExtResource("33_3mgr8")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Npc7" unique_id=1152366071]
+position = Vector2(-22, 0)
+sprite_frames = SubResource("SpriteFrames_0iq8w")
+autoplay = "default"
+flip_h = true

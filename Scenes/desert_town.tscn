@@ -19,11 +19,11 @@
 [ext_resource type="FontFile" uid="uid://co73uuh4b2edi" path="res://Fonts/PublicPixel-rv0pA.ttf" id="13_0wrig"]
 [ext_resource type="Script" uid="uid://ddit0hlhhwpce" path="res://Scripts/label.gd" id="14_bitj7"]
 [ext_resource type="PackedScene" uid="uid://dgpbrt256leeo" path="res://Scenes/Autoload Shader.tscn" id="15_el3b1"]
-[ext_resource type="AudioStream" uid="uid://uc4txkahtfj1" path="res://Music/508136_-The-wanderer -sped-up.mp3" id="18_cn6qi"]
 [ext_resource type="Texture2D" uid="uid://bnscmmv1t3igm" path="res://Pixel Art/Spritesheets/Desert Haything.png" id="19_wc6un"]
 [ext_resource type="Texture2D" uid="uid://bfwt5pdxglfv6" path="res://Pixel Art/Scrolling BG/3.png" id="20_5kpla"]
 [ext_resource type="Texture2D" uid="uid://c3o5fl0g0q751" path="res://desert/desert_sky.png" id="20_7ihge"]
 [ext_resource type="Texture2D" uid="uid://cyfvqj8x23hpo" path="res://Pixel Art/Scrolling BG/sprite-2-2.png" id="20_y1idr"]
+[ext_resource type="AudioStream" uid="uid://do1joaxfrc4uk" path="res://Music/606055_-DuneRiders-.mp3" id="22_p1fl2"]
 [ext_resource type="Texture2D" uid="uid://1pgku65y8xn7" path="res://Pixel Art/Scrolling BG/Plan 2.png" id="23_wq6rh"]
 [ext_resource type="Texture2D" uid="uid://bpcktp280fw3c" path="res://Pixel Art/Scrolling BG/sprite-3-1.png" id="24_nfdaa"]
 [ext_resource type="PackedScene" uid="uid://dfq3xd3runjr3" path="res://Scenes/quailNPC.tscn" id="27_1jskl"]
@@ -403,8 +403,9 @@ script = ExtResource("14_bitj7")
 [node name="Scanline shader2" parent="." unique_id=600135161 instance=ExtResource("15_el3b1")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=55203307]
-stream = ExtResource("18_cn6qi")
+stream = ExtResource("22_p1fl2")
 volume_db = 5.0
+autoplay = true
 parameters/looping = true
 
 [node name="Wind" type="CPUParticles2D" parent="." unique_id=1396166256]

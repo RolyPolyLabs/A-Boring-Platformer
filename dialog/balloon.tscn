@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://biylry104e4g4" path="res://Sound Effects/Quail Cam.mp3" id="5_nily6"]
 [ext_resource type="AudioStream" uid="uid://c5gqffqfctn6g" path="res://Sound Effects/freesound_community-075176_duck-quack-40345.mp3" id="6_b42tu"]
 [ext_resource type="Texture2D" uid="uid://c4dkqblu2ka8t" path="res://Pixel Art/Sign.png" id="7_xpcs7"]
+[ext_resource type="Texture2D" uid="uid://b3bmu1rpgn6r7" path="res://Pixel Art/Quail Sherif.png" id="8_laiqf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0.23137255, 0.42745098, 1)
@@ -187,6 +188,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_712qk"]
+atlas = ExtResource("8_laiqf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi7u8"]
+atlas = ExtResource("8_laiqf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gncyq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_712qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi7u8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="ExampleBalloon" type="CanvasLayer" unique_id=1434168376]
 layer = 100
 script = ExtResource("1_36de5")
@@ -311,6 +334,15 @@ position = Vector2(145, 537)
 scale = Vector2(9.90625, 9.90625)
 sprite_frames = SubResource("SpriteFrames_712qk")
 autoplay = "default"
+flip_h = true
+
+[node name="Sheriff Rect" type="AnimatedSprite2D" parent="Balloon" unique_id=1994866731]
+visible = false
+position = Vector2(145, 537)
+scale = Vector2(9.90625, 9.90625)
+sprite_frames = SubResource("SpriteFrames_gncyq")
+autoplay = "default"
+frame_progress = 0.48263606
 flip_h = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1116280512]

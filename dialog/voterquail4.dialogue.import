@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://chxn41rh2xfxg"
+path="res://.godot/imported/voterquail4.dialogue-a9c012e8be93686ead2e0cebeea45af1.tres"
+
+[deps]
+
+source_file="res://dialog/voterquail4.dialogue"
+dest_files=["res://.godot/imported/voterquail4.dialogue-a9c012e8be93686ead2e0cebeea45af1.tres"]
+
+[params]
+
+defaults=true
