@@ -32,7 +32,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acqhf"]
-size = Vector2(64, 12)
+size = Vector2(12, 15)
 
 [node name="Npc" type="Node2D" unique_id=165633267]
 script = ExtResource("1_ge5dm")
