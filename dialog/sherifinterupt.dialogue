@@ -15,5 +15,6 @@ Sheriff Quail: You think you can help! HA!
 Duck: Quack
 Sheriff Quail: If you really think so... the Pyramid is on the right most side of the town. I can have my guards unlock the gate for you. 
 Sheriff Quail: Good Luck!
+do Engine.set_meta("GateUnlocked", true)
 do Engine.set_meta("Sheriff_Talked", true)
 => END

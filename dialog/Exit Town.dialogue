@@ -1,0 +1,7 @@
+~ start
+
+if Engine.has_meta("GateUnlocked"):
+	do get_tree().change_scene_to_file("res://Scenes/desert_town.tscn")
+else:
+	Observation: The Gate is locked.
+=> END

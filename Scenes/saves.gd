@@ -3,7 +3,7 @@ extends Control
 signal save_requested(save_name: String)
 signal load_requested(save_name: String)
 
-@export var saves_dir: String = "user://saves"
+@export var saves_dir: String = "user://"
 @export var save_extension: String = ".json"
 
 @onready var save_dropdown: OptionButton = $VBoxContainer/OptionButton
@@ -50,6 +50,19 @@ func _ready() -> void:
 	refresh_save_list()
 
 
+func _get_save_manager() -> Node:
+	return get_node_or_null("/root/SaveManager")
+
+
+func _get_active_saves_dir() -> String:
+	var mgr := _get_save_manager()
+	if mgr and mgr.has_method("get_save_folder"):
+		var folder: String = mgr.get_save_folder()
+		if folder != "":
+			return folder
+	return saves_dir
+
+
 func refresh_save_list() -> void:
 	if not save_dropdown:
 		return
@@ -57,18 +70,24 @@ func refresh_save_list() -> void:
 	var current_selection := _get_selected_save_name()
 	save_dropdown.clear()
 
-	var dir := DirAccess.open(saves_dir)
-	if dir:
-		dir.list_dir_begin()
-		var file_name := dir.get_next()
-		while file_name != "":
-			if not dir.current_is_dir() and file_name.ends_with(save_extension):
-				save_dropdown.add_item(file_name.get_basename())
-			file_name = dir.get_next()
-		dir.list_dir_end()
+	var slot_names: Array[String] = []
+	var mgr := _get_save_manager()
+	if mgr and mgr.has_method("get_save_files"):
+		slot_names = mgr.get_save_files()
+	else:
+		var folder := _get_active_saves_dir()
+		if DirAccess.dir_exists_absolute(folder):
+			for file_name in DirAccess.get_files_at(folder):
+				if file_name.ends_with(save_extension):
+					slot_names.append(file_name.get_basename())
+
+	for slot_name in slot_names:
+		save_dropdown.add_item(slot_name)
 
 	if current_selection != "":
 		_select_save_by_name(current_selection)
+	elif save_dropdown.item_count > 0:
+		save_dropdown.select(0)
 
 
 func _get_selected_save_name() -> String:
@@ -87,7 +106,7 @@ func _select_save_by_name(save_name: String) -> void:
 
 
 func _get_save_file_path(save_name: String) -> String:
-	return saves_dir.path_join(save_name + save_extension)
+	return _get_active_saves_dir().path_join(save_name + save_extension)
 
 
 func _save_exists(save_name: String) -> bool:
@@ -103,7 +122,10 @@ func _sanitize_slot_name(raw_name: String) -> String:
 
 
 func _sync_signal_bus_to_save_data() -> void:
-	var sav_data: Dictionary = SaveManager.get_sav_data()
+	var mgr := _get_save_manager()
+	if not mgr or not mgr.has_method("get_sav_data"):
+		return
+	var sav_data: Dictionary = mgr.get_sav_data()
 	sav_data["signal_bus"] = {
 		"score": SignalBus.score,
 		"skin": SignalBus.skin,
@@ -117,7 +139,10 @@ func _sync_signal_bus_to_save_data() -> void:
 
 
 func _format_bus_summary(prefix_line: String) -> String:
-	var bus_data: Dictionary = SaveManager.get_sav_data().get("signal_bus", {})
+	var bus_data: Dictionary = {}
+	var mgr := _get_save_manager()
+	if mgr and mgr.has_method("get_sav_data"):
+		bus_data = mgr.get_sav_data().get("signal_bus", {})
 	return (
 		prefix_line + "\n"
 		+ "Score: %s\n" % str(int(bus_data.get("score", SignalBus.score)))
@@ -166,8 +191,13 @@ func _on_overwrite_canceled() -> void:
 
 
 func _perform_save(target_name: String) -> void:
+	var mgr := _get_save_manager()
+	if not mgr or not mgr.has_method("save_game"):
+		_show_popup("Save Failed", "SaveManager is not available.")
+		return
+
 	_sync_signal_bus_to_save_data()
-	var saved_ok := SaveManager.save_game(target_name)
+	var saved_ok: bool = mgr.save_game(target_name)
 
 	if new_save_input:
 		new_save_input.text = ""
@@ -186,7 +216,12 @@ func _on_load_pressed() -> void:
 	if save_name == "":
 		return
 
-	var loaded_ok: Variant = SaveManager.load_game(save_name)
+	var mgr := _get_save_manager()
+	if not mgr or not mgr.has_method("load_game"):
+		_show_popup("Load Failed", "SaveManager is not available.")
+		return
+
+	var loaded_ok: Variant = mgr.load_game(save_name)
 	load_requested.emit(save_name)
 
 	var was_loaded := true if loaded_ok == null else bool(loaded_ok)
@@ -206,7 +241,7 @@ func _on_delete_pressed() -> void:
 		_show_popup("Delete Failed", "Save file not found for slot: " + save_name)
 		return
 
-	var err := DirAccess.remove_absolute(ProjectSettings.globalize_path(file_path))
+	var err := DirAccess.remove_absolute(file_path)
 	refresh_save_list()
 
 	if err == OK:
@@ -296,7 +331,9 @@ func _on_import_file_selected(source_path: String) -> void:
 		_show_popup("Import Failed", "Selected file is not a valid save JSON.")
 		return
 
-	DirAccess.make_dir_recursive_absolute(saves_dir)
+	var target_folder := _get_active_saves_dir()
+	if target_folder != "user://":
+		DirAccess.make_dir_recursive_absolute(target_folder)
 
 	var typed_name := new_save_input.text.strip_edges() if new_save_input else ""
 	var raw_slot_name := typed_name if typed_name != "" else source_path.get_file().get_basename()

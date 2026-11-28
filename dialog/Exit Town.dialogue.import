@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bs23vkyxinya0"
+path="res://.godot/imported/Exit Town.dialogue-d35229f701ffeb681a8c10e36cd035cc.tres"
+
+[deps]
+
+source_file="res://dialog/Exit Town.dialogue"
+dest_files=["res://.godot/imported/Exit Town.dialogue-d35229f701ffeb681a8c10e36cd035cc.tres"]
+
+[params]
+
+defaults=true
