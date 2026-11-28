@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	hasmap = SignalBus.hasmap
 	if hasmap == true:
-		get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+		get_tree().change_scene_to_file("res://Scenes/interactive_level_map.tscn")
 	else:
 		SignalBus.emit_signal("StopMusicBGMENU")
 		audio_stream_player.play()

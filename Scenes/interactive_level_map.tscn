@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bosnun2c12gqq" path="res://Pixel Art/Map Revamped.png" id="1_rjm25"]
 [ext_resource type="Texture2D" uid="uid://bybffv33gm62i" path="res://Pixel Art/Duck Run.png" id="2_fb7yy"]
 [ext_resource type="Script" uid="uid://b8lti6tpi6mad" path="res://Scenes/playermap.gd" id="2_oupby"]
+[ext_resource type="Script" uid="uid://b6jr27d1seihm" path="res://Scripts/first_path.gd" id="2_qketh"]
 [ext_resource type="PackedScene" uid="uid://qx6m0vxsrg02" path="res://Scenes/level_2.tscn" id="3_w5fqq"]
 [ext_resource type="PackedScene" uid="uid://b4vt868sc2wxa" path="res://Scenes/desert_town.tscn" id="4_2s8jq"]
 [ext_resource type="Texture2D" uid="uid://cftrky1t15716" path="res://Pixel Art/Duck Walk.png" id="5_hd82k"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cbp6xtmn5a13v" path="res://Pixel Art/portal/portal1_frame_5.png" id="11_4k846"]
 [ext_resource type="Texture2D" uid="uid://c08ag5myo28q3" path="res://Pixel Art/portal/portal1_frame_6.png" id="12_3rikm"]
 [ext_resource type="Texture2D" uid="uid://blcxr3kwqbtuy" path="res://Pixel Art/portal/portal1_frame_7.png" id="13_aiush"]
+[ext_resource type="AudioStream" uid="uid://uioiqo36ep6l" path="res://Sound Effects/floraphonic-spin-whoosh-1-186596.mp3" id="15_3fc3q"]
 
 [sub_resource type="Curve2D" id="Curve2D_oupby"]
 _data = {
@@ -120,6 +122,54 @@ position = Vector2(767, -123)
 scale = Vector2(12.0546875, 12.0546875)
 texture = ExtResource("1_rjm25")
 
+[node name="First Path" type="Node2D" parent="." unique_id=1287881497]
+visible = false
+position = Vector2(122, 531)
+script = ExtResource("2_qketh")
+
+[node name="ColorRect" type="ColorRect" parent="First Path" unique_id=2064642903]
+offset_left = 18.0
+offset_top = -9.0
+offset_right = 139.0
+offset_bottom = 11.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="First Path" unique_id=1795733598]
+offset_left = 125.0
+offset_top = -28.0
+offset_right = 284.0
+offset_bottom = -8.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="First Path" unique_id=583937973]
+offset_left = 269.0
+offset_top = 43.0
+offset_right = 428.0
+offset_bottom = 63.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="First Path" unique_id=1550897427]
+offset_left = 270.0
+offset_top = -9.0
+offset_right = 285.0
+offset_bottom = 44.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1221569149]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1372488415]
+offset_left = -13.0
+offset_right = 1152.0
+offset_bottom = 77.0
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=162458350]
+offset_left = -68.0
+offset_top = 609.0
+offset_right = 1156.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 0.5019608)
+
 [node name="Path2D" type="Path2D" parent="." unique_id=1800365291]
 curve = SubResource("Curve2D_oupby")
 
@@ -133,7 +183,7 @@ z_index = 1
 scale = Vector2(1.875, 1.625)
 sprite_frames = SubResource("SpriteFrames_bkkca")
 autoplay = "default"
-frame_progress = 0.56641364
+frame_progress = 0.7837397
 
 [node name="Player" type="Node2D" parent="Path2D/PathFollow2D" unique_id=1793480521]
 script = ExtResource("2_oupby")
@@ -159,5 +209,15 @@ position = Vector2(122, 534)
 
 [node name="Point2" type="Marker2D" parent="." unique_id=1290968312]
 position = Vector2(568, 582)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=739083473]
+stream = ExtResource("15_3fc3q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1712812297]
+offset_left = -78.0
+offset_top = 275.0
+offset_right = -3.0
+offset_bottom = 648.0
+color = Color(1, 0.8784314, 0.5529412, 1)
 
 [connection signal="area_entered" from="Path2D/PathFollow2D/Player/Area2D" to="Path2D/PathFollow2D/Player" method="_on_area_2d_area_entered"]

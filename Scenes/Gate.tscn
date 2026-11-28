@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://i62ddb63pjlf"]
 
-[ext_resource type="Script" uid="uid://dc8c62b1jgrim" path="res://Scripts/flag.gd" id="1_qe3w3"]
+[ext_resource type="Script" uid="uid://5ff0lu3bukje" path="res://Scenes/gatedesert.gd" id="1_qe3w3"]
 [ext_resource type="Texture2D" uid="uid://dmwk401f457k1" path="res://Pixel Art/Gate.png" id="2_qe3w3"]
 [ext_resource type="AudioStream" uid="uid://cte3foq8jntbj" path="res://Sound Effects/hurt.wav" id="3_81eci"]
 

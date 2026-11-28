@@ -30,6 +30,7 @@ var BadgeHealthAmount = 1
 var BadgeFlashAmount = 1
 var BadgeBreadAmount = 1
 signal openbadgeshop
+var town_unlcoked = false
 
 func add_point(amount: int = 1):
 	score += amount

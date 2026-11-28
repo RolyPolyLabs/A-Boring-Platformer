@@ -651,7 +651,7 @@ autoplay = &"Walk"
 
 [node name="StaticBody2D" parent="." unique_id=1301453939 instance=ExtResource("26_d42f2")]
 position = Vector2(2970, 280)
-next_scene = "uid://b4vt868sc2wxa"
+next_scene = "uid://be2r5dugp64ol"
 
 [editable path="Snake"]
 [editable path="Snake2"]

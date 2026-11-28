@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://be2r5dugp64ol"]
+
+[ext_resource type="Texture2D" uid="uid://bosnun2c12gqq" path="res://Pixel Art/Map Revamped.png" id="1_rjm25"]
+[ext_resource type="Texture2D" uid="uid://bybffv33gm62i" path="res://Pixel Art/Duck Run.png" id="2_fb7yy"]
+[ext_resource type="Script" uid="uid://b8lti6tpi6mad" path="res://Scenes/playermap.gd" id="2_oupby"]
+[ext_resource type="PackedScene" uid="uid://qx6m0vxsrg02" path="res://Scenes/level_2.tscn" id="3_w5fqq"]
+[ext_resource type="PackedScene" uid="uid://b4vt868sc2wxa" path="res://Scenes/desert_town.tscn" id="4_2s8jq"]
+[ext_resource type="Texture2D" uid="uid://cftrky1t15716" path="res://Pixel Art/Duck Walk.png" id="5_hd82k"]
+[ext_resource type="Texture2D" uid="uid://v1o81cjfttx1" path="res://Pixel Art/portal/portal1_frame_1.png" id="7_v0n7n"]
+[ext_resource type="Texture2D" uid="uid://c63lrsb3daj4g" path="res://Pixel Art/portal/portal1_frame_2.png" id="8_qketh"]
+[ext_resource type="Texture2D" uid="uid://bagpkvcqqxf8d" path="res://Pixel Art/portal/portal1_frame_3.png" id="9_3fc3q"]
+[ext_resource type="Texture2D" uid="uid://cvyk4852imyjl" path="res://Pixel Art/portal/portal1_frame_4.png" id="10_f830d"]
+[ext_resource type="Texture2D" uid="uid://cbp6xtmn5a13v" path="res://Pixel Art/portal/portal1_frame_5.png" id="11_4k846"]
+[ext_resource type="Texture2D" uid="uid://c08ag5myo28q3" path="res://Pixel Art/portal/portal1_frame_6.png" id="12_3rikm"]
+[ext_resource type="Texture2D" uid="uid://blcxr3kwqbtuy" path="res://Pixel Art/portal/portal1_frame_7.png" id="13_aiush"]
+
+[sub_resource type="Curve2D" id="Curve2D_oupby"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 122, 531, 0, 0, 0, 0, 254, 531, 0, 0, 0, 0, 254, 503, 0, 0, 0, 0, 400, 503, 0, 0, 0, 0, 400, 578, 0, 0, 0, 0, 568, 578)
+}
+point_count = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo224"]
+atlas = ExtResource("7_v0n7n")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkkca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo224")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qketh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3fc3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f830d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4k846")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3rikm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aiush")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oupby"]
+atlas = ExtResource("2_fb7yy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eps0"]
+atlas = ExtResource("2_fb7yy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd82k"]
+atlas = ExtResource("5_hd82k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5fqq"]
+atlas = ExtResource("5_hd82k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s8jq"]
+atlas = ExtResource("5_hd82k")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dps0x"]
+atlas = ExtResource("5_hd82k")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hd82k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oupby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eps0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd82k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5fqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s8jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dps0x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fb7yy"]
+
+[node name="Interactive level map" type="Node2D" unique_id=1378873166]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1730998203]
+position = Vector2(628, 313)
+
+[node name="MapRevamped" type="Sprite2D" parent="." unique_id=1465000187]
+position = Vector2(767, -123)
+scale = Vector2(12.0546875, 12.0546875)
+texture = ExtResource("1_rjm25")
+
+[node name="First Path" type="Node2D" parent="." unique_id=1287881497]
+visible = false
+position = Vector2(122, 531)
+
+[node name="ColorRect" type="ColorRect" parent="First Path" unique_id=2064642903]
+offset_left = 18.0
+offset_top = -9.0
+offset_right = 139.0
+offset_bottom = 11.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="First Path" unique_id=1795733598]
+offset_left = 125.0
+offset_top = -28.0
+offset_right = 284.0
+offset_bottom = -8.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="First Path" unique_id=583937973]
+offset_left = 269.0
+offset_top = 43.0
+offset_right = 428.0
+offset_bottom = 63.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="First Path" unique_id=1550897427]
+offset_left = 270.0
+offset_top = -9.0
+offset_right = 285.0
+offset_bottom = 44.0
+color = Color(1, 0.8784314, 0.5529412, 1)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1800365291]
+curve = SubResource("Curve2D_oupby")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1546987430]
+position = Vector2(122, 531)
+rotates = false
+
+[node name="Animated Sprite 2d" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" unique_id=107217333]
+visible = false
+z_index = 1
+scale = Vector2(1.875, 1.625)
+sprite_frames = SubResource("SpriteFrames_bkkca")
+autoplay = "default"
+frame_progress = 0.91679853
+
+[node name="Player" type="Node2D" parent="Path2D/PathFollow2D" unique_id=1793480521]
+script = ExtResource("2_oupby")
+level_1_scene = ExtResource("3_w5fqq")
+level_2_scene = ExtResource("4_2s8jq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Player" unique_id=2046291778]
+z_index = 2
+scale = Vector2(2.8364468, 2.8364468)
+sprite_frames = SubResource("SpriteFrames_hd82k")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Player" unique_id=2049504443]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Player/Area2D" unique_id=1558051674]
+shape = SubResource("CircleShape2D_fb7yy")
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D/Player" unique_id=384171029]
+zoom = Vector2(3, 3)
+
+[node name="Point1" type="Marker2D" parent="." unique_id=537236904]
+position = Vector2(122, 534)
+
+[node name="Point2" type="Marker2D" parent="." unique_id=1290968312]
+position = Vector2(568, 582)
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/Player/Area2D" to="Path2D/PathFollow2D/Player" method="_on_area_2d_area_entered"]
